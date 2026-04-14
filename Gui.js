@@ -51,7 +51,7 @@
         }
     };
     try {
-        for (let d of (c.data = JSON.parse(localStorage.getItem("ZIPGUISettings") || "{}"), ["backgroundColor", "cheatList", "contentBackground", "defaultButton", "disabledButton", "enabledButton", "infoColor", "inputColor", "textColor"]))
+        for (let d of (c.data = JSON.parse(localStorage.getItem("ZIPGUISettings") || "{}"),["backgroundColor", "cheatList", "contentBackground", "defaultButton", "disabledButton", "enabledButton", "infoColor", "inputColor", "textColor"]))
             c.data[d] && (c.setItem("theme." + d, c.data[d]), c.deleteItem(d))
     } catch {
         c.setData({})
@@ -158,7 +158,7 @@
                 shift: i,
                 alt: n,
                 key: s
-            }] = [c.data.hide || {
+            }] =[c.data.hide || {
                 ctrl: !0,
                 key: "e"
             }, c.data.close || {
@@ -235,7 +235,7 @@
             onclick: function() {
                     let e = !1;
                     return () => {
-                        for (var t of [...u.children])
+                        for (var t of[...u.children])
                             t != $ && (e ? t.style.display = t.style._display : (t.style._display = t.style.display, t.style.display = "none"));
                         u.style.height = e ? "100%" : "55px",
                             u.style.width = e ? "100%" : "165px",
@@ -454,7 +454,7 @@
                         try {
                             w = await ("function" == typeof g ? g?.() : g)
                         } catch {
-                            w = []
+                            w =[]
                         }
                         if ("options" == $ && w?.length) {
                             let k = document.createElement("select");
@@ -484,7 +484,7 @@
     }
     document.body.appendChild(_);
     let C = {
-        global: [{
+        global:[{
             name: "Auto Answer",
             description: "Toggles auto answer on",
             type: "toggle",
@@ -581,7 +581,7 @@
         }, {
             name: "Percent Auto Answer",
             description: "Answers questions correctly or incorrectly depending on the goal grade given (Disable and re-enable to update goal)",
-            inputs: [{
+            inputs:[{
                 name: "Target Grade",
                 type: "number"
             }],
@@ -631,7 +631,7 @@
         }, {
             name: "Use any Banner",
             description: "Unlocked all banners",
-            inputs: [{
+            inputs:[{
                 name: "Banner",
                 type: "options",
                 options: Object.entries({
@@ -748,17 +748,17 @@
         }, {
             name: "Spam Buy Blooks",
             description: "Opens a box an amount of times",
-            inputs: [{
+            inputs:[{
                 name: "Box",
                 type: "options",
-                options: () => Array.from(document.querySelectorAll("[class*='packsWrapper'] > div")).reduce((e, t) => (t.querySelector("[class*='blookContainer'] > img") || e.push(t.querySelector("[class*='packImgContainer'] > img").alt), e), [])
+                options: () => Array.from(document.querySelectorAll("[class*='packsWrapper'] > div")).reduce((e, t) => (t.querySelector("[class*='blookContainer'] > img") || e.push(t.querySelector("[class*='packImgContainer'] > img").alt), e),[])
             }, {
                 name: "Amount",
                 type: "number"
             }, {
                 name: "Show Unlocks",
                 type: "options",
-                options: [{
+                options:[{
                     name: "Show Unlocks",
                     value: !0
                 }, {
@@ -810,7 +810,7 @@
         }, {
             name: "Flood Game",
             description: "Floods a game with a number of fake accounts",
-            inputs: [{
+            inputs:[{
                 name: "Name",
                 type: "string"
             }, {
@@ -819,7 +819,7 @@
             }, {
                 name: "Blook",
                 type: "options",
-                options: ["Chick", "Chicken", "Cow", "Goat", "Horse", "Pig", "Sheep", "Duck", "Alpaca", "Dog", "Cat", "Rabbit", "Goldfish", "Hamster", "Turtle", "Kitten", "Puppy", "Bear", "Moose", "Fox", "Raccoon", "Squirrel", "Owl", "Hedgehog", "Deer", "Wolf", "Beaver", "Tiger", "Orangutan", "Cockatoo", "Parrot", "Anaconda", "Jaguar", "Macaw", "Toucan", "Panther", "Capuchin", "Gorilla", "Hippo", "Rhino", "Giraffe", "Snowy Owl", "Polar Bear", "Arctic Fox", "Baby Penguin", "Penguin", "Arctic Hare", "Seal", "Walrus", "Witch", "Wizard", "Elf", "Fairy", "Slime Monster", "Jester", "Dragon", "Queen", "Unicorn", "King", "Two of Spades", "Eat Me", "Drink Me", "Alice", "Queen of Hearts", "Dormouse", "White Rabbit", "Cheshire Cat", "Caterpillar", "Mad Hatter", "King of Hearts", "Toast", "Cereal", "Yogurt", "Breakfast Combo", "Orange Juice", "Milk", "Waffle", "Pancakes", "French Toast", "Pizza", "Earth", "Meteor", "Stars", "Alien", "Planet", "UFO", "Spaceship", "Astronaut", "Lil Bot", "Lovely Bot", "Angry Bot", "Happy Bot", "Watson", "Buddy Bot", "Brainy Bot", "Mega Bot", "Old Boot", "Jellyfish", "Clownfish", "Frog", "Crab", "Pufferfish", "Blobfish", "Octopus", "Narwhal", "Dolphin", "Baby Shark", "Megalodon", "Panda", "Sloth", "Tenrec", "Flamingo", "Zebra", "Elephant", "Lemur", "Peacock", "Chameleon", "Lion", "Amber", "Dino Egg", "Dino Fossil", "Stegosaurus", "Velociraptor", "Brontosaurus", "Triceratops", "Tyrannosaurus Rex", "Ice Bat", "Ice Bug", "Ice Elemental", "Rock Monster", "Dink", "Donk", "Bush Monster", "Yeti", "Dingo", "Echidna", "Koala", "Kookaburra", "Platypus", "Joey", "Kangaroo", "Crocodile", "Sugar Glider", "Deckhand", "Buccaneer", "Swashbuckler", "Treasure Map", "Seagull", "Jolly Pirate", "Pirate Ship", "Kraken", "Captain Blackbeard", "Snow Globe", "Holiday Gift", "Hot Chocolate", "Holiday Wreath", "Stocking", "Gingerbread Man", "Gingerbread House", "Reindeer", "Snowman", "Santa Claus", "Pumpkin", "Swamp Monster", "Frankenstein", "Vampire", "Zombie", "Mummy", "Caramel Apple", "Candy Corn", "Werewolf", "Ghost", "Rainbow Jellyfish", "Blizzard Clownfish", "Lovely Frog", "Lucky Frog", "Spring Frog", "Poison Dart Frog", "Lucky Hamster", "Chocolate Rabbit", "Spring Rabbit", "Lemon Crab", "Pirate Pufferfish", "Donut Blobfish", "Crimson Octopus", "Rainbow Narwhal", "Frost Wreath", "Tropical Globe", "New York Snow Globe", "London Snow Globe", "Japan Snow Globe", "Egypt Snow Globe", "Paris Snow Globe", "Red Sweater Snowman", "Blue Sweater Snowman", "Elf Sweater Snowman", "Santa Claws", "Cookies Combo", "Chilly Flamingo", "Snowy Bush Monster", "Nutcracker Koala", "Sandwich", "Ice Slime", "Frozen Fossil", "Ice Crab", "Rainbow Panda", "White Peacock", "Tiger Zebra", "Teal Platypus", "Red Astronaut", "Orange Astronaut", "Yellow Astronaut", "Lime Astronaut", "Green Astronaut", "Cyan Astronaut", "Blue Astronaut", "Pink Astronaut", "Purple Astronaut", "Brown Astronaut", "Black Astronaut", "Lovely Planet", "Lovely Peacock", "Haunted Pumpkin", "Pumpkin Cookie", "Ghost Cookie", "Red Gummy Bear", "Blue Gummy Bear", "Green Gummy Bear", "Chick Chicken", "Chicken Chick", "Raccoon Bandit", "Owl Sheriff", "Vampire Frog", "Pumpkin King", "Leprechaun", "Anaconda Wizard", "Spooky Pumpkin", "Spooky Mummy", "Agent Owl", "Master Elf", "Party Pig", "Wise Owl", "Spooky Ghost", "Phantom King", "Tim the Alien", "Rainbow Astronaut", "Hamsta Claus", "Light Blue", "Black", "Red", "Purple", "Pink", "Orange", "Lime", "Green", "Teal", "Tan", "Maroon", "Gray", "Mint", "Salmon", "Burgandy", "Baby Blue", "Dust", "Brown", "DullBlue", "Yellow", "Blue"].map(e => ({
+                options:["Chick", "Chicken", "Cow", "Goat", "Horse", "Pig", "Sheep", "Duck", "Alpaca", "Dog", "Cat", "Rabbit", "Goldfish", "Hamster", "Turtle", "Kitten", "Puppy", "Bear", "Moose", "Fox", "Raccoon", "Squirrel", "Owl", "Hedgehog", "Deer", "Wolf", "Beaver", "Tiger", "Orangutan", "Cockatoo", "Parrot", "Anaconda", "Jaguar", "Macaw", "Toucan", "Panther", "Capuchin", "Gorilla", "Hippo", "Rhino", "Giraffe", "Snowy Owl", "Polar Bear", "Arctic Fox", "Baby Penguin", "Penguin", "Arctic Hare", "Seal", "Walrus", "Witch", "Wizard", "Elf", "Fairy", "Slime Monster", "Jester", "Dragon", "Queen", "Unicorn", "King", "Two of Spades", "Eat Me", "Drink Me", "Alice", "Queen of Hearts", "Dormouse", "White Rabbit", "Cheshire Cat", "Caterpillar", "Mad Hatter", "King of Hearts", "Toast", "Cereal", "Yogurt", "Breakfast Combo", "Orange Juice", "Milk", "Waffle", "Pancakes", "French Toast", "Pizza", "Earth", "Meteor", "Stars", "Alien", "Planet", "UFO", "Spaceship", "Astronaut", "Lil Bot", "Lovely Bot", "Angry Bot", "Happy Bot", "Watson", "Buddy Bot", "Brainy Bot", "Mega Bot", "Old Boot", "Jellyfish", "Clownfish", "Frog", "Crab", "Pufferfish", "Blobfish", "Octopus", "Narwhal", "Dolphin", "Baby Shark", "Megalodon", "Panda", "Sloth", "Tenrec", "Flamingo", "Zebra", "Elephant", "Lemur", "Peacock", "Chameleon", "Lion", "Amber", "Dino Egg", "Dino Fossil", "Stegosaurus", "Velociraptor", "Brontosaurus", "Triceratops", "Tyrannosaurus Rex", "Ice Bat", "Ice Bug", "Ice Elemental", "Rock Monster", "Dink", "Donk", "Bush Monster", "Yeti", "Dingo", "Echidna", "Koala", "Kookaburra", "Platypus", "Joey", "Kangaroo", "Crocodile", "Sugar Glider", "Deckhand", "Buccaneer", "Swashbuckler", "Treasure Map", "Seagull", "Jolly Pirate", "Pirate Ship", "Kraken", "Captain Blackbeard", "Snow Globe", "Holiday Gift", "Hot Chocolate", "Holiday Wreath", "Stocking", "Gingerbread Man", "Gingerbread House", "Reindeer", "Snowman", "Santa Claus", "Pumpkin", "Swamp Monster", "Frankenstein", "Vampire", "Zombie", "Mummy", "Caramel Apple", "Candy Corn", "Werewolf", "Ghost", "Rainbow Jellyfish", "Blizzard Clownfish", "Lovely Frog", "Lucky Frog", "Spring Frog", "Poison Dart Frog", "Lucky Hamster", "Chocolate Rabbit", "Spring Rabbit", "Lemon Crab", "Pirate Pufferfish", "Donut Blobfish", "Crimson Octopus", "Rainbow Narwhal", "Frost Wreath", "Tropical Globe", "New York Snow Globe", "London Snow Globe", "Japan Snow Globe", "Egypt Snow Globe", "Paris Snow Globe", "Red Sweater Snowman", "Blue Sweater Snowman", "Elf Sweater Snowman", "Santa Claws", "Cookies Combo", "Chilly Flamingo", "Snowy Bush Monster", "Nutcracker Koala", "Sandwich", "Ice Slime", "Frozen Fossil", "Ice Crab", "Rainbow Panda", "White Peacock", "Tiger Zebra", "Teal Platypus", "Red Astronaut", "Orange Astronaut", "Yellow Astronaut", "Lime Astronaut", "Green Astronaut", "Cyan Astronaut", "Blue Astronaut", "Pink Astronaut", "Purple Astronaut", "Brown Astronaut", "Black Astronaut", "Lovely Planet", "Lovely Peacock", "Haunted Pumpkin", "Pumpkin Cookie", "Ghost Cookie", "Red Gummy Bear", "Blue Gummy Bear", "Green Gummy Bear", "Chick Chicken", "Chicken Chick", "Raccoon Bandit", "Owl Sheriff", "Vampire Frog", "Pumpkin King", "Leprechaun", "Anaconda Wizard", "Spooky Pumpkin", "Spooky Mummy", "Agent Owl", "Master Elf", "Party Pig", "Wise Owl", "Spooky Ghost", "Phantom King", "Tim the Alien", "Rainbow Astronaut", "Hamsta Claus", "Light Blue", "Black", "Red", "Purple", "Pink", "Orange", "Lime", "Green", "Teal", "Tan", "Maroon", "Gray", "Mint", "Salmon", "Burgandy", "Baby Blue", "Dust", "Brown", "DullBlue", "Yellow", "Blue"].map(e => ({
                     name: e,
                     value: e
                 }))
@@ -1017,7 +1017,7 @@
         }, {
             name: "Simulate Pack",
             description: "Simulates unlocking a pack",
-            inputs: [{
+            inputs:[{
                 name: "Pack",
                 type: "options",
                 options: () => [...document.querySelector("[class*=packsWrapper]")?.children]?.map(e => e.children[0].children[0].alt)
@@ -1056,7 +1056,7 @@
 
                 function pickW(a) {
                     let v = 0;
-                    let sum = [];
+                    let sum =[];
                     const rand = Math.floor(Math.random() * a.reduce((a, b) => a + b, 0));
                     a.forEach(e => (sum.push(v), v += e));
                     return sum.map(e => rand < e).findLastIndex(e => e ? 0 : 1);
@@ -1075,7 +1075,7 @@
         }, {
             name: "Bypass Filter",
             description: "Bypasses the name filter",
-            inputs: [{
+            inputs:[{
                 name: "Text",
                 type: "text",
             }],
@@ -1162,7 +1162,7 @@
         }, {
             name: "Use Banner IDs",
             description: "Enter Banner ID to use Banner",
-            inputs: [{
+            inputs:[{
                 name: "Banner ID",
                 type: "text",
             }],
@@ -1184,7 +1184,7 @@
         }, {
             name: "Change Blook Ingame",
             description: "Changes your blook",
-            inputs: [{
+            inputs:[{
                 name: "Blook",
                 type: "options",
                 async options() {
@@ -1196,8 +1196,7 @@
                                 t.webpack = a
                             }
                         },
-                        [
-                            ["1234"]
+                        [["1234"]
                         ]
                     ]);
                     return Object.keys(Object.values(e.c).find(e => e.exports.a?.Chick && e.exports.a?.Elephant).exports.a)
@@ -1219,7 +1218,7 @@
         }, {
             name: "Set Blook Ad Text",
             description: "Sets a load of text as your blook and floods teachers screen on lobby",
-            inputs: [{
+            inputs:[{
                 name: "Text",
                 type: "input",
             }],
@@ -1249,7 +1248,7 @@
         }, {
             name: "Set Blook Ad Text Ingame",
             description: "Sets a load of text as your blook",
-            inputs: [{
+            inputs:[{
                 name: "Text",
                 type: "options",
                 async options() {
@@ -1315,8 +1314,7 @@
                 } = Object.values(function e(t = document.querySelector("body>div")) {
                         return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
                     }
-                    ())[1].children[0]._owner;
-                [...document.querySelectorAll('[class*="answerContainer"]')].forEach((a, o) => {
+                    ())[1].children[0]._owner;[...document.querySelectorAll('[class*="answerContainer"]')].forEach((a, o) => {
                     (e.question || t.client.question).correctAnswers.includes((e.question || t.client.question).answers[o]) ? a.style.backgroundColor = "rgb(0, 207, 119)" : a.style.backgroundColor = "rgb(189, 15, 38)"
                 })
             }
@@ -1348,7 +1346,7 @@
                     } = await fetch("https://play.blooket.com/api/playersessions/solo", {
                         body: JSON.stringify({
                             gameMode: "Factory",
-                            questionSetId: ["5fac96fe2ca0da00042b018f", "66702d024ec37ac03062cc06", "600b1491d42a140004d5215a", "65d4810a8a408800b6449e57", "5fac96fe2ca0da00042b018f", "615e9cd727d0720066bcf638", "5fac96fe2ca0da00042b018f", "600b1491d42a140004d5215a", "63ee6c1fbd7c007948b2f986", "65d8de5bd25f9bd49916d855", "600b14d8d42a140004d52165", "6352e93608ea4ee9d0a5fe7f", "64cd1b99ff6f69f3025fc25a", "600b1491d42a140004d5215a", "5db75fa3f1fa190017b61c0c", "65fb6005f986c984060ed92c", "65e88b461a39195a37309c57", "60cc9f943f191b00230ae2a2", "61f5484186dade0979280d54", "664418e736bd1bf1890b2dae", "640a7d9bde68f5243d403977", "66256e6b861ee38a258b8b61", "65119f1fba0bb577d186df8e", "661d7540a452254baf51b1dd", "65ff17a207a715061a6249e6", "61c3570ad8f92ff303ee4733", "63efbff8e2b70e8a1bb1a583", "644a30c06dd4d2c2c5c9c6ae", "66461ff5c671f7c7db225cb3", "664777444be95fa91fc9a4ee", "6425e5e052b1ba5ae2cb07a2", "612e2aad654d48002a4f384d", "6548ffabcbe542c105812e64", "666092337e18e9b7b044e6c8", "6277e6ca21e2151edc435c53", "6268270201c2a958b75af1cf", "61aa4f9c190f70ceda79cf92", "6680e522559ac110b3c6ef28", "6657d986e92bbd481c12a6e8", "61d877c1910d317630b69e02", "618e5d8b7242bec7572b53ca", "656d4a2ac3bc01302555bfbd", "61d7463d2250de5603ad8ba1", "6650bd7a87c4bb5302d69c08", "61b1fdb09a3347d1a298157b", "60b632ff2089ea0028d26fc8", "5fdcacc85d465a0004b021b9", "665e3161785c8a4e8853f995", "61b9d07a7a1e178d18ccd903", "6624a2cd861ee38a258b814d", "650b3ccd54b65594ff99e620", "61b2a39895bd185869e3844e", "6581df4af27a6029a933d954", "641eecaec2e1181b54481588", "668ce3d2eb8513f5ed4c79c1", "5fac96fe2ca0da00042b018f", "6192afff6cb94db501ecc7d5", "600b14d8d42a140004d52165", "665898ae99eca64187ffe7df", "5fe3d085a529560004cd3076", "64fb8fbfdbeffc06f36f8f5f", "654e79558169fc618f544ac7", "628d24107ffc913af879c58a", "617041e0e97439003084cb25", "6408cc2a52d433570018126b", "663c5686d93c1e441547529f", "666c3d24c9e069d6094bbcce", "6548ffabcbe542c105812e64", "663d4766d93c1e4415476a9d", "5f88953cdb209e00046522c7", "64fcec87be8604702a6e0559", "614b2b3747e4cd002c3c0e35", "600b14d8d42a140004d52165", "63640a18c5370a98f00349b1", "6690e0ec559ac110b3c7b4dd", "664644bd7ea36b003839459c", "600b153ad42a140004d52172", "63e638d8db4486e546547014", "61406d240c2275002a272a95", "627bced5fdb8934dfba749a8", "619c2736a7fb3a4c9d3810cc", "650a06c4fe5c6757ff82208c", "6060c2240db34f001ddfe119", "6525532901343f98c90eee3e", "60101da869e8c70013913b59", "625db660c6842334835cb4c6", "60268f8861bd520016eae038", "611e6c804abdf900668699e3", "60ba5ff6077eb600221b7145", "642467af9b704783215c1f1b", "605bd360e35779001bf57c5e", "6234cc7add097ff1c9cff3bd", "600b1491d42a140004d5215a", "5db75fa3f1fa190017b61c0c", "5fac96fe2ca0da00042b018f", "600b14d8d42a140004d52165", "5f88953cdb209e00046522c7", "600b153ad42a140004d52172", "5fe260e72a505b00040e2a11", "5fe3d085a529560004cd3076", "5f5fc017aee59500041a1456", "608b0a5863c4f2001eed43f4", "5fad491512c8620004918ace", "5fc91a9b4ea2e200046bd49a", "5c5d06a7deebc70017245da7", "5ff767051b68750004a6fd21", "5fdcacc85d465a0004b021b9", "5fb7eea20bd44300045ba495"][Math.floor(107 * Math.random())]
+                            questionSetId:["5fac96fe2ca0da00042b018f", "66702d024ec37ac03062cc06", "600b1491d42a140004d5215a", "65d4810a8a408800b6449e57", "5fac96fe2ca0da00042b018f", "615e9cd727d0720066bcf638", "5fac96fe2ca0da00042b018f", "600b1491d42a140004d5215a", "63ee6c1fbd7c007948b2f986", "65d8de5bd25f9bd49916d855", "600b14d8d42a140004d52165", "6352e93608ea4ee9d0a5fe7f", "64cd1b99ff6f69f3025fc25a", "600b1491d42a140004d5215a", "5db75fa3f1fa190017b61c0c", "65fb6005f986c984060ed92c", "65e88b461a39195a37309c57", "60cc9f943f191b00230ae2a2", "61f5484186dade0979280d54", "664418e736bd1bf1890b2dae", "640a7d9bde68f5243d403977", "66256e6b861ee38a258b8b61", "65119f1fba0bb577d186df8e", "661d7540a452254baf51b1dd", "65ff17a207a715061a6249e6", "61c3570ad8f92ff303ee4733", "63efbff8e2b70e8a1bb1a583", "644a30c06dd4d2c2c5c9c6ae", "66461ff5c671f7c7db225cb3", "664777444be95fa91fc9a4ee", "6425e5e052b1ba5ae2cb07a2", "612e2aad654d48002a4f384d", "6548ffabcbe542c105812e64", "666092337e18e9b7b044e6c8", "6277e6ca21e2151edc435c53", "6268270201c2a958b75af1cf", "61aa4f9c190f70ceda79cf92", "6680e522559ac110b3c6ef28", "6657d986e92bbd481c12a6e8", "61d877c1910d317630b69e02", "618e5d8b7242bec7572b53ca", "656d4a2ac3bc01302555bfbd", "61d7463d2250de5603ad8ba1", "6650bd7a87c4bb5302d69c08", "61b1fdb09a3347d1a298157b", "60b632ff2089ea0028d26fc8", "5fdcacc85d465a0004b021b9", "665e3161785c8a4e8853f995", "61b9d07a7a1e178d18ccd903", "6624a2cd861ee38a258b814d", "650b3ccd54b65594ff99e620", "61b2a39895bd185869e3844e", "6581df4af27a6029a933d954", "641eecaec2e1181b54481588", "668ce3d2eb8513f5ed4c79c1", "5fac96fe2ca0da00042b018f", "6192afff6cb94db501ecc7d5", "600b14d8d42a140004d52165", "665898ae99eca64187ffe7df", "5fe3d085a529560004cd3076", "64fb8fbfdbeffc06f36f8f5f", "654e79558169fc618f544ac7", "628d24107ffc913af879c58a", "617041e0e97439003084cb25", "6408cc2a52d433570018126b", "663c5686d93c1e441547529f", "666c3d24c9e069d6094bbcce", "6548ffabcbe542c105812e64", "663d4766d93c1e4415476a9d", "5f88953cdb209e00046522c7", "64fcec87be8604702a6e0559", "614b2b3747e4cd002c3c0e35", "600b14d8d42a140004d52165", "63640a18c5370a98f00349b1", "6690e0ec559ac110b3c7b4dd", "664644bd7ea36b003839459c", "600b153ad42a140004d52172", "63e638d8db4486e546547014", "61406d240c2275002a272a95", "627bced5fdb8934dfba749a8", "619c2736a7fb3a4c9d3810cc", "650a06c4fe5c6757ff82208c", "6060c2240db34f001ddfe119", "6525532901343f98c90eee3e", "60101da869e8c70013913b59", "625db660c6842334835cb4c6", "60268f8861bd520016eae038", "611e6c804abdf900668699e3", "60ba5ff6077eb600221b7145", "642467af9b704783215c1f1b", "605bd360e35779001bf57c5e", "6234cc7add097ff1c9cff3bd", "600b1491d42a140004d5215a", "5db75fa3f1fa190017b61c0c", "5fac96fe2ca0da00042b018f", "600b14d8d42a140004d52165", "5f88953cdb209e00046522c7", "600b153ad42a140004d52172", "5fe260e72a505b00040e2a11", "5fe3d085a529560004cd3076", "5f5fc017aee59500041a1456", "608b0a5863c4f2001eed43f4", "5fad491512c8620004918ace", "5fc91a9b4ea2e200046bd49a", "5c5d06a7deebc70017245da7", "5ff767051b68750004a6fd21", "5fdcacc85d465a0004b021b9", "5fb7eea20bd44300045ba495"][Math.floor(107 * Math.random())]
                         }),
                         credentials: "include",
                         method: "POST"
@@ -1425,7 +1423,7 @@
                                 allSets: Object.values(blooks).reduce((a, b) => {
                                     return !a.includes(b.set) && a.push(b.set),
                                         a
-                                }, [])
+                                },[])
                             });
                         }
                     } else {
@@ -1441,7 +1439,7 @@
             name: "Freeze Host",
             description: "Freezes the host's screen",
             run: function() {
-                const encodedChars = [
+                const encodedChars =[
                     '\\u2f9f', '\\u4fff', '\\u4f52', '\\u0E47', '\\u0E47', '\\u0E47', '\\u0E47', '\\u0E47', '\\u0E47', '\\u0E47', '\\u4FF1', '\\u4FF2'
                 ];
 
@@ -1839,7 +1837,7 @@
                                 if (t.setState({
                                         blook: r,
                                         numToSell: t.state.blookData[r] - 1
-                                    }), ["Legendary", "Chroma", "Mystical"].includes(document.querySelector("[class*='highlightedRarity']").innerText.trim()))
+                                    }),["Legendary", "Chroma", "Mystical"].includes(document.querySelector("[class*='highlightedRarity']").innerText.trim()))
                                     continue;
                                 o += `    ${r} ${t.state.blookData[r] - 1} `,
                                     await t.sellBlook({
@@ -1852,7 +1850,7 @@
                     alert("This can only be ran in the Blooks page.")
             }
         }],
-        voyage: [{
+        voyage:[{
             name: "Heist ESP",
             description: "Shows you what's under each chest during a heist",
             type: "toggle",
@@ -1938,7 +1936,7 @@
         }, {
             name: "Set Doubloons",
             description: "Sets Doubloons",
-            inputs: [{
+            inputs:[{
                 name: "Amount",
                 type: "number"
             }],
@@ -1964,7 +1962,7 @@
         }, {
             name: "Start Heist",
             description: "Starts a heist on someone",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -1993,7 +1991,7 @@
                         name: t,
                         blook: o.b,
                         doubloons: o.d || 0
-                    }), e), []);
+                    }), e),[]);
                     if (0 === o.length)
                         return a.questionsToAnswer = 1, void a.randomQ();
                     let {
@@ -2014,7 +2012,7 @@
         }, {
             name: "Swap Doubloons",
             description: "Swaps Doubloons with someone",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -2055,7 +2053,7 @@
         }, {
             name: "Take Doubloons",
             description: "Takes Doubloons from someone",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -2096,7 +2094,7 @@
         }, {
             name: "Player Swapper",
             description: "Swaps your stats and identity with another player",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -2109,7 +2107,9 @@
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
                         let targetData = a[e];
+                        let myData = a[t.props.client.name];
                         t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
                         t.setState({ doubloons: targetData.d || 0 });
                     }
                 });
@@ -2134,7 +2134,7 @@
         }, {
             name: "Flood Alert Box",
             description: "Makes the alert box filled with text",
-            inputs: [{
+            inputs:[{
                 name: "Text",
                 type: "text"
             }],
@@ -2181,7 +2181,7 @@
         }, {
             name: "Send Ad Text",
             description: "Sends a load of text to another player (This will override your blook!)",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -2219,7 +2219,7 @@
         }, {
             name: "Set Host Screen Text",
             description: "Makes the whole host screen filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(e) {
                 var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
                 a.props.liveGameController.setVal({
@@ -2254,17 +2254,26 @@
             inputs: [{
                 name: "Gamemode",
                 type: "options",
-                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
             }],
             run: function(mode) {
-                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                const routeMap = {
+                    Royale: "battle-royale",
+                    Fish: "fishing"
+                };
+                let route = routeMap[mode] || mode.toLowerCase();
+                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
+                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
+                    }())[1].children[0]._owner.stateNode;
                 if (stateNode && stateNode.props && stateNode.props.client) {
                     stateNode.props.client.type = mode;
-                    stateNode.forceUpdate();
+                }
+                if (stateNode && stateNode.props && stateNode.props.history) {
+                    stateNode.props.history.push("/play/" + route);
                 }
             }
         }],
-        brawl: [{
+        brawl:[{
             name: "Double Enemy XP",
             description: "Doubles enemy XP drop value",
             run: function() {
@@ -2330,11 +2339,11 @@
             description: "Maxes out all your current abilities",
             run: function() {
                 let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                for (var [t, a] of Object.entries(e.state.abilities))
+                for (var[t, a] of Object.entries(e.state.abilities))
                     for (let o = 0; o < 10 - a; o++)
                         e.game.current.scene.scenes[0].game.events.emit("level up", t, e.state.abilities[t]++);
                 e.setState({
-                    level: e.game.current.scene.scenes[0].level = [1, 3, 5, 10, 15, 25, 35].sort((t, a) => Math.abs(t - e.state.level) - Math.abs(a - e.state.level))[0] - 1
+                    level: e.game.current.scene.scenes[0].level =[1, 3, 5, 10, 15, 25, 35].sort((t, a) => Math.abs(t - e.state.level) - Math.abs(a - e.state.level))[0] - 1
                 })
             }
         }, {
@@ -2390,7 +2399,7 @@
         }, {
             name: "Set XP",
             description: "Sets amount of XP",
-            inputs: [{
+            inputs:[{
                 name: "XP",
                 type: "number"
             }],
@@ -2425,7 +2434,7 @@
         }, {
             name: "Player Swapper",
             description: "Swaps your stats and identity with another player",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -2438,7 +2447,9 @@
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
                         let targetData = a[e];
+                        let myData = a[t.props.client.name];
                         t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
                         t.setState({ xp: targetData.xp || 0 });
                     }
                 });
@@ -2463,7 +2474,7 @@
         }, {
             name: "Flood Alert Box",
             description: "Makes the alert box filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(userInput) {
                 function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
                 getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
@@ -2483,7 +2494,7 @@
         }, {
             name: "Send Ad Text",
             description: "Sends a load of text to another player (This will override your blook!)",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -2533,7 +2544,7 @@
         }, {
             name: "Steal Player's XP",
             description: "Steals all of someone's XP",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -2558,20 +2569,26 @@
         }, {
             name: "Game Mode Changer",
             description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
-            inputs: [{
+            inputs:[{
                 name: "Gamemode",
                 type: "options",
-                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
             }],
             run: function(mode) {
-                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
+                let route = routeMap[mode] || mode.toLowerCase();
+                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
+                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
+                    }())[1].children[0]._owner.stateNode;
                 if (stateNode && stateNode.props && stateNode.props.client) {
                     stateNode.props.client.type = mode;
-                    stateNode.forceUpdate();
+                }
+                if (stateNode && stateNode.props && stateNode.props.history) {
+                    stateNode.props.history.push("/play/" + route);
                 }
             }
         }],
-        cafe: [{
+        cafe:[{
             name: "Max Items",
             description: "Maxes out items in the shop (Only usable in the shop)",
             run: function() {
@@ -2605,7 +2622,7 @@
         }, {
             name: "Set Cash",
             description: "Sets cafe cash",
-            inputs: [{
+            inputs:[{
                 name: "Amount",
                 type: "number"
             }],
@@ -2625,7 +2642,7 @@
         }, {
             name: "Spam Attack Player",
             description: "Attacks the player to make the game unplayable",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -2672,7 +2689,7 @@
         }, {
             name: "Attack Player",
             description: "Sends the player a health inspection",
-            inputs: [{
+            inputs:[{
                 name: "Player's Name",
                 type: "text"
             }],
@@ -2690,7 +2707,7 @@
         }, {
             name: "Tax Player",
             description: "Makes a player pay tax",
-            inputs: [{
+            inputs:[{
                 name: "Player's Name",
                 type: "text"
             }],
@@ -2735,7 +2752,7 @@
         }, {
             name: "Player Swapper",
             description: "Swaps your stats and identity with another player",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -2748,7 +2765,9 @@
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
                         let targetData = a[e];
+                        let myData = a[t.props.client.name];
                         t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
                         t.setState({ cafeCash: targetData.ca || 0 });
                     }
                 });
@@ -2800,7 +2819,7 @@
         }, {
             name: "Send Ad Text",
             description: "Sends a load of text to another player (This will override your blook!)",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -2850,7 +2869,7 @@
         }, {
             name: "Steal Player's Cash",
             description: "Steals all of someone's Cafe Cash",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -2877,17 +2896,23 @@
             inputs: [{
                 name: "Gamemode",
                 type: "options",
-                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
             }],
             run: function(mode) {
-                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
+                let route = routeMap[mode] || mode.toLowerCase();
+                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
+                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
+                    }())[1].children[0]._owner.stateNode;
                 if (stateNode && stateNode.props && stateNode.props.client) {
                     stateNode.props.client.type = mode;
-                    stateNode.forceUpdate();
+                }
+                if (stateNode && stateNode.props && stateNode.props.history) {
+                    stateNode.props.history.push("/play/" + route);
                 }
             }
         }],
-        crypto: [{
+        crypto:[{
             name: "Choice ESP",
             description: "Shows what each choice will give you",
             type: "toggle",
@@ -2949,7 +2974,7 @@
             data: null,
             run: function() {
                 this.enabled ? (this.enabled = !1, clearInterval(this.data), this.data = null) : (this.enabled = !0, this.data = setInterval(() => Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.setState({
-                    choices: [{
+                    choices:[{
                         type: "mult",
                         val: 3,
                         rate: .075,
@@ -2966,7 +2991,7 @@
             data: null,
             run: function() {
                 this.enabled ? (this.enabled = !1, clearInterval(this.data), this.data = null) : (this.enabled = !0, this.data = setInterval(() => Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.setState({
-                    choices: [{
+                    choices:[{
                         type: "mult",
                         val: 5,
                         rate: .075,
@@ -2983,7 +3008,7 @@
             data: null,
             run: function() {
                 this.enabled ? (this.enabled = !1, clearInterval(this.data), this.data = null) : (this.enabled = !0, this.data = setInterval(() => Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.setState({
-                    choices: [{
+                    choices:[{
                         type: "hack",
                         val: 3,
                         rate: .075,
@@ -3026,7 +3051,7 @@
             enabled: !1,
             data: null,
             run: function() {
-                const encodedChars = [
+                const encodedChars =[
                     '\\u2f9f', '\\u4fff', '\\u4f52', '\\u0E47', '\\u0E47', '\\u0E47', '\\u0E47', '\\u0E47', '\\u0E47', '\\u0E47', '\\u4FF1', '\\u4FF2'
                 ];
 
@@ -3153,7 +3178,7 @@
         }, {
             name: "Set Crypto",
             description: "Sets crypto",
-            inputs: [{
+            inputs:[{
                 name: "Amount",
                 type: "number"
             }],
@@ -3209,7 +3234,7 @@
         }, {
             name: "Steal Player's Crypto",
             description: "Steals all of someone's crypto",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -3240,7 +3265,7 @@
         }, {
             name: "Get Player's Password",
             description: "Shows the password of any player in an alert box",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -3261,7 +3286,7 @@
         }, {
             name: "Flood Alert Box",
             description: "Makes the alert box filled with text",
-            inputs: [{
+            inputs:[{
                 name: "Text",
                 type: "text"
             }],
@@ -3308,7 +3333,7 @@
         }, {
             name: "Send Ad Text",
             description: "Sends a load of text to another player (This will override your blook!)",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -3345,7 +3370,7 @@
         }, {
             name: "Player Swapper",
             description: "Swaps your stats and identity with another player",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -3358,7 +3383,9 @@
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
                         let targetData = a[e];
+                        let myData = a[t.props.client.name];
                         t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
                         t.setState({ crypto: targetData.cr || 0, crypto2: targetData.cr || 0 });
                     }
                 });
@@ -3386,17 +3413,23 @@
             inputs: [{
                 name: "Gamemode",
                 type: "options",
-                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
             }],
             run: function(mode) {
-                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
+                let route = routeMap[mode] || mode.toLowerCase();
+                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
+                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
+                    }())[1].children[0]._owner.stateNode;
                 if (stateNode && stateNode.props && stateNode.props.client) {
                     stateNode.props.client.type = mode;
-                    stateNode.forceUpdate();
+                }
+                if (stateNode && stateNode.props && stateNode.props.history) {
+                    stateNode.props.history.push("/play/" + route);
                 }
             }
         }],
-        defense: [{
+        defense:[{
             name: "Earthquake",
             description: "Shuffles around towers",
             run: function() {
@@ -3464,7 +3497,7 @@
             description: "Removes all the enemies",
             run: function() {
                 var e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                e.enemies = e.futureEnemies = []
+                e.enemies = e.futureEnemies =[]
             }
         }, {
             name: "Remove Obstacles",
@@ -3510,7 +3543,7 @@
         }, {
             name: "Player Swapper",
             description: "Swaps your stats and identity with another player",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -3523,7 +3556,9 @@
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
                         let targetData = a[e];
+                        let myData = a[t.props.client.name];
                         t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
                         t.dmg = targetData.d || 0;
                     }
                 });
@@ -3555,7 +3590,7 @@
         }, {
             name: "Flood Alert Box",
             description: "Makes the alert box filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(userInput) {
                 function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
                 getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
@@ -3575,7 +3610,7 @@
         }, {
             name: "Send Ad Text",
             description: "Sends a load of text to another player (This will override your blook!)",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -3625,7 +3660,7 @@
         }, {
             name: "Steal Player's Damage",
             description: "Steals all of someone's damage",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -3652,17 +3687,23 @@
             inputs: [{
                 name: "Gamemode",
                 type: "options",
-                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
             }],
             run: function(mode) {
-                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
+                let route = routeMap[mode] || mode.toLowerCase();
+                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
+                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
+                    }())[1].children[0]._owner.stateNode;
                 if (stateNode && stateNode.props && stateNode.props.client) {
                     stateNode.props.client.type = mode;
-                    stateNode.forceUpdate();
+                }
+                if (stateNode && stateNode.props && stateNode.props.history) {
+                    stateNode.props.history.push("/play/" + route);
                 }
             }
         }],
-        defense2: [{
+        defense2:[{
             name: "Max Tower Stats",
             description: "Makes all placed towers overpowered",
             run: function() {
@@ -3724,7 +3765,7 @@
         }, {
             name: "Set Round",
             description: "Sets the current round",
-            inputs: [{
+            inputs:[{
                 name: "Round",
                 type: "number"
             }],
@@ -3736,7 +3777,7 @@
         }, {
             name: "Player Swapper",
             description: "Swaps your stats and identity with another player",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -3749,7 +3790,9 @@
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
                         let targetData = a[e];
+                        let myData = a[t.props.client.name];
                         t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
                     }
                 });
             }
@@ -3773,7 +3816,7 @@
         }, {
             name: "Flood Alert Box",
             description: "Makes the alert box filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(userInput) {
                 function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
                 getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
@@ -3793,7 +3836,7 @@
         }, {
             name: "Send Ad Text",
             description: "Sends a load of text to another player (This will override your blook!)",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -3829,7 +3872,7 @@
                 var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
                 if (this.enabled) {
                     this.enabled = !1; clearInterval(this.data); this.data = null;
-                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/d`, val: 0 });
+                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/d`, val: 0 }); // reset
                 } else {
                     this.enabled = !0;
                     this.data = setInterval(() => {
@@ -3843,7 +3886,7 @@
         }, {
             name: "Steal Player's Damage",
             description: "Steals all of someone's damage",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -3866,20 +3909,26 @@
         }, {
             name: "Game Mode Changer",
             description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
-            inputs: [{
+            inputs:[{
                 name: "Gamemode",
                 type: "options",
-                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
             }],
             run: function(mode) {
-                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
+                let route = routeMap[mode] || mode.toLowerCase();
+                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
+                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
+                    }())[1].children[0]._owner.stateNode;
                 if (stateNode && stateNode.props && stateNode.props.client) {
                     stateNode.props.client.type = mode;
-                    stateNode.forceUpdate();
+                }
+                if (stateNode && stateNode.props && stateNode.props.history) {
+                    stateNode.props.history.push("/play/" + route);
                 }
             }
         }],
-        dinos: [{
+        dinos:[{
             name: "Auto Choose",
             description: "Automatically choose the best fossil when excavating",
             type: "toggle",
@@ -3999,7 +4048,7 @@
             enabled: !1,
             data: null,
             run: function() {
-                let e = ["⁰", "\xb9", "\xb2", "\xb3", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"],
+                let e =["⁰", "\xb9", "\xb2", "\xb3", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"],
                     t = t => {
                         let a = "";
                         for (; t > 0;)
@@ -4009,7 +4058,7 @@
                     a = e => {
                         let a = e.toString();
                         if (e >= 1e3) {
-                            let o = ["", "K", "M", "B", "T"],
+                            let o =["", "K", "M", "B", "T"],
                                 r = ~~((digits(e) - 1) / 3);
                             if (r < o.length) {
                                 let i = "";
@@ -4038,9 +4087,9 @@
                                 return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
                             }
                             ())[1].children[0]._owner,
-                        t = [...document.querySelector('[class*="rockButton"]').parentElement.children];
+                        t =[...document.querySelector('[class*="rockButton"]').parentElement.children];
                     t.every(e => e.querySelector("div")) || e.setState({
-                        choices: [{
+                        choices:[{
                             type: "fossil",
                             val: 10,
                             rate: .1,
@@ -4109,7 +4158,7 @@
         }, {
             name: "Set Fossils",
             description: "Sets the amount of fossils you have",
-            inputs: [{
+            inputs:[{
                 name: "Fossils",
                 type: "number"
             }],
@@ -4130,7 +4179,7 @@
         }, {
             name: "Set Multiplier",
             description: "Sets fossil multiplier",
-            inputs: [{
+            inputs:[{
                 name: "Multiplier",
                 type: "number"
             }],
@@ -4190,7 +4239,7 @@
         }, {
             name: "Player Swapper",
             description: "Swaps your stats and identity with another player",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -4203,7 +4252,9 @@
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
                         let targetData = a[e];
+                        let myData = a[t.props.client.name];
                         t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
                         t.setState({ fossils: targetData.f || 0 });
                     }
                 });
@@ -4228,7 +4279,7 @@
         }, {
             name: "Flood Alert Box",
             description: "Makes the alert box filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(userInput) {
                 function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
                 getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
@@ -4248,7 +4299,7 @@
         }, {
             name: "Send Ad Text",
             description: "Sends a load of text to another player (This will override your blook!)",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -4298,7 +4349,7 @@
         }, {
             name: "Steal Player's Fossils",
             description: "Steals all of someone's fossils",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -4322,20 +4373,26 @@
         }, {
             name: "Game Mode Changer",
             description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
-            inputs: [{
+            inputs:[{
                 name: "Gamemode",
                 type: "options",
-                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
             }],
             run: function(mode) {
-                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
+                let route = routeMap[mode] || mode.toLowerCase();
+                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
+                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
+                    }())[1].children[0]._owner.stateNode;
                 if (stateNode && stateNode.props && stateNode.props.client) {
                     stateNode.props.client.type = mode;
-                    stateNode.forceUpdate();
+                }
+                if (stateNode && stateNode.props && stateNode.props.history) {
+                    stateNode.props.history.push("/play/" + route);
                 }
             }
         }],
-        doom: [{
+        doom:[{
             name: "Fill Deck",
             description: "Fills your deck with every maxed out card and artifact (Only works on towers page)",
             run: function() {
@@ -4426,7 +4483,7 @@
         }, {
             name: "Set Coins",
             description: "Try's to set amount of tower coins you have",
-            inputs: [{
+            inputs:[{
                 name: "Coins",
                 type: "number"
             }],
@@ -4444,7 +4501,7 @@
         }, {
             name: "Set Streak",
             description: "Sets your streak to the desired amount",
-            inputs: [{
+            inputs:[{
                 name: "Streak",
                 type: "number"
             }],
@@ -4459,26 +4516,26 @@
                     }) : alert("You need to be in battle to run this cheat!")
             }
         }],
-        factory: [{
+        factory:[{
             name: "Choose Blook",
             description: "Gives you a blook",
-            inputs: [{
+            inputs:[{
                 name: "Blook",
                 type: "options",
-                options: [{
+                options:[{
                     name: "Chick",
                     color: "#ffcd05",
                     class: "🌽",
                     rarity: "Common",
-                    cash: [3, 7, 65, 400, 2500],
-                    time: [1, 1, 1, 1, 1],
-                    price: [300, 3e3, 3e4, 2e5]
+                    cash:[3, 7, 65, 400, 2500],
+                    time:[1, 1, 1, 1, 1],
+                    price:[300, 3e3, 3e4, 2e5]
                 }, {
                     name: "Chicken",
                     color: "#ed1c24",
                     class: "🌽",
                     rarity: "Common",
-                    cash: [10, 40, 200, 1400, 1e4],
+                    cash:[10, 40, 200, 1400, 1e4],
                     time: [5, 4, 3, 2, 1],
                     price: [570, 4e3, 5e4, 8e5]
                 }, {
@@ -4486,15 +4543,15 @@
                     color: "#58595b",
                     class: "🌽",
                     rarity: "Common",
-                    cash: [25, 75, 1500, 25e3, 25e4],
-                    time: [15, 10, 10, 10, 5],
-                    price: [500, 9500, 16e4, 4e6]
+                    cash:[25, 75, 1500, 25e3, 25e4],
+                    time:[15, 10, 10, 10, 5],
+                    price:[500, 9500, 16e4, 4e6]
                 }, {
                     name: "Duck",
                     color: "#4ab96d",
                     class: "🌽",
                     rarity: "Common",
-                    cash: [4, 24, 200, 3e3, 4e4],
+                    cash:[4, 24, 200, 3e3, 4e4],
                     time: [3, 3, 3, 3, 3],
                     price: [450, 4200, 7e4, 11e5]
                 }, {
@@ -4502,15 +4559,15 @@
                     color: "#c59a74",
                     class: "🌽",
                     rarity: "Common",
-                    cash: [5, 28, 200, 1300, 12e3],
-                    time: [3, 3, 2, 2, 2],
-                    price: [500, 6400, 45e3, 5e5]
+                    cash:[5, 28, 200, 1300, 12e3],
+                    time:[3, 3, 2, 2, 2],
+                    price:[500, 6400, 45e3, 5e5]
                 }, {
                     name: "Horse",
                     color: "#995b3c",
                     class: "🌽",
                     rarity: "Common",
-                    cash: [5, 20, 270, 1800, 15e3],
+                    cash:[5, 20, 270, 1800, 15e3],
                     time: [2, 2, 2, 2, 2],
                     price: [550, 8200, 65e3, 6e5]
                 }, {
@@ -4518,9 +4575,9 @@
                     color: "#f6a9cb",
                     class: "🌽",
                     rarity: "Common",
-                    cash: [20, 50, 1300, 8e3, 8e4],
-                    time: [7, 7, 7, 7, 5],
-                    price: [400, 11e3, 8e4, 13e5]
+                    cash:[20, 50, 1300, 8e3, 8e4],
+                    time:[7, 7, 7, 7, 5],
+                    price:[400, 11e3, 8e4, 13e5]
                 }, {
                     name: "Sheep",
                     color: "#414042",
@@ -4528,21 +4585,21 @@
                     rarity: "Common",
                     cash: [6, 25, 250, 1500, 11e3],
                     time: [3, 3, 3, 2, 2],
-                    price: [500, 5e3, 5e4, 43e4]
+                    price:[500, 5e3, 5e4, 43e4]
                 }, {
                     name: "Cat",
                     color: "#f49849",
                     class: "🐾",
                     rarity: "Common",
-                    cash: [5, 18, 170, 1700, 13e3],
-                    time: [2, 2, 2, 2, 2],
-                    price: [480, 5500, 6e4, 5e5]
+                    cash:[5, 18, 170, 1700, 13e3],
+                    time:[2, 2, 2, 2, 2],
+                    price:[480, 5500, 6e4, 5e5]
                 }, {
                     name: "Dog",
                     color: "#995b3c",
                     class: "🐾",
                     rarity: "Common",
-                    cash: [7, 25, 220, 1900, 9e3],
+                    cash:[7, 25, 220, 1900, 9e3],
                     time: [3, 3, 2, 2, 1],
                     price: [460, 6600, 7e4, 73e4]
                 }, {
@@ -4550,23 +4607,23 @@
                     color: "#f18221",
                     class: "🐾",
                     rarity: "Common",
-                    cash: [5, 40, 350, 3500, 35e3],
-                    time: [3, 3, 3, 3, 3],
-                    price: [750, 7200, 84e3, 95e4]
+                    cash:[5, 40, 350, 3500, 35e3],
+                    time:[3, 3, 3, 3, 3],
+                    price:[750, 7200, 84e3, 95e4]
                 }, {
                     name: "Rabbit",
                     color: "#e7bf9a",
                     class: "🐾",
                     rarity: "Common",
-                    cash: [3, 18, 185, 800, 7e3],
-                    time: [2, 2, 2, 1, 1],
-                    price: [500, 5800, 56e3, 55e4]
+                    cash:[3, 18, 185, 800, 7e3],
+                    time:[2, 2, 2, 1, 1],
+                    price:[500, 5800, 56e3, 55e4]
                 }, {
                     name: "Hamster",
                     color: "#ce9176",
                     class: "🐾",
                     rarity: "Common",
-                    cash: [10, 45, 450, 4500, 45e3],
+                    cash:[10, 45, 450, 4500, 45e3],
                     time: [4, 4, 4, 4, 4],
                     price: [650, 6500, 8e4, 93e4]
                 }, {
@@ -4574,23 +4631,23 @@
                     color: "#619a3c",
                     class: "🐾",
                     rarity: "Common",
-                    cash: [23, 120, 1400, 15e3, 17e4],
-                    time: [10, 10, 10, 10, 10],
-                    price: [700, 8500, 11e4, 13e5]
+                    cash:[23, 120, 1400, 15e3, 17e4],
+                    time:[10, 10, 10, 10, 10],
+                    price:[700, 8500, 11e4, 13e5]
                 }, {
                     name: "Puppy",
                     color: "#414042",
                     class: "🐾",
                     rarity: "Common",
-                    cash: [4, 10, 75, 500, 3e3],
-                    time: [1, 1, 1, 1, 1],
-                    price: [450, 4e3, 35e3, 25e4]
+                    cash:[4, 10, 75, 500, 3e3],
+                    time:[1, 1, 1, 1, 1],
+                    price:[450, 4e3, 35e3, 25e4]
                 }, {
                     name: "Kitten",
                     color: "#58595b",
                     class: "🐾",
                     rarity: "Common",
-                    cash: [4, 8, 60, 400, 2e3],
+                    cash:[4, 8, 60, 400, 2e3],
                     time: [1, 1, 1, 1, 1],
                     price: [350, 3500, 26e3, 17e4]
                 }, {
@@ -4598,17 +4655,17 @@
                     color: "#995b3c",
                     class: "🌲",
                     rarity: "Common",
-                    cash: [12, 70, 550, 4500, 1e5],
-                    time: [7, 7, 6, 5, 5],
-                    price: [550, 5500, 63e3, 16e5]
+                    cash:[12, 70, 550, 4500, 1e5],
+                    time:[7, 7, 6, 5, 5],
+                    price:[550, 5500, 63e3, 16e5]
                 }, {
                     name: "Moose",
                     color: "#995b3c",
                     class: "🌲",
                     rarity: "Common",
-                    cash: [8, 45, 400, 3500, 26e3],
-                    time: [5, 5, 4, 4, 3],
-                    price: [520, 6500, 58e3, 7e5]
+                    cash:[8, 45, 400, 3500, 26e3],
+                    time:[5, 5, 4, 4, 3],
+                    price:[520, 6500, 58e3, 7e5]
                 }, {
                     name: "Fox",
                     color: "#f49849",
@@ -4616,119 +4673,119 @@
                     rarity: "Common",
                     cash: [7, 15, 80, 550, 3e3],
                     time: [2, 2, 1, 1, 1],
-                    price: [400, 4e3, 36e3, 24e4]
+                    price:[400, 4e3, 36e3, 24e4]
                 }, {
                     name: "Raccoon",
                     color: "#6d6e71",
                     class: "🌲",
                     rarity: "Common",
-                    cash: [5, 14, 185, 1900, 19e3],
-                    time: [2, 2, 2, 2, 2],
-                    price: [400, 5e3, 71e3, 8e5]
+                    cash:[5, 14, 185, 1900, 19e3],
+                    time:[2, 2, 2, 2, 2],
+                    price:[400, 5e3, 71e3, 8e5]
                 }, {
                     name: "Squirrel",
                     color: "#d25927",
                     class: "🌲",
                     rarity: "Common",
-                    cash: [3, 10, 65, 470, 2600],
+                    cash:[3, 10, 65, 470, 2600],
                     time: [1, 1, 1, 1, 1],
-                    price: [420, 3600, 32e3, 21e4]
+                    price:[420, 3600, 32e3, 21e4]
                 }, {
                     name: "Owl",
                     color: "#594a42",
                     class: "🌲",
                     rarity: "Common",
-                    cash: [4, 17, 155, 1500, 15e3],
-                    time: [2, 2, 2, 2, 2],
-                    price: [500, 4800, 55e3, 58e4]
+                    cash:[4, 17, 155, 1500, 15e3],
+                    time:[2, 2, 2, 2, 2],
+                    price:[500, 4800, 55e3, 58e4]
                 }, {
                     name: "Hedgehog",
                     color: "#3f312b",
                     class: "🌲",
                     rarity: "Common",
-                    cash: [11, 37, 340, 2200, 3e4],
-                    time: [5, 4, 3, 2, 2],
-                    price: [540, 7e3, 77e3, 12e5]
+                    cash:[11, 37, 340, 2200, 3e4],
+                    time:[5, 4, 3, 2, 2],
+                    price:[540, 7e3, 77e3, 12e5]
                 }, {
                     name: "Seal",
                     color: "#7ca1d5",
                     class: "❄️",
                     rarity: "Common",
-                    cash: [6, 17, 150, 1200, 13e3],
+                    cash:[6, 17, 150, 1200, 13e3],
                     time: [2, 2, 2, 2, 2],
-                    price: [480, 4500, 43e3, 52e4]
+                    price:[480, 4500, 43e3, 52e4]
                 }, {
                     name: "Arctic Fox",
                     color: "#7ca1d5",
                     class: "❄️",
                     rarity: "Common",
-                    cash: [5, 18, 180, 850, 8500],
+                    cash:[5, 18, 180, 850, 8500],
                     time: [2, 2, 2, 1, 1],
-                    price: [520, 550, 61e3, 68e4]
+                    price:[520, 550, 61e3, 68e4]
                 }, {
                     name: "Snowy Owl",
                     color: "#feda3f",
                     class: "❄️",
                     rarity: "Common",
-                    cash: [5, 20, 190, 1900, 16e3],
-                    time: [3, 3, 2, 2, 2],
-                    price: [370, 5300, 76e3, 62e4]
+                    cash:[5, 20, 190, 1900, 16e3],
+                    time:[3, 3, 2, 2, 2],
+                    price:[370, 5300, 76e3, 62e4]
                 }, {
                     name: "Arctic Hare",
                     color: "#7ca1d5",
                     class: "❄️",
                     rarity: "Common",
-                    cash: [6, 19, 85, 900, 7e3],
-                    time: [2, 2, 1, 1, 1],
-                    price: [540, 5200, 66e3, 55e4]
+                    cash:[6, 19, 85, 900, 7e3],
+                    time:[2, 2, 1, 1, 1],
+                    price:[540, 5200, 66e3, 55e4]
                 }, {
                     name: "Penguin",
                     color: "#fb8640",
                     class: "❄️",
                     rarity: "Common",
-                    cash: [4, 21, 310, 3200, 33e3],
-                    time: [3, 3, 3, 3, 3],
-                    price: [400, 6500, 76e3, 87e4]
+                    cash:[4, 21, 310, 3200, 33e3],
+                    time:[3, 3, 3, 3, 3],
+                    price:[400, 6500, 76e3, 87e4]
                 }, {
                     name: "Baby Penguin",
                     color: "#414042",
                     class: "❄️",
                     rarity: "Common",
-                    cash: [3, 8, 70, 450, 2700],
+                    cash:[3, 8, 70, 450, 2700],
                     time: [1, 1, 1, 1, 1],
-                    price: [420, 3300, 33e3, 23e4]
+                    price:[420, 3300, 33e3, 23e4]
                 }, {
                     name: "Polar Bear",
                     color: "#7ca1d5",
                     class: "❄️",
                     rarity: "Common",
-                    cash: [12, 75, 700, 6500, 85e3],
+                    cash:[12, 75, 700, 6500, 85e3],
                     time: [8, 7, 6, 5, 5],
-                    price: [630, 7e3, 91e3, 14e5]
+                    price:[630, 7e3, 91e3, 14e5]
                 }, {
                     name: "Walrus",
                     color: "#7d4f33",
                     class: "❄️",
                     rarity: "Common",
-                    cash: [11, 46, 420, 3700, 51e3],
-                    time: [5, 5, 4, 4, 4],
-                    price: [550, 6200, 68e3, 1e6]
+                    cash:[11, 46, 420, 3700, 51e3],
+                    time:[5, 5, 4, 4, 4],
+                    price:[550, 6200, 68e3, 1e6]
                 }, {
                     name: "Tiger",
                     color: "#f18221",
                     class: "🌴",
                     rarity: "Common",
-                    cash: [6, 20, 100, 975, 7500],
+                    cash:[6, 20, 100, 975, 7500],
                     time: [3, 3, 1, 1, 1],
-                    price: [390, 6e3, 7e4, 61e4]
+                    price:[390, 6e3, 7e4, 61e4]
                 }, {
                     name: "Jaguar",
                     color: "#fbb040",
                     class: "🌴",
                     rarity: "Common",
-                    cash: [8, 28, 230, 1600, 17e3],
-                    time: [3, 3, 2, 2, 2],
-                    price: [390, 6e3, 7e4, 61e4]
+                    cash:[8, 28, 230, 1600, 17e3],
+                    time:[3, 3, 2, 2, 2],
+                    price:[390, 6e3, 7e4, 61e4]
                 }, {
                     name: "Toucan",
                     color: "#ffca34",
@@ -4736,21 +4793,21 @@
                     rarity: "Common",
                     cash: [9, 20, 175, 625, 3800],
                     time: [2, 2, 2, 1, 1],
-                    price: [520, 4800, 42e3, 3e5]
+                    price:[520, 4800, 42e3, 3e5]
                 }, {
                     name: "Cockatoo",
                     color: "#7ca1d5",
                     class: "🌴",
                     rarity: "Common",
-                    cash: [6, 35, 160, 1700, 18e3],
-                    time: [4, 4, 2, 2, 2],
-                    price: [500, 5e3, 63e3, 7e5]
+                    cash:[6, 35, 160, 1700, 18e3],
+                    time:[4, 4, 2, 2, 2],
+                    price:[500, 5e3, 63e3, 7e5]
                 }, {
                     name: "Macaw",
                     color: "#00aeef",
                     class: "🌴",
                     rarity: "Common",
-                    cash: [3, 8, 85, 850, 8500],
+                    cash:[3, 8, 85, 850, 8500],
                     time: [1, 1, 1, 1, 1],
                     price: [480, 5400, 62e3, 63e4]
                 }, {
@@ -4758,17 +4815,17 @@
                     color: "#ed1c24",
                     class: "🌴",
                     rarity: "Common",
-                    cash: [3, 9, 90, 900, 9e3],
-                    time: [1, 1, 1, 1, 1],
-                    price: [540, 5700, 65e3, 69e4]
+                    cash:[3, 9, 90, 900, 9e3],
+                    time:[1, 1, 1, 1, 1],
+                    price:[540, 5700, 65e3, 69e4]
                 }, {
                     name: "Panther",
                     color: "#2f2c38",
                     class: "🌴",
                     rarity: "Common",
-                    cash: [12, 28, 215, 2100, 21e3],
-                    time: [5, 3, 2, 2, 2],
-                    price: [530, 6500, 76e3, 87e4]
+                    cash:[12, 28, 215, 2100, 21e3],
+                    time:[5, 3, 2, 2, 2],
+                    price:[530, 6500, 76e3, 87e4]
                 }, {
                     name: "Anaconda",
                     color: "#8a9143",
@@ -4776,277 +4833,277 @@
                     rarity: "Common",
                     cash: [3, 15, 85, 1500, 7600],
                     time: [1, 2, 1, 2, 1],
-                    price: [410, 5100, 58e3, 59e4]
+                    price:[410, 5100, 58e3, 59e4]
                 }, {
                     name: "Orangutan",
                     color: "#bc6234",
                     class: "🌴",
                     rarity: "Common",
-                    cash: [13, 52, 570, 4300, 7e4],
-                    time: [5, 5, 5, 4, 4],
-                    price: [600, 7e3, 8e4, 14e5]
+                    cash:[13, 52, 570, 4300, 7e4],
+                    time:[5, 5, 5, 4, 4],
+                    price:[600, 7e3, 8e4, 14e5]
                 }, {
                     name: "Capuchin",
                     color: "#e0b0a6",
                     class: "🌴",
                     rarity: "Common",
-                    cash: [4, 14, 160, 780, 8200],
-                    time: [2, 2, 2, 1, 1],
-                    price: [390, 4700, 57e3, 68e4]
+                    cash:[4, 14, 160, 780, 8200],
+                    time:[2, 2, 2, 1, 1],
+                    price:[390, 4700, 57e3, 68e4]
                 }, {
                     name: "Elf",
                     color: "#a7d054",
                     class: "⚔️",
                     rarity: "Uncommon",
-                    cash: [5e3, 15e3, 15e4, 15e5, 1e7],
+                    cash:[5e3, 15e3, 15e4, 15e5, 1e7],
                     time: [1, 1, 1, 1, 1],
-                    price: [8e5, 9e6, 11e7, 8e8]
+                    price:[8e5, 9e6, 11e7, 8e8]
                 }, {
                     name: "Witch",
                     color: "#4ab96d",
                     class: "⚔️",
                     rarity: "Uncommon",
-                    cash: [18e3, 6e4, 4e4, 4e6, 35e6],
+                    cash:[18e3, 6e4, 4e4, 4e6, 35e6],
                     time: [3, 3, 2, 2, 2],
-                    price: [11e5, 12e6, 15e7, 14e8]
+                    price:[11e5, 12e6, 15e7, 14e8]
                 }, {
                     name: "Wizard",
                     color: "#5a459c",
                     class: "⚔️",
                     rarity: "Uncommon",
-                    cash: [19500, 65e3, 44e4, 46e5, 4e6],
-                    time: [3, 3, 2, 2, 2],
-                    price: [13e5, 135e5, 16e7, 16e8]
+                    cash:[19500, 65e3, 44e4, 46e5, 4e6],
+                    time:[3, 3, 2, 2, 2],
+                    price:[13e5, 135e5, 16e7, 16e8]
                 }, {
                     name: "Fairy",
                     color: "#df6d9c",
                     class: "⚔️",
                     rarity: "Uncommon",
-                    cash: [18500, 6e4, 62e4, 44e5, 38e6],
+                    cash:[18500, 6e4, 62e4, 44e5, 38e6],
                     time: [3, 3, 3, 2, 2],
-                    price: [12e5, 125e5, 15e6, 15e8]
+                    price:[12e5, 125e5, 15e6, 15e8]
                 }, {
                     name: "Slime Monster",
                     color: "#2fa04a",
                     class: "⚔️",
                     rarity: "Uncommon",
-                    cash: [35e3, 14e4, 1e6, 11e6, 11e7],
-                    time: [5, 5, 4, 4, 4],
-                    price: [16e5, 15e6, 2e8, 23e8]
+                    cash:[35e3, 14e4, 1e6, 11e6, 11e7],
+                    time:[5, 5, 4, 4, 4],
+                    price:[16e5, 15e6, 2e8, 23e8]
                 }, {
                     name: "Jester",
                     color: "#be1e2d",
                     class: "⚔️",
                     rarity: "Rare",
-                    cash: [25e3, 1e5, 68e4, 65e5, 32e6],
+                    cash:[25e3, 1e5, 68e4, 65e5, 32e6],
                     time: [3, 3, 2, 2, 1],
-                    price: [2e6, 21e6, 23e7, 26e8]
+                    price:[2e6, 21e6, 23e7, 26e8]
                 }, {
                     name: "Dragon",
                     color: "#2fa04a",
                     class: "⚔️",
                     rarity: "Rare",
-                    cash: [36e3, 15e4, 15e5, 15e6, 15e7],
+                    cash:[36e3, 15e4, 15e5, 15e6, 15e7],
                     time: [4, 4, 4, 4, 4],
-                    price: [23e5, 24e6, 27e7, 3e9]
+                    price:[23e5, 24e6, 27e7, 3e9]
                 }, {
                     name: "Unicorn",
                     color: "#f6afce",
                     class: "⚔️",
                     rarity: "Epic",
-                    cash: [24e3, 15e4, 14e5, 7e6, 75e6],
-                    time: [2, 2, 2, 1, 1],
-                    price: [45e5, 45e6, 55e7, 65e8]
+                    cash:[24e3, 15e4, 14e5, 7e6, 75e6],
+                    time:[2, 2, 2, 1, 1],
+                    price:[45e5, 45e6, 55e7, 65e8]
                 }, {
                     name: "Queen",
                     color: "#9e1f63",
                     class: "⚔️",
                     rarity: "Rare",
-                    cash: [24e3, 95e3, 95e4, 97e5, 95e6],
-                    time: [3, 3, 3, 3, 3],
-                    price: [19e5, 2e7, 23e7, 25e8]
+                    cash:[24e3, 95e3, 95e4, 97e5, 95e6],
+                    time:[3, 3, 3, 3, 3],
+                    price:[19e5, 2e7, 23e7, 25e8]
                 }, {
                     name: "King",
                     color: "#ee2640",
                     class: "⚔️",
                     rarity: "Legendary",
-                    cash: [75e3, 4e5, 6e6, 9e7, 125e7],
-                    time: [5, 5, 5, 5, 5],
-                    price: [6e6, 95e6, 16e8, 25e9]
+                    cash:[75e3, 4e5, 6e6, 9e7, 125e7],
+                    time:[5, 5, 5, 5, 5],
+                    price:[6e6, 95e6, 16e8, 25e9]
                 }, {
                     name: "Two of Spades",
                     color: "#414042",
                     class: "🏰",
                     rarity: "Uncommon",
-                    cash: [4500, 14e3, 14e4, 14e5, 9e6],
-                    time: [1, 1, 1, 1, 1],
-                    price: [77e4, 83e5, 98e6, 71e7]
+                    cash:[4500, 14e3, 14e4, 14e5, 9e6],
+                    time:[1, 1, 1, 1, 1],
+                    price:[77e4, 83e5, 98e6, 71e7]
                 }, {
                     name: "Eat Me",
                     color: "#d58c55",
                     class: "🏰",
                     rarity: "Uncommon",
-                    cash: [13e3, 45e3, 45e4, 45e5, 5e7],
-                    time: [2, 2, 2, 2, 2],
-                    price: [13e5, 14e6, 16e7, 2e9]
+                    cash:[13e3, 45e3, 45e4, 45e5, 5e7],
+                    time:[2, 2, 2, 2, 2],
+                    price:[13e5, 14e6, 16e7, 2e9]
                 }, {
                     name: "Drink Me",
                     color: "#dd7399",
                     class: "🏰",
                     rarity: "Uncommon",
-                    cash: [12e3, 4e4, 4e5, 4e6, 45e6],
-                    time: [2, 2, 2, 2, 2],
-                    price: [12e5, 12e6, 14e7, 18e8]
+                    cash:[12e3, 4e4, 4e5, 4e6, 45e6],
+                    time:[2, 2, 2, 2, 2],
+                    price:[12e5, 12e6, 14e7, 18e8]
                 }, {
                     name: "Alice",
                     color: "#4cc9f5",
                     class: "🏰",
                     rarity: "Uncommon",
-                    cash: [13e3, 42e3, 21e4, 21e5, 23e6],
+                    cash:[13e3, 42e3, 21e4, 21e5, 23e6],
                     time: [2, 2, 1, 1, 1],
-                    price: [12e5, 13e6, 15e7, 19e8]
+                    price:[12e5, 13e6, 15e7, 19e8]
                 }, {
                     name: "Queen of Hearts",
                     color: "#d62027",
                     class: "🏰",
                     rarity: "Uncommon",
-                    cash: [23e3, 87e3, 62e4, 75e5, 9e7],
-                    time: [4, 4, 3, 3, 3],
-                    price: [13e5, 13e6, 18e7, 24e8]
+                    cash:[23e3, 87e3, 62e4, 75e5, 9e7],
+                    time:[4, 4, 3, 3, 3],
+                    price:[13e5, 13e6, 18e7, 24e8]
                 }, {
                     name: "Dormouse",
                     color: "#89d6f8",
                     class: "🏰",
                     rarity: "Rare",
-                    cash: [17e3, 68e3, 7e5, 35e5, 35e6],
-                    time: [2, 2, 1, 1, 1],
-                    price: [2e6, 22e6, 25e7, 28e8]
+                    cash:[17e3, 68e3, 7e5, 35e5, 35e6],
+                    time:[2, 2, 1, 1, 1],
+                    price:[2e6, 22e6, 25e7, 28e8]
                 }, {
                     name: "White Rabbit",
                     color: "#ffcd05",
                     class: "🏰",
                     rarity: "Rare",
-                    cash: [26e3, 105e3, 11e6, 77e5, 72e6],
+                    cash:[26e3, 105e3, 11e6, 77e5, 72e6],
                     time: [3, 3, 3, 2, 2],
-                    price: [2e6, 23e6, 28e7, 29e8]
+                    price:[2e6, 23e6, 28e7, 29e8]
                 }, {
                     name: "Cheshire Cat",
                     color: "#dd7399",
                     class: "🏰",
                     rarity: "Rare",
-                    cash: [32e3, 1e5, 9e5, 9e6, 6e7],
-                    time: [4, 3, 3, 3, 2],
-                    price: [18e5, 19e6, 22e7, 24e8]
+                    cash:[32e3, 1e5, 9e5, 9e6, 6e7],
+                    time:[4, 3, 3, 3, 2],
+                    price:[18e5, 19e6, 22e7, 24e8]
                 }, {
                     name: "Caterpillar",
                     color: "#00c0f3",
                     class: "🏰",
                     rarity: "Epic",
-                    cash: [1e4, 7e4, 65e4, 75e5, 85e6],
-                    time: [1, 1, 1, 1, 1],
-                    price: [42e5, 42e6, 54e7, 69e8]
+                    cash:[1e4, 7e4, 65e4, 75e5, 85e6],
+                    time:[1, 1, 1, 1, 1],
+                    price:[42e5, 42e6, 54e7, 69e8]
                 }, {
                     name: "Mad Hatter",
                     color: "#914f93",
                     class: "🏰",
                     rarity: "Epic",
-                    cash: [38e3, 25e4, 15e5, 14e6, 8e7],
-                    time: [3, 3, 2, 2, 1],
-                    price: [48e5, 48e6, 52e7, 66e8]
+                    cash:[38e3, 25e4, 15e5, 14e6, 8e7],
+                    time:[3, 3, 2, 2, 1],
+                    price:[48e5, 48e6, 52e7, 66e8]
                 }, {
                     name: "King of Hearts",
                     color: "#c62127",
                     class: "🏰",
                     rarity: "Legendary",
-                    cash: [8e4, 42e4, 68e5, 1e8, 15e8],
+                    cash:[8e4, 42e4, 68e5, 1e8, 15e8],
                     time: [5, 5, 5, 5, 5],
-                    price: [7e6, 11e7, 18e8, 3e10]
+                    price:[7e6, 11e7, 18e8, 3e10]
                 }, {
                     name: "Earth",
                     color: "#416eb5",
                     class: "🚀",
                     rarity: "Uncommon",
-                    cash: [15e3, 45e3, 6e5, 65e5, 65e6],
+                    cash:[15e3, 45e3, 6e5, 65e5, 65e6],
                     time: [3, 3, 3, 3, 3],
-                    price: [1e6, 11e6, 15e7, 17e8]
+                    price:[1e6, 11e6, 15e7, 17e8]
                 }, {
                     name: "Meteor",
                     color: "#c68c3c",
                     class: "🚀",
                     rarity: "Uncommon",
-                    cash: [23e3, 65e3, 7e5, 45e5, 2e7],
-                    time: [5, 4, 3, 2, 1],
-                    price: [95e4, 13e6, 16e7, 16e8]
+                    cash:[23e3, 65e3, 7e5, 45e5, 2e7],
+                    time:[5, 4, 3, 2, 1],
+                    price:[95e4, 13e6, 16e7, 16e8]
                 }, {
                     name: "Stars",
                     color: "#19184d",
                     class: "🚀",
                     rarity: "Uncommon",
-                    cash: [1e4, 4e4, 2e5, 2e6, 18e6],
-                    time: [2, 2, 1, 1, 1],
-                    price: [14e5, 14e6, 15e7, 15e8]
+                    cash:[1e4, 4e4, 2e5, 2e6, 18e6],
+                    time:[2, 2, 1, 1, 1],
+                    price:[14e5, 14e6, 15e7, 15e8]
                 }, {
                     name: "Alien",
                     color: "#8dc63f",
                     class: "🚀",
                     rarity: "Uncommon",
-                    cash: [3e4, 1e5, 1e6, 11e6, 85e6],
-                    time: [4, 4, 4, 4, 4],
-                    price: [15e5, 17e6, 19e7, 17e8]
+                    cash:[3e4, 1e5, 1e6, 11e6, 85e6],
+                    time:[4, 4, 4, 4, 4],
+                    price:[15e5, 17e6, 19e7, 17e8]
                 }, {
                     name: "Planet",
                     color: "#9dc6ea",
                     class: "🚀",
                     rarity: "Rare",
-                    cash: [25e3, 1e5, 9e5, 9e6, 9e7],
+                    cash:[25e3, 1e5, 9e5, 9e6, 9e7],
                     time: [3, 3, 3, 3, 3],
-                    price: [2e6, 21e6, 21e7, 24e8]
+                    price:[2e6, 21e6, 21e7, 24e8]
                 }, {
                     name: "UFO",
                     color: "#a15095",
                     class: "🚀",
                     rarity: "Rare",
-                    cash: [17e3, 7e4, 7e5, 7e6, 7e7],
-                    time: [2, 2, 2, 2, 2],
-                    price: [21e5, 23e6, 25e7, 28e8]
+                    cash:[17e3, 7e4, 7e5, 7e6, 7e7],
+                    time:[2, 2, 2, 2, 2],
+                    price:[21e5, 23e6, 25e7, 28e8]
                 }, {
                     name: "Spaceship",
                     color: "#ffcb29",
                     class: "🚀",
                     rarity: "Epic",
-                    cash: [6e4, 32e4, 21e5, 15e6, 85e6],
-                    time: [5, 4, 3, 2, 1],
-                    price: [48e5, 46e6, 54e7, 68e8]
+                    cash:[6e4, 32e4, 21e5, 15e6, 85e6],
+                    time:[5, 4, 3, 2, 1],
+                    price:[48e5, 46e6, 54e7, 68e8]
                 }, {
                     name: "Astronaut",
                     color: "#9bd4ee",
                     class: "🚀",
                     rarity: "Legendary",
-                    cash: [45e3, 26e4, 25e5, 38e6, 55e7],
-                    time: [3, 3, 2, 2, 2],
-                    price: [65e5, 1e8, 17e8, 27e9]
+                    cash:[45e3, 26e4, 25e5, 38e6, 55e7],
+                    time:[3, 3, 2, 2, 2],
+                    price:[65e5, 1e8, 17e8, 27e9]
                 }, {
                     name: "Lil Bot",
                     color: "#3e564a",
                     class: "🤖",
                     rarity: "Uncommon",
-                    cash: [4e3, 12e3, 18e4, 19e5, 25e6],
-                    time: [1, 1, 1, 1, 1],
-                    price: [73e4, 12e6, 13e7, 19e8]
+                    cash:[4e3, 12e3, 18e4, 19e5, 25e6],
+                    time:[1, 1, 1, 1, 1],
+                    price:[73e4, 12e6, 13e7, 19e8]
                 }, {
                     name: "Lovely Bot",
                     color: "#f179af",
                     class: "🤖",
                     rarity: "Uncommon",
-                    cash: [16e3, 65e3, 65e4, 48e5, 42e6],
+                    cash:[16e3, 65e3, 65e4, 48e5, 42e6],
                     time: [3, 3, 3, 2, 2],
-                    price: [13e5, 14e6, 17e7, 16e8]
+                    price:[13e5, 14e6, 17e7, 16e8]
                 }, {
                     name: "Angry Bot",
                     color: "#f1613a",
                     class: "🤖",
                     rarity: "Uncommon",
-                    cash: [22e3, 85e3, 8e5, 62e5, 65e6],
+                    cash:[22e3, 85e3, 8e5, 62e5, 65e6],
                     time: [4, 4, 4, 3, 3],
                     price: [12e5, 13e6, 15e7, 17e8]
                 }, {
@@ -5054,17 +5111,17 @@
                     color: "#51ba6b",
                     class: "🤖",
                     rarity: "Uncommon",
-                    cash: [11e3, 45e3, 5e5, 25e5, 3e7],
+                    cash:[11e3, 45e3, 5e5, 25e5, 3e7],
                     time: [2, 2, 2, 1, 1],
-                    price: [14e5, 15e6, 18e7, 24e8]
+                    price:[14e5, 15e6, 18e7, 24e8]
                 }, {
                     name: "Watson",
                     color: "#d69b5a",
                     class: "🤖",
                     rarity: "Rare",
-                    cash: [24e3, 1e5, 1e6, 1e7, 1e8],
-                    time: [3, 3, 3, 3, 3],
-                    price: [2e6, 22e6, 24e7, 26e8]
+                    cash:[24e3, 1e5, 1e6, 1e7, 1e8],
+                    time:[3, 3, 3, 3, 3],
+                    price:[2e6, 22e6, 24e7, 26e8]
                 }, {
                     name: "Buddy Bot",
                     color: "#9dc6ea",
@@ -5072,23 +5129,23 @@
                     rarity: "Rare",
                     cash: [22e3, 95e3, 65e4, 65e5, 65e6],
                     time: [3, 3, 2, 2, 2],
-                    price: [19e5, 21e6, 23e7, 25e8]
+                    price:[19e5, 21e6, 23e7, 25e8]
                 }, {
                     name: "Brainy Bot",
                     color: "#9ecf7a",
                     class: "🤖",
                     rarity: "Epic",
-                    cash: [5e4, 25e4, 21e5, 21e6, 17e7],
+                    cash:[5e4, 25e4, 21e5, 21e6, 17e7],
                     time: [4, 3, 3, 3, 2],
-                    price: [5e6, 46e6, 5e8, 67e8]
+                    price:[5e6, 46e6, 5e8, 67e8]
                 }, {
                     name: "Mega Bot",
                     color: "#d71f27",
                     class: "🤖",
                     rarity: "Legendary",
-                    cash: [8e4, 43e4, 42e5, 62e6, 1e9],
+                    cash:[8e4, 43e4, 42e5, 62e6, 1e9],
                     time: [5, 5, 3, 3, 3],
-                    price: [7e6, 12e7, 19e8, 35e9]
+                    price:[7e6, 12e7, 19e8, 35e9]
                 }].map(e => ({
                     name: e.name,
                     value: JSON.stringify(e)
@@ -5134,7 +5191,7 @@
                 e.setState({
                         bits: 0,
                         ads: [],
-                        hazards: [],
+                        hazards:[],
                         color: "",
                         lol: !1,
                         joke: !1,
@@ -5157,7 +5214,7 @@
         }, {
             name: "Send Glitch",
             description: "Sends a glitch to everyone else playing",
-            inputs: [{
+            inputs:[{
                 name: "Glitch",
                 type: "options",
                 options: Object.entries({
@@ -5196,9 +5253,9 @@
                         color: "#d71f27",
                         class: "🤖",
                         rarity: "Legendary",
-                        cash: [8e4, 43e4, 42e5, 62e6, 1e9],
+                        cash:[8e4, 43e4, 42e5, 62e6, 1e9],
                         time: [5, 5, 3, 3, 3],
-                        price: [7e6, 12e7, 19e8, 35e9],
+                        price:[7e6, 12e7, 19e8, 35e9],
                         active: !1,
                         level: 4,
                         bonus: 5.5
@@ -5208,7 +5265,7 @@
         }, {
             name: "Set Cash",
             description: "Sets amount of cash you have",
-            inputs: [{
+            inputs:[{
                 name: "Cash",
                 type: "number"
             }],
@@ -5220,7 +5277,7 @@
         }, {
             name: "Player Swapper",
             description: "Swaps your stats and identity with another player",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -5233,7 +5290,9 @@
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
                         let targetData = a[e];
+                        let myData = a[t.props.client.name];
                         t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
                         t.setState({ cash: targetData.ca || 0 });
                     }
                 });
@@ -5258,7 +5317,7 @@
         }, {
             name: "Flood Alert Box",
             description: "Makes the alert box filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(userInput) {
                 function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
                 getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
@@ -5278,7 +5337,7 @@
         }, {
             name: "Send Ad Text",
             description: "Sends a load of text to another player (This will override your blook!)",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -5296,7 +5355,7 @@
         }, {
             name: "Set Host Screen Text",
             description: "Makes the whole host screen filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(e) {
                 var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
                 a.props.liveGameController.setVal({
@@ -5335,7 +5394,7 @@
         }, {
             name: "Steal Player's Cash",
             description: "Steals all of someone's cash",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -5359,20 +5418,26 @@
         }, {
             name: "Game Mode Changer",
             description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
-            inputs: [{
+            inputs:[{
                 name: "Gamemode",
                 type: "options",
-                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
             }],
             run: function(mode) {
-                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
+                let route = routeMap[mode] || mode.toLowerCase();
+                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
+                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
+                    }())[1].children[0]._owner.stateNode;
                 if (stateNode && stateNode.props && stateNode.props.client) {
                     stateNode.props.client.type = mode;
-                    stateNode.forceUpdate();
+                }
+                if (stateNode && stateNode.props && stateNode.props.history) {
+                    stateNode.props.history.push("/play/" + route);
                 }
             }
         }],
-        fishing: [{
+        fishing:[{
             name: "Always Frenzy",
             description: "Always sets everyone to frenzy mode",
             type: "toggle",
@@ -5456,10 +5521,10 @@
         }, {
             name: "Send Distraction",
             description: "Sends a distraction to everyone",
-            inputs: [{
+            inputs:[{
                 name: "Distraction",
                 type: "options",
-                options: ["Crab", "Jellyfish", "Frog", "Pufferfish", "Octopus", "Narwhal", "Megalodon", "Blobfish", "Baby Shark"]
+                options:["Crab", "Jellyfish", "Frog", "Pufferfish", "Octopus", "Narwhal", "Megalodon", "Blobfish", "Baby Shark"]
             }],
             run: function(e) {
                 var t = document.createElement("iframe"),
@@ -5478,7 +5543,7 @@
         }, {
             name: "Set Lure",
             description: "Sets fishing lure (range 1 - 5)",
-            inputs: [{
+            inputs:[{
                 name: "Lure (1 - 5)",
                 type: "number",
                 min: 1,
@@ -5492,10 +5557,10 @@
         }, {
             name: "Set Next Fish",
             description: "Sets the next fish to catch",
-            inputs: [{
+            inputs:[{
                 name: "Fish",
                 type: "options",
-                options: ["Old Boot", "Waffle", "Two of Spades", "Jellyfish", "Clownfish", "Goldfish", "Frog", "Blizzard Clownfish", "Turtle", "Cat", "Lovely Frog", "Lucky Frog", "Poison Dart Frog", "Seal", "Walrus", "Fairy", "Crab", "Lemon Crab", "Pufferfish", "Blobfish", "Rainbow Jellyfish", "Octopus", "Pirate Pufferfish", "Donut Blobfish", "Crimson Octopus", "Narwhal", "Baby Shark", "Megalodon", "Alien", "Rainbow Narwhal", "UFO", "Santa Claus", "Swamp Monster", "Red Astronaut", "Spooky Pumpkin", "Dragon", "Tim the Alien"]
+                options:["Old Boot", "Waffle", "Two of Spades", "Jellyfish", "Clownfish", "Goldfish", "Frog", "Blizzard Clownfish", "Turtle", "Cat", "Lovely Frog", "Lucky Frog", "Poison Dart Frog", "Seal", "Walrus", "Fairy", "Crab", "Lemon Crab", "Pufferfish", "Blobfish", "Rainbow Jellyfish", "Octopus", "Pirate Pufferfish", "Donut Blobfish", "Crimson Octopus", "Narwhal", "Baby Shark", "Megalodon", "Alien", "Rainbow Narwhal", "UFO", "Santa Claus", "Swamp Monster", "Red Astronaut", "Spooky Pumpkin", "Dragon", "Tim the Alien"]
             }],
             run: function(e) {
                 function t() {
@@ -5506,25 +5571,25 @@
                             rarity: "Trash",
                             minWeight: 1,
                             maxWeight: 10,
-                            tiers: ["F", "D", "C"]
+                            tiers:["F", "D", "C"]
                         },
                         Waffle: {
                             rarity: "Trash",
                             minWeight: 1,
                             maxWeight: 10,
-                            tiers: ["F", "D", "C"]
+                            tiers:["F", "D", "C"]
                         },
                         "Two of Spades": {
                             rarity: "Trash",
                             minWeight: 1,
                             maxWeight: 10,
-                            tiers: ["F", "D", "C"]
+                            tiers:["F", "D", "C"]
                         },
                         Jellyfish: {
                             rarity: "Easy One",
                             minWeight: 10,
                             maxWeight: 25,
-                            tiers: ["D", "C", "B"]
+                            tiers:["D", "C", "B"]
                         },
                         Clownfish: {
                             rarity: "Easy One",
@@ -5560,13 +5625,13 @@
                             rarity: "Great Catch",
                             minWeight: 100,
                             maxWeight: 200,
-                            tiers: ["D", "C", "B", "A"]
+                            tiers:["D", "C", "B", "A"]
                         },
                         "Lovely Frog": {
                             rarity: "Great Catch",
                             minWeight: 150,
                             maxWeight: 350,
-                            tiers: ["D", "C", "B", "A"]
+                            tiers:["D", "C", "B", "A"]
                         },
                         "Lucky Frog": {
                             rarity: "Great Catch",
@@ -5578,13 +5643,13 @@
                             rarity: "Great Catch",
                             minWeight: 250,
                             maxWeight: 750,
-                            tiers: ["D", "C", "B", "A"]
+                            tiers:["D", "C", "B", "A"]
                         },
                         Seal: {
                             rarity: "Rare Find",
                             minWeight: 500,
                             maxWeight: 1e3,
-                            tiers: ["D", "C", "B", "A"]
+                            tiers:["D", "C", "B", "A"]
                         },
                         Walrus: {
                             rarity: "Rare Find",
@@ -5602,13 +5667,13 @@
                             rarity: "Rare Find",
                             minWeight: 1e3,
                             maxWeight: 3e3,
-                            tiers: ["D", "C", "B", "A"]
+                            tiers:["D", "C", "B", "A"]
                         },
                         "Lemon Crab": {
                             rarity: "Rare Find",
                             minWeight: 2e3,
                             maxWeight: 5e3,
-                            tiers: ["C", "B", "A"]
+                            tiers:["C", "B", "A"]
                         },
                         Pufferfish: {
                             rarity: "Rare Find",
@@ -5626,13 +5691,13 @@
                             rarity: "Epic Grab",
                             minWeight: 7e3,
                             maxWeight: 1e4,
-                            tiers: ["C", "B", "A"]
+                            tiers:["C", "B", "A"]
                         },
                         Octopus: {
                             rarity: "Epic Grab",
                             minWeight: 1e4,
                             maxWeight: 15e3,
-                            tiers: ["C", "B", "A"]
+                            tiers:["C", "B", "A"]
                         },
                         "Pirate Pufferfish": {
                             rarity: "Epic Grab",
@@ -5656,7 +5721,7 @@
                             rarity: "Catch of the Day",
                             minWeight: 25e3,
                             maxWeight: 5e4,
-                            tiers: ["B", "A", "S"]
+                            tiers:["B", "A", "S"]
                         },
                         "Baby Shark": {
                             rarity: "Catch of the Day",
@@ -5680,7 +5745,7 @@
                             rarity: "Angler's Legend",
                             minWeight: 75e4,
                             maxWeight: 1e6,
-                            tiers: ["A", "S", "S+"]
+                            tiers:["A", "S", "S+"]
                         },
                         UFO: {
                             rarity: "Angler's Legend",
@@ -5698,7 +5763,7 @@
                             rarity: "Angler's Legend",
                             minWeight: 1e6,
                             maxWeight: 2e6,
-                            tiers: ["A", "S", "S+"]
+                            tiers:["A", "S", "S+"]
                         },
                         "Red Astronaut": {
                             rarity: "Angler's Legend",
@@ -5716,7 +5781,7 @@
                             rarity: "Angler's Legend",
                             minWeight: 1e6,
                             maxWeight: 2e6,
-                            tiers: ["A", "S", "S+"]
+                            tiers:["A", "S", "S+"]
                         },
                         "Tim the Alien": {
                             rarity: "Angler's Legend",
@@ -5725,7 +5790,7 @@
                             tiers: ["A", "S", "S+"]
                         }
                     },
-                    o = ["Crab", "Jellyfish", "Frog", "Pufferfish", "Octopus", "Narwhal", "Megalodon", "Blobfish", "Baby Shark"];
+                    o =["Crab", "Jellyfish", "Frog", "Pufferfish", "Octopus", "Narwhal", "Megalodon", "Blobfish", "Baby Shark"];
                 if (!window.functionSet) {
                     var r = t().stateNode.answerNext;
                     t().stateNode.answerNext = function() {
@@ -5769,7 +5834,7 @@
         }, {
             name: "Set Weight",
             description: "Sets weight",
-            inputs: [{
+            inputs:[{
                 name: "Weight",
                 type: "number"
             }],
@@ -5784,14 +5849,14 @@
                         val: {
                             b: t.props.client.blook,
                             w: e,
-                            f: ["Crab", "Jellyfish", "Frog", "Pufferfish", "Octopus", "Narwhal", "Megalodon", "Blobfish", "Baby Shark"][Math.floor(9 * Math.random())]
+                            f:["Crab", "Jellyfish", "Frog", "Pufferfish", "Octopus", "Narwhal", "Megalodon", "Blobfish", "Baby Shark"][Math.floor(9 * Math.random())]
                         }
                     })
             }
         }, {
             name: "Player Swapper",
             description: "Swaps your stats and identity with another player",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -5804,7 +5869,9 @@
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
                         let targetData = a[e];
+                        let myData = a[t.props.client.name];
                         t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
                         t.setState({ weight: targetData.w || 0, weight2: targetData.w || 0 });
                     }
                 });
@@ -5829,7 +5896,7 @@
         }, {
             name: "Flood Alert Box",
             description: "Makes the alert box filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(userInput) {
                 function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
                 getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
@@ -5849,7 +5916,7 @@
         }, {
             name: "Send Ad Text",
             description: "Sends a load of text to another player (This will override your blook!)",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -5867,7 +5934,7 @@
         }, {
             name: "Set Host Screen Text",
             description: "Makes the whole host screen filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(e) {
                 var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
                 a.props.liveGameController.setVal({
@@ -5906,7 +5973,7 @@
         }, {
             name: "Steal Player's Weight",
             description: "Steals all of someone's weight",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -5930,20 +5997,26 @@
         }, {
             name: "Game Mode Changer",
             description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
-            inputs: [{
+            inputs:[{
                 name: "Gamemode",
                 type: "options",
-                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
             }],
             run: function(mode) {
-                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
+                let route = routeMap[mode] || mode.toLowerCase();
+                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
+                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
+                    }())[1].children[0]._owner.stateNode;
                 if (stateNode && stateNode.props && stateNode.props.client) {
                     stateNode.props.client.type = mode;
-                    stateNode.forceUpdate();
+                }
+                if (stateNode && stateNode.props && stateNode.props.history) {
+                    stateNode.props.history.push("/play/" + route);
                 }
             }
         }],
-        flappy: [{
+        flappy:[{
             name: "Toggle Ghost",
             description: "Lets you go through the pipes",
             type: "toggle",
@@ -5961,7 +6034,7 @@
         }, {
             name: "Set Score",
             description: "Sets flappy blook score",
-            inputs: [{
+            inputs:[{
                 name: "Score",
                 type: "number"
             }],
@@ -5971,7 +6044,7 @@
         }, {
             name: "Change Game Code",
             description: "Replace the old game with new HTML content",
-            inputs: [{
+            inputs:[{
                 name: "HTML Code",
                 type: "text"
             }],
@@ -6015,7 +6088,7 @@
         }, {
             name: "Change Settings",
             description: "Changes various game mechanics and lets you play with the spacebar",
-            inputs: [{
+            inputs:[{
                 name: "Bird Gravity",
                 type: "number",
                 value: 800
@@ -6040,14 +6113,14 @@
                             this.isStarted = !0),
                         this.bird.body.velocity.y = -this.birdFlapPower
                 }
-                scene.input._events.pointerdown = [];
+                scene.input._events.pointerdown =[];
                 scene.create();
                 scene.input.keyboard.addKey('SPACE').on("down", e => {
                     scene.flap.call(scene);
                 });
             }
         }],
-        gold: [{
+        gold:[{
             name: "Always Triple",
             description: "Always get triple gold",
             type: "toggle",
@@ -6230,7 +6303,7 @@
         }, {
             name: "Flood Alert Box",
             description: "Makes the alert box filled with text",
-            inputs: [{
+            inputs:[{
                 name: "Text",
                 type: "text"
             }],
@@ -6277,7 +6350,7 @@
         }, {
             name: "Reset Players Gold",
             description: "Sets a player's gold to 0",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -6302,7 +6375,7 @@
         }, {
             name: "Set Gold",
             description: "Sets amount of gold",
-            inputs: [{
+            inputs:[{
                 name: "Gold",
                 type: "number"
             }],
@@ -6323,7 +6396,7 @@
         }, {
             name: "Swap Gold",
             description: "Swaps gold with someone",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -6350,7 +6423,7 @@
         }, {
             name: "Set Player's Gold",
             description: "Sets a players gold to any amount.",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -6371,7 +6444,7 @@
         }, {
             name: "Send Ad Text",
             description: "Sends a load of text to another player (This will override your blook!)",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -6452,7 +6525,7 @@
         }, {
             name: "Player Swapper",
             description: "Swaps your stats and identity with another player",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -6465,7 +6538,9 @@
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
                         let targetData = a[e];
+                        let myData = a[t.props.client.name];
                         t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
                         t.setState({ gold: targetData.g || 0, gold2: targetData.g || 0 });
                     }
                 });
@@ -6490,7 +6565,7 @@
         }, {
             name: "Set Host Screen Text",
             description: "Makes the whole host screen filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(e) {
                 var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
                 a.props.liveGameController.setVal({
@@ -6522,7 +6597,7 @@
         }, {
             name: "Steal Player's Gold",
             description: "Steals all of someone's gold",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -6546,20 +6621,26 @@
         }, {
             name: "Game Mode Changer",
             description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
-            inputs: [{
+            inputs:[{
                 name: "Gamemode",
                 type: "options",
-                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
             }],
             run: function(mode) {
-                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
+                let route = routeMap[mode] || mode.toLowerCase();
+                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
+                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
+                    }())[1].children[0]._owner.stateNode;
                 if (stateNode && stateNode.props && stateNode.props.client) {
                     stateNode.props.client.type = mode;
-                    stateNode.forceUpdate();
+                }
+                if (stateNode && stateNode.props && stateNode.props.history) {
+                    stateNode.props.history.push("/play/" + route);
                 }
             }
         }],
-        kingdom: [{
+        kingdom:[{
             name: "Choice ESP",
             description: "Shows you what will happen if you say Yes or No",
             type: "toggle",
@@ -6610,7 +6691,7 @@
                                 document.querySelectorAll("[class*=guestButton][role=button]"),
                                 x => (x.onclick = () => Array.prototype.forEach.call(document.querySelectorAll(".choiceESP"), x => x.remove())));
                         }
-                    }), 50, ['materials', 'people', 'happiness', 'gold']);
+                    }), 50,['materials', 'people', 'happiness', 'gold']);
                 }
             }
         }, {
@@ -6633,7 +6714,7 @@
         }, {
             name: "Set Guests",
             description: "Sets the amount of guests you've seen",
-            inputs: [{
+            inputs:[{
                 name: "Guests",
                 type: "number"
             }],
@@ -6649,7 +6730,7 @@
                 Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.nextGuest()
             }
         }],
-        racing: [{
+        racing:[{
             name: "Instant Win",
             description: "Instantly Wins the race",
             run: function() {
@@ -6668,7 +6749,7 @@
         }, {
             name: "Set Questions",
             description: "Sets the number of questions left",
-            inputs: [{
+            inputs:[{
                 name: "Questions",
                 type: "number"
             }],
@@ -6693,7 +6774,7 @@
         }, {
             name: "Attack Player",
             description: "Sends the specified attack to a player",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -6732,7 +6813,7 @@
         }, {
             name: "Player Swapper",
             description: "Swaps your stats and identity with another player",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -6745,7 +6826,9 @@
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
                         let targetData = a[e];
+                        let myData = a[t.props.client.name];
                         t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
                         t.setState({ progress: targetData.pr || 0 });
                     }
                 });
@@ -6770,7 +6853,7 @@
         }, {
             name: "Flood Alert Box",
             description: "Makes the alert box filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(userInput) {
                 function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
                 getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
@@ -6790,7 +6873,7 @@
         }, {
             name: "Send Ad Text",
             description: "Sends a load of text to another player (This will override your blook!)",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -6847,7 +6930,7 @@
         }, {
             name: "Steal Player's Progress",
             description: "Steals all of someone's progress",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -6871,20 +6954,26 @@
         }, {
             name: "Game Mode Changer",
             description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
-            inputs: [{
+            inputs:[{
                 name: "Gamemode",
                 type: "options",
-                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
             }],
             run: function(mode) {
-                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
+                let route = routeMap[mode] || mode.toLowerCase();
+                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
+                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
+                    }())[1].children[0]._owner.stateNode;
                 if (stateNode && stateNode.props && stateNode.props.client) {
                     stateNode.props.client.type = mode;
-                    stateNode.forceUpdate();
+                }
+                if (stateNode && stateNode.props && stateNode.props.history) {
+                    stateNode.props.history.push("/play/" + route);
                 }
             }
         }],
-        royale: [{
+        royale:[{
             name: "Auto Answer (Toggle)",
             description: "Toggles auto answer on",
             type: "toggle",
@@ -6899,7 +6988,7 @@
         }, {
             name: "Auto Answer",
             description: "Chooses the correct answer for you. Will answer with the time provided.",
-            inputs: [{
+            inputs:[{
                 name: "Time (milliseconds)",
                 type: "number",
                 min: 0,
@@ -6913,7 +7002,7 @@
         }, {
             name: "Player Swapper",
             description: "Swaps your stats and identity with another player",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -6926,7 +7015,9 @@
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
                         let targetData = a[e];
+                        let myData = a[t.props.client.name];
                         t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
                     }
                 });
             }
@@ -6950,7 +7041,7 @@
         }, {
             name: "Set Energy",
             description: "Sets amount of energy you have",
-            inputs: [{ name: "Energy", type: "number" }],
+            inputs:[{ name: "Energy", type: "number" }],
             run: function(e) {
                 var t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
                 t.props.liveGameController.setVal({
@@ -6961,7 +7052,7 @@
         }, {
             name: "Flood Alert Box",
             description: "Makes the alert box filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(userInput) {
                 function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
                 getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
@@ -6981,7 +7072,7 @@
         }, {
             name: "Send Ad Text",
             description: "Sends a load of text to another player (This will override your blook!)",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -7038,7 +7129,7 @@
         }, {
             name: "Steal Player's Energy",
             description: "Steals energy from a player (DB side)",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -7061,23 +7152,29 @@
         }, {
             name: "Game Mode Changer",
             description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
-            inputs: [{
+            inputs:[{
                 name: "Gamemode",
                 type: "options",
-                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
             }],
             run: function(mode) {
-                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
+                let route = routeMap[mode] || mode.toLowerCase();
+                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
+                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
+                    }())[1].children[0]._owner.stateNode;
                 if (stateNode && stateNode.props && stateNode.props.client) {
                     stateNode.props.client.type = mode;
-                    stateNode.forceUpdate();
+                }
+                if (stateNode && stateNode.props && stateNode.props.history) {
+                    stateNode.props.history.push("/play/" + route);
                 }
             }
         }],
-        rush: [{
+        rush:[{
             name: "Set Blooks",
             description: "Sets amount of blooks you or your team has",
-            inputs: [{
+            inputs:[{
                 name: "Blooks",
                 type: "number"
             }],
@@ -7140,7 +7237,7 @@
         }, {
             name: "Player Swapper",
             description: "Swaps your stats and identity with another player",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -7153,7 +7250,9 @@
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
                         let targetData = a[e];
+                        let myData = a[t.props.client.name];
                         t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
                         t.setState({ numBlooks: targetData.bs || 0 });
                     }
                 });
@@ -7178,7 +7277,7 @@
         }, {
             name: "Flood Alert Box",
             description: "Makes the alert box filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(userInput) {
                 function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
                 getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
@@ -7198,7 +7297,7 @@
         }, {
             name: "Send Ad Text",
             description: "Sends a load of text to another player (This will override your blook!)",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -7255,7 +7354,7 @@
         }, {
             name: "Steal Player's Blooks",
             description: "Steals all of someone's Blooks (Rush)",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -7279,20 +7378,26 @@
         }, {
             name: "Game Mode Changer",
             description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
-            inputs: [{
+            inputs:[{
                 name: "Gamemode",
                 type: "options",
-                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
             }],
             run: function(mode) {
-                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
+                let route = routeMap[mode] || mode.toLowerCase();
+                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
+                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
+                    }())[1].children[0]._owner.stateNode;
                 if (stateNode && stateNode.props && stateNode.props.client) {
                     stateNode.props.client.type = mode;
-                    stateNode.forceUpdate();
+                }
+                if (stateNode && stateNode.props && stateNode.props.history) {
+                    stateNode.props.history.push("/play/" + route);
                 }
             }
         }],
-        workshop: [{
+        workshop:[{
             name: "Remove Distractions",
             description: "Removes all enemy distractions",
             run: function() {
@@ -7304,13 +7409,13 @@
                     blizzard: !1,
                     force: !1,
                     canada: !1,
-                    trees: [!1, !1, !1, !1, !1, !1, !1, !1, !1, !1]
+                    trees:[!1, !1, !1, !1, !1, !1, !1, !1, !1, !1]
                 })
             }
         }, {
             name: "Send Distraction",
             description: "Sends a distraction to everyone else playing",
-            inputs: [{
+            inputs:[{
                 name: "Distraction",
                 type: "options",
                 options: Object.entries({
@@ -7339,7 +7444,7 @@
         }, {
             name: "Set Toys",
             description: "Sets amount of toys",
-            inputs: [{
+            inputs:[{
                 name: "Toys",
                 type: "number"
             }],
@@ -7359,7 +7464,7 @@
         }, {
             name: "Set Toys Per Question",
             description: "Sets amount of toys per question",
-            inputs: [{
+            inputs:[{
                 name: "Toys Per Question",
                 type: "number"
             }],
@@ -7371,7 +7476,7 @@
         }, {
             name: "Swap Toys",
             description: "Swaps toys with someone",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -7400,7 +7505,7 @@
         }, {
             name: "Player Swapper",
             description: "Swaps your stats and identity with another player",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -7413,7 +7518,9 @@
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
                         let targetData = a[e];
+                        let myData = a[t.props.client.name];
                         t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
                         t.setState({ toys: targetData.t || 0 });
                     }
                 });
@@ -7438,7 +7545,7 @@
         }, {
             name: "Flood Alert Box",
             description: "Makes the alert box filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(userInput) {
                 function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
                 getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
@@ -7458,7 +7565,7 @@
         }, {
             name: "Send Ad Text",
             description: "Sends a load of text to another player (This will override your blook!)",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -7515,7 +7622,7 @@
         }, {
             name: "Steal Player's Toys",
             description: "Steals all of someone's Toys",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -7539,23 +7646,29 @@
         }, {
             name: "Game Mode Changer",
             description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
-            inputs: [{
+            inputs:[{
                 name: "Gamemode",
                 type: "options",
-                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
             }],
             run: function(mode) {
-                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
+                let route = routeMap[mode] || mode.toLowerCase();
+                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
+                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
+                    }())[1].children[0]._owner.stateNode;
                 if (stateNode && stateNode.props && stateNode.props.client) {
                     stateNode.props.client.type = mode;
-                    stateNode.forceUpdate();
+                }
+                if (stateNode && stateNode.props && stateNode.props.history) {
+                    stateNode.props.history.push("/play/" + route);
                 }
             }
         }],
-        classic: [{
+        classic:[{
             name: "Player Swapper",
             description: "Swaps your stats and identity with another player",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -7567,7 +7680,10 @@
                 let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
-                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: a[e] });
+                        let targetData = a[e];
+                        let myData = a[t.props.client.name];
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
                     }
                 });
             }
@@ -7602,7 +7718,7 @@
         }, {
             name: "Flood Alert Box",
             description: "Makes the alert box filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(userInput) {
                 function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
                 getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
@@ -7622,7 +7738,7 @@
         }, {
             name: "Send Ad Text",
             description: "Sends a load of text to another player (This will override your blook!)",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -7679,7 +7795,7 @@
         }, {
             name: "Steal Player's Points",
             description: "Steals points from a player",
-            inputs: [{
+            inputs:[{
                 name: "Player",
                 type: "options",
                 options() {
@@ -7705,20 +7821,26 @@
             inputs: [{
                 name: "Gamemode",
                 type: "options",
-                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
             }],
             run: function(mode) {
-                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
+                let route = routeMap[mode] || mode.toLowerCase();
+                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
+                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
+                    }())[1].children[0]._owner.stateNode;
                 if (stateNode && stateNode.props && stateNode.props.client) {
                     stateNode.props.client.type = mode;
-                    stateNode.forceUpdate();
+                }
+                if (stateNode && stateNode.props && stateNode.props.history) {
+                    stateNode.props.history.push("/play/" + route);
                 }
             }
         }],
         settings: [{
             name: "Import Settings",
             description: "Import a custom theme",
-            inputs: [{
+            inputs:[{
                 name: "JSON Data",
                 type: "string"
             }],
@@ -7752,10 +7874,10 @@
         }, {
             name: "Defaults",
             description: "Changes all the settings to a preset",
-            inputs: [{
+            inputs:[{
                 name: "Theme",
                 type: "options",
-                options: [{
+                options:[{
                     name: "Default",
                     value: {
                         backgroundColor: "rgb(11, 194, 207)",
@@ -7987,7 +8109,7 @@
         }, {
             name: "Scale",
             description: "Forces the GUI to scale from 25%-100%",
-            inputs: [{
+            inputs:[{
                 type: "number",
                 name: "Percent scale",
                 min: 25,
@@ -8002,7 +8124,7 @@
         }, {
             name: "Hide Keybind",
             description: "Change the hide keybind (Click button after input to change)",
-            inputs: [{
+            inputs:[{
                 type: "function",
                 name: "Input",
                 function: e => B(({
@@ -8025,7 +8147,7 @@
         }, {
             name: "Close Keybind",
             description: "Change the quick close keybind (Click button after input to change)",
-            inputs: [{
+            inputs:[{
                 type: "function",
                 name: "Input",
                 function: e => B(({
@@ -8033,7 +8155,7 @@
                     ctrl: a,
                     alt: o,
                     key: r
-                }) => e("" + [a && "Ctrl", t && "Shift", o && "Alt", r && r.toUpperCase()].filter(Boolean).join(" + ")))
+                }) => e("" +[a && "Ctrl", t && "Shift", o && "Alt", r && r.toUpperCase()].filter(Boolean).join(" + ")))
             }],
             run: function(e) {
                 c.setItem("close", e),
@@ -8059,7 +8181,7 @@
         }, {
             name: "Category List Color",
             description: "Changes the categories list background color",
-            inputs: [{
+            inputs:[{
                 type: "string",
                 name: "Color"
             }],
@@ -8070,7 +8192,7 @@
         }, {
             name: "Info Color",
             description: "Changes the color of the information at the top of the GUI",
-            inputs: [{
+            inputs:[{
                 type: "string",
                 name: "Color"
             }],
@@ -8081,7 +8203,7 @@
         }, {
             name: "Button Color",
             description: "Changes the color of the cheats",
-            inputs: [{
+            inputs:[{
                 type: "string",
                 name: "Color"
             }],
@@ -8092,7 +8214,7 @@
         }, {
             name: "Enabled Toggle Color",
             description: "Changes the color of enabled toggle cheats",
-            inputs: [{
+            inputs:[{
                 type: "string",
                 name: "Color"
             }],
@@ -8102,7 +8224,7 @@
         }, {
             name: "Disabled Toggle Color",
             description: "Changes the color of disabled toggle cheats",
-            inputs: [{
+            inputs:[{
                 type: "string",
                 name: "Color"
             }],
@@ -8113,7 +8235,7 @@
         }, {
             name: "Text Color",
             description: "Changes the text color",
-            inputs: [{
+            inputs:[{
                 type: "string",
                 name: "Color"
             }],
@@ -8124,7 +8246,7 @@
         }, {
             name: "Input Color",
             description: "Changes the color of inputs, like the set gold number input",
-            inputs: [{
+            inputs:[{
                 type: "string",
                 name: "Color"
             }],
@@ -8144,7 +8266,7 @@
                     c.setItem("theme.contentBackground", e)
             }
         }],
-        chat: [{
+        chat:[{
             element: l("div", {
                 className: "alertContainer",
                 style: {
@@ -8441,8 +8563,7 @@
 
                 function unlockBlook(b) {
                     var blooks = webpackJsonp.push([
-                        [], {
-                            ['1234']: (_, a, b) => {
+                        [], {['1234']: (_, a, b) => {
                                 a.webpack = b
                             }
                         },
@@ -8527,7 +8648,7 @@
                 return container;
             })())
         }],
-        alerts: [{
+        alerts:[{
             element: l("div", {
                 className: "alertContainer",
                 style: {
@@ -8623,7 +8744,7 @@
                     for (; 100 <= n; s++)
                         n = Math.floor(n / 10);
                     let l = "";
-                    var c = ["⁰", "\xb9", "\xb2", "\xb3", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"];
+                    var c =["⁰", "\xb9", "\xb2", "\xb3", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"];
                     for (let d of (s + 1).toString().split(""))
                         l += c[Number(d)];
                     t = n / 10 + " \xd7 10" + l
@@ -8655,7 +8776,7 @@
                         wordWrap: "break-word"
                     }
                 }));
-                insertElemBefore("Leaderboard", "https://i.ibb.co/hZQjjVP/trophy-icon.webp", [{
+                insertElemBefore("Leaderboard", "https://i.ibb.co/hZQjjVP/trophy-icon.webp",[{
                     element: this.leaderboardEl
                 }], !0, h.children[3]);
                 this.addLog("Leaderboard Loaded!");
@@ -8697,7 +8818,7 @@
                                 u,
                                 h = this.diffObjects(this.data, r);
                             this.data = r;
-                            let m = [];
+                            let m =[];
                             switch (this.getGamemode()) {
                                 case "pirate":
                                     m = Object.entries(r).map(([e, {
@@ -8954,24 +9075,24 @@
     // Add "Classic" to the menu
     w("Alerts", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434255/alerts_dsucpi.png", C.alerts, !0),
         w("Global", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434297/global_cq8tkv.webp", C.global)(),
-        w('<span style="font-size: 18px">Host</span>', ['<img style="height: 60px; margin-left: -15px; margin-right: -10px" src="https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435147/image-removebg-preview_wljrdo.png">'], C.host, !0),
+        w('<span style="font-size: 18px">Host</span>',['<img style="height: 60px; margin-left: -15px; margin-right: -10px" src="https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435147/image-removebg-preview_wljrdo.png">'], C.host, !0),
         w("Classic", "https://ac.blooket.com/dashboard/949175a25e1a141b2c4d.svg", C.classic),
         w(`<span style="font-size: 18px">Pirate's Voyage</span>`, "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435445/download_ruzs9t.svg", C.voyage),
         w("Gold Quest", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434943/gold_srug2d.svg", C.gold),
         w("Cafe", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435594/images-removebg-preview_cd6kgf.png", C.cafe),
         w("Crypto Hack", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434915/crypto_jpiwqh.svg", C.crypto),
         w('<span style="font-size: 17px">Deceptive Dinos</span>', "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435770/Dog_pubpgf.svg", C.dinos),
-        w('<span style="font-size: 18px">Tower Defense</span>', ['<img style="width: 30px; margin-right: 5px" src="https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435770/Laser_Lvl1_lfvg67.svg">'], C.defense),
-        w('<span style="font-size: 16px">Tower Defense 2</span>', ['<img style="width: 30px; margin-right: 5px; rotate: 45deg" src="https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435769/missile_nqvxdw.svg">'], C.defense2),
+        w('<span style="font-size: 18px">Tower Defense</span>',['<img style="width: 30px; margin-right: 5px" src="https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435770/Laser_Lvl1_lfvg67.svg">'], C.defense),
+        w('<span style="font-size: 16px">Tower Defense 2</span>',['<img style="width: 30px; margin-right: 5px; rotate: 45deg" src="https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435769/missile_nqvxdw.svg">'], C.defense2),
         w("Factory", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434307/factory_izgbu7.png", C.factory),
         w('<span style="font-size: 19px">Fishing Frenzy</span>', "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434794/fishing_frenzy_gqhmdp.svg", C.fishing),
         w("Flappy Blook", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743437721/chick_d7scks.svg", C.flappy),
-        w('<span style="font-size: 17px">Tower of Doom</span>', ['<img style="height: 30px; margin-left: 5px; margin-right: 10px" src="https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435342/cards-05_jj0btj.svg">'], C.doom),
+        w('<span style="font-size: 17px">Tower of Doom</span>',['<img style="height: 30px; margin-left: 5px; margin-right: 10px" src="https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435342/cards-05_jj0btj.svg">'], C.doom),
         w('<span style="font-size: 18px">Crazy Kingdom</span>', "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435770/Jester_lvl1_uzhicy.svg", C.kingdom),
         w("Racing", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435260/racing_ihojlx.svg", C.racing),
         w("Battle Royale", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743438026/VS_Lightning_Bolt_Bottom_1_fiyexy.svg", C.royale),
         w("Blook Rush", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743438076/download_iu7fm7.png", C.rush),
-        w('<span style="font-size: 18px">Monster Brawl</span>', ['<img style="height: 28px; margin-left: 5px; margin-right: 8px" src="https://res.cloudinary.com/dhiws7ac5/image/upload/v1743438121/Blue_xp_2_m3wqpw.svg">'], C.brawl),
+        w('<span style="font-size: 18px">Monster Brawl</span>',['<img style="height: 28px; margin-left: 5px; margin-right: 8px" src="https://res.cloudinary.com/dhiws7ac5/image/upload/v1743438121/Blue_xp_2_m3wqpw.svg">'], C.brawl),
         w(`<span style="font-size: 15px">Santa's Workshop</span>`, "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434611/santa_iv1laq.webp", C.workshop),
         w("Chat", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434319/chat_zt0hkp.webp", C.chat, !0),
         w("Extras", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434333/extras_jvb85e.png", C.extras, !0),
@@ -9015,8 +9136,7 @@
                         o[t.code] = !0,
                         r ||= t.shiftKey,
                         i ||= t.ctrlKey,
-                        n ||= t.altKey,
-                        ["shift", "control", "alt", "meta"].includes(t.key.toLowerCase()) || (s = t.key.toLowerCase()),
+                        n ||= t.altKey,["shift", "control", "alt", "meta"].includes(t.key.toLowerCase()) || (s = t.key.toLowerCase()),
                         e?.({
                             shift: r,
                             ctrl: i,
