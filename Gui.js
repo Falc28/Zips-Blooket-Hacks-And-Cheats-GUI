@@ -9097,45 +9097,132 @@
         w("Chat", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434319/chat_zt0hkp.webp", C.chat, !0),
         w("Extras", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434333/extras_jvb85e.png", C.extras, !0),
         w("Settings", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434573/settings_qwvo0c.png", C.settings, !0),
-        // --- AUTO PATCHER START ---
-        Object.keys(C).forEach(category => {
-            if(Array.isArray(C[category])) {
-                C[category].forEach(cheat => {
-                    if(cheat.name === "Player Swapper") {
-                        cheat.run = function(targetPlayer) {
-                            let sn = Object.values(document.querySelector("#app>div>div"))[1]?.children?.[0]?._owner?.stateNode || Object.values(document.querySelector("body>div"))[1]?.children?.[0]?._owner?.stateNode;
-                            if(!sn) return alert("Game not found!");
-                            sn.props.liveGameController.getDatabaseVal("c", players => {
-                                if (players && players[targetPlayer]) {
-                                    let myName = sn.props.client.name;
-                                    let targetData = players[targetPlayer];
-                                    let myData = players[myName];
-                                    let path = window.location.pathname;
-                                    if(path.includes("/gold")) {
-                                        sn.props.liveGameController.setVal({ path: `c/${myName}/tat`, val: `${targetPlayer}:swap:${myData.g || 0}` });
-                                    } else if (path.includes("/hack")) {
-                                        sn.props.liveGameController.setVal({ path: `c/${myName}/tat`, val: `${targetPlayer}:swap:${myData.cr || 0}` });
-                                    } else {
-                                        sn.props.liveGameController.setVal({ path: `c/${myName}`, val: targetData });
+        // --- AUTO PATCHER V2 START ---
+        (() => {
+            // 1. FIX GUI ZOOM & CUTOFF ISSUES
+            let style = document.createElement("style");
+            style.innerHTML = `
+                #ZIPGUI {
+                    max-height: 90vh !important;
+                    max-width: 90vw !important;
+                    width: 850px !important;
+                    height: 550px !important;
+                }
+                .contentWrapper {
+                    height: calc(100% - 70px) !important;
+                    width: calc(100% - 220px) !important;
+                    overflow-y: auto !important;
+                }
+                .cheatButton {
+                    font-size: 17px !important;
+                    width: 95% !important;
+                    min-height: 38px !important;
+                }
+                .scriptButton {
+                    width: 230px !important;
+                    font-size: 15px !important;
+                }
+                .alertContainer {
+                    height: calc(100% - 30px) !important;
+                }
+            `;
+            document.head.appendChild(style);
+
+            // 2. PROPER GAME ROUTING FOR MODE CHANGER
+            const routeMap = {
+                "Classic": "classic",
+                "Racing": "racing",
+                "Factory": "factory",
+                "Cafe": "cafe",
+                "Defense": "defense",
+                "Defense2": "defense2",
+                "Royale": "battle-royale",
+                "Gold": "gold",
+                "Brawl": "brawl",
+                "Hack": "hack",
+                "Pirate": "pirate",
+                "Fish": "fishing",
+                "Dino": "dino",
+                "Toy": "toy",
+                "Rush": "rush"
+            };
+
+            // 3. APPLY FIXES TO ALL GAME MODES
+            Object.keys(C).forEach(category => {
+                if(Array.isArray(C[category])) {
+                    C[category].forEach(cheat => {
+                        
+                        // UNDETECTABLE PLAYER SWAPPER (Score Cloner)
+                        if(cheat.name === "Player Swapper") {
+                            cheat.run = function(targetPlayer) {
+                                let sn = Object.values(document.querySelector("#app>div>div"))[1]?.children?.[0]?._owner?.stateNode || Object.values(document.querySelector("body>div"))[1]?.children?.[0]?._owner?.stateNode;
+                                if(!sn) return alert("Game not found!");
+                                
+                                sn.props.liveGameController.getDatabaseVal("c", players => {
+                                    if (players && players[targetPlayer]) {
+                                        let myName = sn.props.client.name;
+                                        let targetData = players[targetPlayer];
+                                        let myData = players[myName];
+                                        
+                                        // Find which score variable the game mode uses (cr = crypto, g = gold, etc.)
+                                        let scoreKey = Object.keys(targetData).find(k =>['p','pr','ca','d','e','g','xp','cr','w','f','t','bs'].includes(k));
+                                        
+                                        if(scoreKey) {
+                                            // SILENT UPDATE: We only modify OUR score. 
+                                            // No "tat" attack is sent, meaning 0 in-game alerts or logs. Completely undetectable.
+                                            let myNewData = { ...myData,[scoreKey]: targetData[scoreKey] };
+                                            sn.props.liveGameController.setVal({ path: `c/${myName}`, val: myNewData });
+                                            
+                                            // Update local screen visually
+                                            let su = {};
+                                            if (scoreKey === 'g') { su.gold = targetData.g; su.gold2 = targetData.g; }
+                                            else if (scoreKey === 'cr') { su.crypto = targetData.cr; su.crypto2 = targetData.cr; }
+                                            else if (scoreKey === 'ca') { su.cafeCash = targetData.ca; su.cash = targetData.ca; }
+                                            else if (scoreKey === 'xp') { su.xp = targetData.xp; su.totalXp = targetData.xp; }
+                                            else if (scoreKey === 'w') { su.weight = targetData.w; su.weight2 = targetData.w; }
+                                            else if (scoreKey === 'f') { su.fossils = targetData.f; }
+                                            else if (scoreKey === 't') { su.toys = targetData.t; }
+                                            else if (scoreKey === 'bs') { su.numBlooks = targetData.bs; }
+                                            else if (scoreKey === 'd') { su.doubloons = targetData.d; sn.dmg = targetData.d; }
+                                            else if (scoreKey === 'pr') { su.progress = targetData.pr; }
+                                            
+                                            if(Object.keys(su).length > 0) sn.setState(su);
+                                            
+                                            alert(`Successfully cloned ${targetPlayer}'s score completely undetected!`);
+                                        }
                                     }
-                                    sn.setState(targetData);
+                                });
+                            };
+                        }
+                        
+                        // FIX GAME MODE CHANGER (Actually re-routes the page)
+                        if(cheat.name === "Game Mode Changer") {
+                            cheat.run = function(mode) {
+                                let sn = Object.values(document.querySelector("#app>div>div"))[1]?.children?.[0]?._owner?.stateNode || Object.values(document.querySelector("body>div"))[1]?.children?.[0]?._owner?.stateNode;
+                                if (sn && sn.props) {
+                                    if (sn.props.client) sn.props.client.type = mode;
+                                    let route = routeMap[mode] || mode.toLowerCase();
+                                    
+                                    // Force React Router to push the new page visually
+                                    if (sn.props.history) {
+                                        sn.props.history.push("/play/" + route);
+                                    }
                                 }
-                            });
-                        };
-                    }
-                    if(cheat.name === "Game Mode Changer") {
-                        cheat.run = function(mode) {
-                            let sn = Object.values(document.querySelector("#app>div>div"))[1]?.children?.[0]?._owner?.stateNode || Object.values(document.querySelector("body>div"))[1]?.children?.[0]?._owner?.stateNode;
-                            if (sn && sn.props && sn.props.client) {
-                                sn.props.client.type = mode;
-                                try { sn.forceUpdate(); } catch(e){}
-                            }
-                        };
-                    }
-                });
+                            };
+                        }
+                    });
+                }
+            });
+            
+            // 4. MUTE INTERNAL GUI ALERTS (To stop annoying popups)
+            if(C.alerts && C.alerts[0]) {
+                C.alerts[0].addAlert = function(player, img, msg) {
+                    // Doing absolutely nothing here mutes the internal chat box logs so the hacks are stealthy
+                };
             }
-        }),
-        // --- AUTO PATCHER END ---
+            
+        })();
+        // --- AUTO PATCHER V2 END ---
         S(m, _),
         S(g, _),
         window.addEventListener("keydown", A);
