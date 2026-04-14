@@ -2094,6 +2094,44 @@
                     })
             }
         }, {
+            name: "Player Swapper",
+            description: "Swaps your stats and identity with another player",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetData = a[e];
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.setState({ doubloons: targetData.d || 0 });
+                    }
+                });
+            }
+        }, {
+            name: "Leaderboard Scrambler",
+            description: "Rapidly randomizes your score to scramble the host's leaderboard",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                if(this.enabled) { 
+                    this.enabled = !1; clearInterval(this.data); this.data = null; 
+                } else {
+                    this.enabled = !0;
+                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/d`, val: Math.floor(Math.random() * 1000000) });
+                    }, 200);
+                }
+            }
+        }, {
             name: "Flood Alert Box",
             description: "Makes the alert box filled with text",
             inputs: [{
@@ -2156,7 +2194,8 @@
                     return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
                 }
             }, {
-                name: "Text"
+                name: "Text",
+                type: "text"
             }],
             run: async function(player, e) {
                 let {
@@ -2176,6 +2215,53 @@
                     path: `c/${t2.client.name}/tat`,
                     val: `${player}:196`
                 });
+            }
+        }, {
+            name: "Set Host Screen Text",
+            description: "Makes the whole host screen filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(e) {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({
+                    path: `c/${a.props.client.name}/d`,
+                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
+                });
+            }
+        }, {
+            name: "Set Host Screen Green",
+            description: "Fills the host screen with green characters",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (this.enabled) {
+                    this.enabled = !1; clearInterval(this.data); this.data = null;
+                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/d`, val: a.state.doubloons });
+                } else {
+                    this.enabled = !0;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({
+                            path: `c/${a.props.client.name}/d`,
+                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
+                        });
+                    }, 25);
+                }
+            }
+        }, {
+            name: "Game Mode Changer",
+            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
+            inputs: [{
+                name: "Gamemode",
+                type: "options",
+                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+            }],
+            run: function(mode) {
+                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (stateNode && stateNode.props && stateNode.props.client) {
+                    stateNode.props.client.type = mode;
+                    stateNode.forceUpdate();
+                }
             }
         }],
         brawl: [{
@@ -2335,6 +2421,154 @@
                 Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.setState({
                     level: e
                 })
+            }
+        }, {
+            name: "Player Swapper",
+            description: "Swaps your stats and identity with another player",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetData = a[e];
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.setState({ xp: targetData.xp || 0 });
+                    }
+                });
+            }
+        }, {
+            name: "Leaderboard Scrambler",
+            description: "Rapidly randomizes your score to scramble the host's leaderboard",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                if(this.enabled) { 
+                    this.enabled = !1; clearInterval(this.data); this.data = null; 
+                } else {
+                    this.enabled = !0;
+                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/xp`, val: Math.floor(Math.random() * 1000000) });
+                    }, 200);
+                }
+            }
+        }, {
+            name: "Flood Alert Box",
+            description: "Makes the alert box filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(userInput) {
+                function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
+                getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
+                    if (data != null) {
+                        const playerName = Object.keys(data)[0];
+                        if (userInput) {
+                            const id = "1,723,583,989,363";
+                            const repeatedText = new Array(1700).fill(userInput).join(" ");
+                            getReactOwner().stateNode.props.liveGameController.setVal({
+                                path: `c/${getReactOwner().stateNode.props.client.name}/tat`,
+                                val: `${playerName}:${id}${repeatedText}`
+                            });
+                        }
+                    }
+                });
+            }
+        }, {
+            name: "Send Ad Text",
+            description: "Sends a load of text to another player (This will override your blook!)",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let { stateNode: e } = Object.values(document.querySelector("body>div"))[1].children[0]._owner;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
+                }
+            }, { name: "Text", type: "text" }],
+            run: async function(player, e) {
+                let t2 = Object.values(document.querySelector("body>div"))[1].children[0]._owner.stateNode;
+                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
+                t2.props.client.blook = repeatedText;
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/b`, val: repeatedText });
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/tat`, val: `${player}:196` });
+            }
+        }, {
+            name: "Set Host Screen Text",
+            description: "Makes the whole host screen filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(e) {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({
+                    path: `c/${a.props.client.name}/xp`,
+                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
+                });
+            }
+        }, {
+            name: "Set Host Screen Green",
+            description: "Fills the host screen with green characters",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (this.enabled) {
+                    this.enabled = !1; clearInterval(this.data); this.data = null;
+                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/xp`, val: a.state.xp });
+                } else {
+                    this.enabled = !0;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({
+                            path: `c/${a.props.client.name}/xp`,
+                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
+                        });
+                    }, 25);
+                }
+            }
+        }, {
+            name: "Steal Player's XP",
+            description: "Steals all of someone's XP",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetXp = a[e].xp || 0;
+                        t.setState({ xp: t.state.xp + targetXp, totalXp: t.state.totalXp + targetXp });
+                        t.xp += targetXp; t.totalXp += targetXp;
+                        t.props.liveGameController.setVal({
+                            path: `c/${t.props.client.name}`,
+                            val: { b: t.props.client.blook, xp: t.state.xp }
+                        });
+                    }
+                });
+            }
+        }, {
+            name: "Game Mode Changer",
+            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
+            inputs: [{
+                name: "Gamemode",
+                type: "options",
+                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+            }],
+            run: function(mode) {
+                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (stateNode && stateNode.props && stateNode.props.client) {
+                    stateNode.props.client.type = mode;
+                    stateNode.forceUpdate();
+                }
             }
         }],
         cafe: [{
@@ -2497,6 +2731,160 @@
                             level: 5
                         }))
                     })
+            }
+        }, {
+            name: "Player Swapper",
+            description: "Swaps your stats and identity with another player",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetData = a[e];
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.setState({ cafeCash: targetData.ca || 0 });
+                    }
+                });
+            }
+        }, {
+            name: "Leaderboard Scrambler",
+            description: "Rapidly randomizes your score to scramble the host's leaderboard",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                if(this.enabled) { 
+                    this.enabled = !1; clearInterval(this.data); this.data = null; 
+                } else {
+                    this.enabled = !0;
+                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/ca`, val: Math.floor(Math.random() * 1000000) });
+                    }, 200);
+                }
+            }
+        }, {
+            name: "Crash Host (Cafe)",
+            description: "Crashes the Host's Game",
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/ca/t`, val: "t" });
+            }
+        }, {
+            name: "Flood Alert Box",
+            description: "Makes the alert box filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(userInput) {
+                function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
+                getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
+                    if (data != null) {
+                        const playerName = Object.keys(data)[0];
+                        if (userInput) {
+                            const id = "1,723,583,989,363";
+                            const repeatedText = new Array(1700).fill(userInput).join(" ");
+                            getReactOwner().stateNode.props.liveGameController.setVal({
+                                path: `c/${getReactOwner().stateNode.props.client.name}/tat`,
+                                val: `${playerName}:${id}${repeatedText}`
+                            });
+                        }
+                    }
+                });
+            }
+        }, {
+            name: "Send Ad Text",
+            description: "Sends a load of text to another player (This will override your blook!)",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let { stateNode: e } = Object.values(document.querySelector("body>div"))[1].children[0]._owner;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
+                }
+            }, { name: "Text", type: "text" }],
+            run: async function(player, e) {
+                let t2 = Object.values(document.querySelector("body>div"))[1].children[0]._owner.stateNode;
+                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
+                t2.props.client.blook = repeatedText;
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/b`, val: repeatedText });
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/tat`, val: `${player}:196` });
+            }
+        }, {
+            name: "Set Host Screen Text",
+            description: "Makes the whole host screen filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(e) {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({
+                    path: `c/${a.props.client.name}/ca`,
+                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
+                });
+            }
+        }, {
+            name: "Set Host Screen Green",
+            description: "Fills the host screen with green characters",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (this.enabled) {
+                    this.enabled = !1; clearInterval(this.data); this.data = null;
+                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/ca`, val: a.state.cafeCash });
+                } else {
+                    this.enabled = !0;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({
+                            path: `c/${a.props.client.name}/ca`,
+                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
+                        });
+                    }, 25);
+                }
+            }
+        }, {
+            name: "Steal Player's Cash",
+            description: "Steals all of someone's Cafe Cash",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetCa = a[e].ca || 0;
+                        t.setState({ cafeCash: t.state.cafeCash + targetCa });
+                        t.props.liveGameController.setVal({
+                            path: `c/${t.props.client.name}`,
+                            val: { b: t.props.client.blook, ca: t.state.cafeCash }
+                        });
+                    }
+                });
+            }
+        }, {
+            name: "Game Mode Changer",
+            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
+            inputs: [{
+                name: "Gamemode",
+                type: "options",
+                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+            }],
+            run: function(mode) {
+                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (stateNode && stateNode.props && stateNode.props.client) {
+                    stateNode.props.client.type = mode;
+                    stateNode.forceUpdate();
+                }
             }
         }],
         crypto: [{
@@ -2954,6 +3342,59 @@
                     val: `${player}:196`
                 });
             }
+        }, {
+            name: "Player Swapper",
+            description: "Swaps your stats and identity with another player",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetData = a[e];
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.setState({ crypto: targetData.cr || 0, crypto2: targetData.cr || 0 });
+                    }
+                });
+            }
+        }, {
+            name: "Leaderboard Scrambler",
+            description: "Rapidly randomizes your score to scramble the host's leaderboard",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                if(this.enabled) { 
+                    this.enabled = !1; clearInterval(this.data); this.data = null; 
+                } else {
+                    this.enabled = !0;
+                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/cr`, val: Math.floor(Math.random() * 1000000) });
+                    }, 200);
+                }
+            }
+        }, {
+            name: "Game Mode Changer",
+            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
+            inputs: [{
+                name: "Gamemode",
+                type: "options",
+                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+            }],
+            run: function(mode) {
+                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (stateNode && stateNode.props && stateNode.props.client) {
+                    stateNode.props.client.type = mode;
+                    stateNode.forceUpdate();
+                }
+            }
         }],
         defense: [{
             name: "Earthquake",
@@ -3066,6 +3507,160 @@
                     tokens: e
                 })
             }
+        }, {
+            name: "Player Swapper",
+            description: "Swaps your stats and identity with another player",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetData = a[e];
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.dmg = targetData.d || 0;
+                    }
+                });
+            }
+        }, {
+            name: "Leaderboard Scrambler",
+            description: "Rapidly randomizes your score to scramble the host's leaderboard",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                if(this.enabled) { 
+                    this.enabled = !1; clearInterval(this.data); this.data = null; 
+                } else {
+                    this.enabled = !0;
+                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/d`, val: Math.floor(Math.random() * 1000000) });
+                    }, 200);
+                }
+            }
+        }, {
+            name: "Crash Host (Defense)",
+            description: "Crashes the Host's Game",
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/d/t`, val: "t" });
+            }
+        }, {
+            name: "Flood Alert Box",
+            description: "Makes the alert box filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(userInput) {
+                function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
+                getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
+                    if (data != null) {
+                        const playerName = Object.keys(data)[0];
+                        if (userInput) {
+                            const id = "1,723,583,989,363";
+                            const repeatedText = new Array(1700).fill(userInput).join(" ");
+                            getReactOwner().stateNode.props.liveGameController.setVal({
+                                path: `c/${getReactOwner().stateNode.props.client.name}/tat`,
+                                val: `${playerName}:${id}${repeatedText}`
+                            });
+                        }
+                    }
+                });
+            }
+        }, {
+            name: "Send Ad Text",
+            description: "Sends a load of text to another player (This will override your blook!)",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let { stateNode: e } = Object.values(document.querySelector("body>div"))[1].children[0]._owner;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
+                }
+            }, { name: "Text", type: "text" }],
+            run: async function(player, e) {
+                let t2 = Object.values(document.querySelector("body>div"))[1].children[0]._owner.stateNode;
+                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
+                t2.props.client.blook = repeatedText;
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/b`, val: repeatedText });
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/tat`, val: `${player}:196` });
+            }
+        }, {
+            name: "Set Host Screen Text",
+            description: "Makes the whole host screen filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(e) {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({
+                    path: `c/${a.props.client.name}/d`,
+                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
+                });
+            }
+        }, {
+            name: "Set Host Screen Green",
+            description: "Fills the host screen with green characters",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (this.enabled) {
+                    this.enabled = !1; clearInterval(this.data); this.data = null;
+                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/d`, val: a.dmg });
+                } else {
+                    this.enabled = !0;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({
+                            path: `c/${a.props.client.name}/d`,
+                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
+                        });
+                    }, 25);
+                }
+            }
+        }, {
+            name: "Steal Player's Damage",
+            description: "Steals all of someone's damage",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetDmg = a[e].d || 0;
+                        t.dmg += targetDmg;
+                        t.props.liveGameController.setVal({
+                            path: `c/${t.props.client.name}`,
+                            val: { b: t.props.client.blook, d: t.dmg }
+                        });
+                    }
+                });
+            }
+        }, {
+            name: "Game Mode Changer",
+            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
+            inputs: [{
+                name: "Gamemode",
+                type: "options",
+                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+            }],
+            run: function(mode) {
+                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (stateNode && stateNode.props && stateNode.props.client) {
+                    stateNode.props.client.type = mode;
+                    stateNode.forceUpdate();
+                }
+            }
         }],
         defense2: [{
             name: "Max Tower Stats",
@@ -3137,6 +3732,151 @@
                 Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.setState({
                     round: e
                 })
+            }
+        }, {
+            name: "Player Swapper",
+            description: "Swaps your stats and identity with another player",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetData = a[e];
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                    }
+                });
+            }
+        }, {
+            name: "Leaderboard Scrambler",
+            description: "Rapidly randomizes your score to scramble the host's leaderboard",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                if(this.enabled) { 
+                    this.enabled = !1; clearInterval(this.data); this.data = null; 
+                } else {
+                    this.enabled = !0;
+                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/d`, val: Math.floor(Math.random() * 1000000) });
+                    }, 200);
+                }
+            }
+        }, {
+            name: "Flood Alert Box",
+            description: "Makes the alert box filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(userInput) {
+                function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
+                getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
+                    if (data != null) {
+                        const playerName = Object.keys(data)[0];
+                        if (userInput) {
+                            const id = "1,723,583,989,363";
+                            const repeatedText = new Array(1700).fill(userInput).join(" ");
+                            getReactOwner().stateNode.props.liveGameController.setVal({
+                                path: `c/${getReactOwner().stateNode.props.client.name}/tat`,
+                                val: `${playerName}:${id}${repeatedText}`
+                            });
+                        }
+                    }
+                });
+            }
+        }, {
+            name: "Send Ad Text",
+            description: "Sends a load of text to another player (This will override your blook!)",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let { stateNode: e } = Object.values(document.querySelector("body>div"))[1].children[0]._owner;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
+                }
+            }, { name: "Text", type: "text" }],
+            run: async function(player, e) {
+                let t2 = Object.values(document.querySelector("body>div"))[1].children[0]._owner.stateNode;
+                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
+                t2.props.client.blook = repeatedText;
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/b`, val: repeatedText });
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/tat`, val: `${player}:196` });
+            }
+        }, {
+            name: "Set Host Screen Text",
+            description: "Makes the whole host screen filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(e) {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({
+                    path: `c/${a.props.client.name}/d`,
+                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
+                });
+            }
+        }, {
+            name: "Set Host Screen Green",
+            description: "Fills the host screen with green characters",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (this.enabled) {
+                    this.enabled = !1; clearInterval(this.data); this.data = null;
+                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/d`, val: 0 });
+                } else {
+                    this.enabled = !0;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({
+                            path: `c/${a.props.client.name}/d`,
+                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
+                        });
+                    }, 25);
+                }
+            }
+        }, {
+            name: "Steal Player's Damage",
+            description: "Steals all of someone's damage",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetDmg = a[e].d || 0;
+                        t.props.liveGameController.setVal({
+                            path: `c/${t.props.client.name}`,
+                            val: { b: t.props.client.blook, d: targetDmg }
+                        });
+                    }
+                });
+            }
+        }, {
+            name: "Game Mode Changer",
+            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
+            inputs: [{
+                name: "Gamemode",
+                type: "options",
+                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+            }],
+            run: function(mode) {
+                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (stateNode && stateNode.props && stateNode.props.client) {
+                    stateNode.props.client.type = mode;
+                    stateNode.forceUpdate();
+                }
             }
         }],
         dinos: [{
@@ -3447,7 +4187,155 @@
                     e.style.color = players[p].ic ? "#ff0000" : "#00ff00";
                 });
             }
+        }, {
+            name: "Player Swapper",
+            description: "Swaps your stats and identity with another player",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetData = a[e];
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.setState({ fossils: targetData.f || 0 });
+                    }
+                });
+            }
+        }, {
+            name: "Leaderboard Scrambler",
+            description: "Rapidly randomizes your score to scramble the host's leaderboard",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                if(this.enabled) { 
+                    this.enabled = !1; clearInterval(this.data); this.data = null; 
+                } else {
+                    this.enabled = !0;
+                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/f`, val: Math.floor(Math.random() * 1000000) });
+                    }, 200);
+                }
+            }
+        }, {
+            name: "Flood Alert Box",
+            description: "Makes the alert box filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(userInput) {
+                function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
+                getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
+                    if (data != null) {
+                        const playerName = Object.keys(data)[0];
+                        if (userInput) {
+                            const id = "1,723,583,989,363";
+                            const repeatedText = new Array(1700).fill(userInput).join(" ");
+                            getReactOwner().stateNode.props.liveGameController.setVal({
+                                path: `c/${getReactOwner().stateNode.props.client.name}/tat`,
+                                val: `${playerName}:${id}${repeatedText}`
+                            });
+                        }
+                    }
+                });
+            }
+        }, {
+            name: "Send Ad Text",
+            description: "Sends a load of text to another player (This will override your blook!)",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let { stateNode: e } = Object.values(document.querySelector("body>div"))[1].children[0]._owner;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
+                }
+            }, { name: "Text", type: "text" }],
+            run: async function(player, e) {
+                let t2 = Object.values(document.querySelector("body>div"))[1].children[0]._owner.stateNode;
+                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
+                t2.props.client.blook = repeatedText;
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/b`, val: repeatedText });
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/tat`, val: `${player}:196` });
+            }
+        }, {
+            name: "Set Host Screen Text",
+            description: "Makes the whole host screen filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(e) {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({
+                    path: `c/${a.props.client.name}/f`,
+                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
+                });
+            }
+        }, {
+            name: "Set Host Screen Green",
+            description: "Fills the host screen with green characters",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (this.enabled) {
+                    this.enabled = !1; clearInterval(this.data); this.data = null;
+                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/f`, val: a.state.fossils });
+                } else {
+                    this.enabled = !0;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({
+                            path: `c/${a.props.client.name}/f`,
+                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
+                        });
+                    }, 25);
+                }
+            }
+        }, {
+            name: "Steal Player's Fossils",
+            description: "Steals all of someone's fossils",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetFossils = a[e].f || 0;
+                        t.setState({ fossils: t.state.fossils + targetFossils });
+                        t.props.liveGameController.setVal({
+                            path: `c/${t.props.client.name}`,
+                            val: { b: t.props.client.blook, f: t.state.fossils, ic: t.state.isCheating }
+                        });
+                    }
+                });
+            }
+        }, {
+            name: "Game Mode Changer",
+            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
+            inputs: [{
+                name: "Gamemode",
+                type: "options",
+                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+            }],
+            run: function(mode) {
+                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (stateNode && stateNode.props && stateNode.props.client) {
+                    stateNode.props.client.type = mode;
+                    stateNode.forceUpdate();
+                }
+            }
         }],
+        javascript
         doom: [{
             name: "Fill Deck",
             description: "Fills your deck with every maxed out card and artifact (Only works on towers page)",
@@ -4330,6 +5218,160 @@
                     cash: e
                 })
             }
+        }, {
+            name: "Player Swapper",
+            description: "Swaps your stats and identity with another player",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetData = a[e];
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.setState({ cash: targetData.ca || 0 });
+                    }
+                });
+            }
+        }, {
+            name: "Leaderboard Scrambler",
+            description: "Rapidly randomizes your score to scramble the host's leaderboard",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                if(this.enabled) { 
+                    this.enabled = !1; clearInterval(this.data); this.data = null; 
+                } else {
+                    this.enabled = !0;
+                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/ca`, val: Math.floor(Math.random() * 1000000) });
+                    }, 200);
+                }
+            }
+        }, {
+            name: "Flood Alert Box",
+            description: "Makes the alert box filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(userInput) {
+                function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
+                getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
+                    if (data != null) {
+                        const playerName = Object.keys(data)[0];
+                        if (userInput) {
+                            const id = "1,723,583,989,363";
+                            const repeatedText = new Array(1700).fill(userInput).join(" ");
+                            getReactOwner().stateNode.props.liveGameController.setVal({
+                                path: `c/${getReactOwner().stateNode.props.client.name}/tat`,
+                                val: `${playerName}:${id}${repeatedText}`
+                            });
+                        }
+                    }
+                });
+            }
+        }, {
+            name: "Send Ad Text",
+            description: "Sends a load of text to another player (This will override your blook!)",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let { stateNode: e } = Object.values(document.querySelector("body>div"))[1].children[0]._owner;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
+                }
+            }, { name: "Text", type: "text" }],
+            run: async function(player, e) {
+                let t2 = Object.values(document.querySelector("body>div"))[1].children[0]._owner.stateNode;
+                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
+                t2.props.client.blook = repeatedText;
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/b`, val: repeatedText });
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/tat`, val: `${player}:196` });
+            }
+        }, {
+            name: "Set Host Screen Text",
+            description: "Makes the whole host screen filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(e) {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({
+                    path: `c/${a.props.client.name}/ca`,
+                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
+                });
+            }
+        }, {
+            name: "Set Host Screen Green",
+            description: "Fills the host screen with green characters",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (this.enabled) {
+                    this.enabled = !1; clearInterval(this.data); this.data = null;
+                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/ca`, val: a.state.cash });
+                } else {
+                    this.enabled = !0;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({
+                            path: `c/${a.props.client.name}/ca`,
+                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
+                        });
+                    }, 25);
+                }
+            }
+        }, {
+            name: "Crash Host (Factory)",
+            description: "Crashes the Host's Game",
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/ca/t`, val: "t" });
+            }
+        }, {
+            name: "Steal Player's Cash",
+            description: "Steals all of someone's cash",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetCash = a[e].ca || 0;
+                        t.setState({ cash: t.state.cash + targetCash });
+                        t.props.liveGameController.setVal({
+                            path: `c/${t.props.client.name}`,
+                            val: { b: t.props.client.blook, ca: t.state.cash }
+                        });
+                    }
+                });
+            }
+        }, {
+            name: "Game Mode Changer",
+            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
+            inputs: [{
+                name: "Gamemode",
+                type: "options",
+                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+            }],
+            run: function(mode) {
+                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (stateNode && stateNode.props && stateNode.props.client) {
+                    stateNode.props.client.type = mode;
+                    stateNode.forceUpdate();
+                }
+            }
         }],
         fishing: [{
             name: "Always Frenzy",
@@ -4746,6 +5788,160 @@
                             f: ["Crab", "Jellyfish", "Frog", "Pufferfish", "Octopus", "Narwhal", "Megalodon", "Blobfish", "Baby Shark"][Math.floor(9 * Math.random())]
                         }
                     })
+            }
+        }, {
+            name: "Player Swapper",
+            description: "Swaps your stats and identity with another player",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetData = a[e];
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.setState({ weight: targetData.w || 0, weight2: targetData.w || 0 });
+                    }
+                });
+            }
+        }, {
+            name: "Leaderboard Scrambler",
+            description: "Rapidly randomizes your score to scramble the host's leaderboard",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                if(this.enabled) { 
+                    this.enabled = !1; clearInterval(this.data); this.data = null; 
+                } else {
+                    this.enabled = !0;
+                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/w`, val: Math.floor(Math.random() * 1000000) });
+                    }, 200);
+                }
+            }
+        }, {
+            name: "Flood Alert Box",
+            description: "Makes the alert box filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(userInput) {
+                function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
+                getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
+                    if (data != null) {
+                        const playerName = Object.keys(data)[0];
+                        if (userInput) {
+                            const id = "1,723,583,989,363";
+                            const repeatedText = new Array(1700).fill(userInput).join(" ");
+                            getReactOwner().stateNode.props.liveGameController.setVal({
+                                path: `c/${getReactOwner().stateNode.props.client.name}/tat`,
+                                val: `${playerName}:${id}${repeatedText}`
+                            });
+                        }
+                    }
+                });
+            }
+        }, {
+            name: "Send Ad Text",
+            description: "Sends a load of text to another player (This will override your blook!)",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let { stateNode: e } = Object.values(document.querySelector("body>div"))[1].children[0]._owner;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
+                }
+            }, { name: "Text", type: "text" }],
+            run: async function(player, e) {
+                let t2 = Object.values(document.querySelector("body>div"))[1].children[0]._owner.stateNode;
+                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
+                t2.props.client.blook = repeatedText;
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/b`, val: repeatedText });
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/tat`, val: `${player}:196` });
+            }
+        }, {
+            name: "Set Host Screen Text",
+            description: "Makes the whole host screen filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(e) {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({
+                    path: `c/${a.props.client.name}/w`,
+                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
+                });
+            }
+        }, {
+            name: "Set Host Screen Green",
+            description: "Fills the host screen with green characters",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (this.enabled) {
+                    this.enabled = !1; clearInterval(this.data); this.data = null;
+                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/w`, val: a.state.weight });
+                } else {
+                    this.enabled = !0;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({
+                            path: `c/${a.props.client.name}/w`,
+                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
+                        });
+                    }, 25);
+                }
+            }
+        }, {
+            name: "Crash Host (Fishing)",
+            description: "Crashes the Host's Game",
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/w/t`, val: "t" });
+            }
+        }, {
+            name: "Steal Player's Weight",
+            description: "Steals all of someone's weight",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetWeight = a[e].w || 0;
+                        t.setState({ weight: t.state.weight + targetWeight, weight2: t.state.weight2 + targetWeight });
+                        t.props.liveGameController.setVal({
+                            path: `c/${t.props.client.name}`,
+                            val: { b: t.props.client.blook, w: t.state.weight, f: t.state.frenzy ? "Frenzy" : "" }
+                        });
+                    }
+                });
+            }
+        }, {
+            name: "Game Mode Changer",
+            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
+            inputs: [{
+                name: "Gamemode",
+                type: "options",
+                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+            }],
+            run: function(mode) {
+                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (stateNode && stateNode.props && stateNode.props.client) {
+                    stateNode.props.client.type = mode;
+                    stateNode.forceUpdate();
+                }
             }
         }],
         flappy: [{
@@ -5254,6 +6450,115 @@
 
                 setv(['g/t', 't']);
             }
+        }, {
+            name: "Player Swapper",
+            description: "Swaps your stats and identity with another player",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetData = a[e];
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.setState({ gold: targetData.g || 0, gold2: targetData.g || 0 });
+                    }
+                });
+            }
+        }, {
+            name: "Leaderboard Scrambler",
+            description: "Rapidly randomizes your score to scramble the host's leaderboard",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                if(this.enabled) { 
+                    this.enabled = !1; clearInterval(this.data); this.data = null; 
+                } else {
+                    this.enabled = !0;
+                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/g`, val: Math.floor(Math.random() * 1000000) });
+                    }, 200);
+                }
+            }
+        }, {
+            name: "Set Host Screen Text",
+            description: "Makes the whole host screen filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(e) {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({
+                    path: `c/${a.props.client.name}/g`,
+                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
+                });
+            }
+        }, {
+            name: "Set Host Screen Green",
+            description: "Fills the host screen with green characters",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (this.enabled) {
+                    this.enabled = !1; clearInterval(this.data); this.data = null;
+                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/g`, val: a.state.gold });
+                } else {
+                    this.enabled = !0;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({
+                            path: `c/${a.props.client.name}/g`,
+                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
+                        });
+                    }, 25);
+                }
+            }
+        }, {
+            name: "Steal Player's Gold",
+            description: "Steals all of someone's gold",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetGold = a[e].g || 0;
+                        t.setState({ gold: t.state.gold + targetGold, gold2: t.state.gold2 + targetGold });
+                        t.props.liveGameController.setVal({
+                            path: `c/${t.props.client.name}`,
+                            val: { b: t.props.client.blook, g: t.state.gold, tat: e + ":swap:0" }
+                        });
+                    }
+                });
+            }
+        }, {
+            name: "Game Mode Changer",
+            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
+            inputs: [{
+                name: "Gamemode",
+                type: "options",
+                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+            }],
+            run: function(mode) {
+                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (stateNode && stateNode.props && stateNode.props.client) {
+                    stateNode.props.client.type = mode;
+                    stateNode.forceUpdate();
+                }
+            }
         }],
         kingdom: [{
             name: "Choice ESP",
@@ -5425,564 +6730,159 @@
                     val: player + ":" + attack
                 });
             }
-        }],
-        extras: [{
-            name: "Toggle Invert Colors",
-            description: "Toggle between inverting and restoring colors on the page",
-            run: function() {
-                "invert()" == document.getElementsByTagName("html")[0].style.filter ? document.getElementsByTagName("html")[0].style.filter = "" : document.getElementsByTagName("html")[0].style.filter = "invert()",
-                    elems = document.querySelectorAll(" a, img, video");
-                for (let e = 0; e < elems.length; e++)
-                    ("A" == elems[e].nodeName && ("" != elems[e].style.background || "" != elems[e].style.backgroundImage) || "A" != elems[e].nodeName) && ("invert()" == elems[e].style.filter ? elems[e].style.filter = "" : elems[e].style.filter = "invert()")
-            }
         }, {
-            name: "Toggle Dark Mode",
-            description: "Toggles Dark Mode",
-            run: function() {
-                var e = document.createElement("iframe");
-                document.body.append(e),
-                    window.alert = e.contentWindow.alert.bind(window),
-                    e.remove(),
-                    ! function e() {
-                        let t = document.querySelectorAll("#nightify");
-                        if (t.length)
-                            t[0].parentNode.removeChild(t[0]);
-                        else {
-                            var a = document.getElementsByTagName("head")[0],
-                                o = document.createElement("style");
-                            o.setAttribute("type", "text/css"),
-                                o.setAttribute("id", "nightify"),
-                                o.appendChild(document.createTextNode(`html{-webkit-filter:invert(100%) hue-rotate(180deg) contrast(70%) !important; background: #222;} .line-content {background-color: #333;} html img{-webkit-filter:invert(100%) hue-rotate(0deg) contrast(100%) !important;}`)),
-                                a.appendChild(o)
-                        }
-                    }
-                    ()
-            }
-        }, {
-            name: "3D Page",
-            description: "Makes the page 3D",
-            run: function() {
-                var e = {
-                    menu: document.createElement("div"),
-                    limit: document.createElement("input"),
-                    gap: document.createElement("input"),
-                    sag: document.createElement("input"),
-                    fov: document.createElement("input"),
-                    flo: document.createElement("input"),
-                    off: document.createElement("input"),
-                    non: document.createElement("input"),
-                    end: document.createElement("input"),
-                    tgl: document.createElement("input"),
-                    cssStatic: document.createElement("style"),
-                    cssDynamic: document.createElement("style"),
-                    orientation: {
-                        yaw: 0,
-                        pitch: 0,
-                        roll: 0
-                    },
-                    mouseMove: function(t) {
-                        e.orientation.yaw = -(180 * Math.cos(Math.PI * t.clientX / innerWidth)) * e.limit.value,
-                            e.orientation.pitch = 180 * Math.cos(Math.PI * t.clientY / innerHeight) * e.limit.value,
-                            e.updateBody()
-                    },
-                    gyroMove: function(t) {
-                        innerWidth > innerHeight ? (e.orientation.yaw = -(t.alpha + t.beta), e.orientation.pitch = t.gamma - 90 * Math.sign(90 - Math.abs(t.beta))) : (e.orientation.yaw = -(t.alpha + t.gamma), e.orientation.pitch = t.beta - 90),
-                            e.updateBody()
-                    },
-                    updateOrigin: function(e) {
-                        document.body.style.transformOrigin = innerWidth / 2 + pageXOffset + "px " + (innerHeight / 2 + pageYOffset) + "px"
-                    },
-                    updateBody: function() {
-                        document.body.style.transform = "perspective(" + Math.pow(2, e.fov.value) + "px) translateZ(-" + e.gap.value + "px) rotateX(" + e.orientation.pitch + "deg) rotateY(" + e.orientation.yaw + "deg)"
-                    },
-                    updateCSS: function() {
-                        if (e.non.checked)
-                            e.cssDynamic.innerHTML = "";
-                        else if (e.off.checked)
-                            e.cssDynamic.innerHTML = "* { transform-style: preserve-3d; }";
-                        else {
-                            for (var t = 0; document.querySelector("body" + " > *".repeat(t)); t++);
-                            var a = e.gap.value / t,
-                                o = -Math.PI * e.sag.value / t;
-                            e.cssDynamic.innerHTML = ` * { transform: translateZ(${a}px) rotateX(${o}rad); transform-style: preserve-3d; transition: transform 1s; outline: 1px solid rgba(0, 0, 0, 0.0625); ${e.flo.checked ? "overflow: visible !important;" : ""} } *:hover { transform: translateZ(${2 * a}px) rotateX(${2 * o}rad); ${e.flo.checked ? "" : "overflow: visible;"} } `
-                        }
-                    },
-                    toggle: function() {
-                        "active" == e.menu.className ? e.menu.removeAttribute("class") : e.menu.className = "active"
-                    },
-                    quit: function() {
-                        window.removeEventListener("deviceorientation", e.gyroMove),
-                            window.removeEventListener("mousemove", e.mouseMove),
-                            window.removeEventListener("scroll", e.updateOrigin),
-                            window.addEventListener("resize", e.updateOrigin),
-                            e.menu.remove(),
-                            e.cssStatic.remove(),
-                            e.cssDynamic.remove(),
-                            document.body.removeAttribute("style")
-                    },
-                    newRange: function(t, a, o, r, i, n, s) {
-                        e.menu.appendChild(t),
-                            t.type = "range",
-                            t.min = o,
-                            t.max = i,
-                            t.step = r,
-                            t.value = n,
-                            t.addEventListener("input", s),
-                            e.menu.appendChild(document.createElement("span")).innerHTML = a,
-                            e.menu.appendChild(document.createElement("br"))
-                    },
-                    newCheckbox: function(t, a, o) {
-                        e.menu.appendChild(t),
-                            t.type = "checkbox",
-                            t.addEventListener("click", o),
-                            e.menu.appendChild(document.createElement("span")).innerHTML = a,
-                            e.menu.appendChild(document.createElement("br"))
-                    },
-                    newButton: function(t, a, o) {
-                        e.menu.appendChild(t),
-                            t.type = "button",
-                            t.value = a,
-                            t.addEventListener("click", o)
-                    },
-                    init: function() {
-                        document.body.parentNode.appendChild(e.menu).id = "tri-menu",
-                            e.newRange(e.limit, "limit", 0, .03125, 1, .125, e.updateBody),
-                            e.newRange(e.gap, "gap / distance", 0, 32, 512, 128, function() {
-                                e.updateCSS(),
-                                    e.updateBody()
-                            }),
-                            e.newRange(e.sag, "sag", -.25, .03125, .25, 0, e.updateCSS),
-                            e.newRange(e.fov, "field of view", 7, 1, 13, 10, e.updateBody),
-                            e.newCheckbox(e.flo, "force overflow", e.updateCSS),
-                            e.flo.setAttribute("checked", ""),
-                            e.newCheckbox(e.off, "flatten layers", e.updateCSS),
-                            e.newCheckbox(e.non, "flatten everything", e.updateCSS),
-                            e.newButton(e.end, "Quit", e.quit),
-                            e.newButton(e.tgl, "≡", e.toggle),
-                            e.tgl.id = "tri-toggle",
-                            e.menu.appendChild(e.cssStatic).innerHTML = " html, body { transition-property: none; height: 100%25; width: 100%25; } html, html:hover, #tri-menu, #tri-menu > *, #tri-menu > *:hover { transform: none; outline: none; overflow: auto !important; float: none; } #tri-menu { position: fixed; top: 0; left: 0; background: rgba(0, 0, 0, 0.5); color: white; border: 1px solid rgba(255, 255, 255, 0.5);; border-radius: 0 0 16px 0; padding: 8px; transform: translate(-100%25, -100%25) translate(32px, 32px); } #tri-menu.active { transform: none; } #tri-toggle { position: absolute; bottom: 0; right: 0; height: 32px; width: 32px; background: transparent; color: white; border: none; cursor: pointer; } #tri-menu.active > #tri-toggle { background: white; color: black; border-radius: 8px 0 0 0; }",
-                            e.menu.appendChild(e.cssDynamic),
-                            e.updateCSS(),
-                            window.addEventListener("deviceorientation", e.gyroMove),
-                            window.addEventListener("mousemove", e.mouseMove),
-                            window.addEventListener("scroll", e.updateOrigin),
-                            window.addEventListener("resize", e.updateOrigin),
-                            window.scrollBy(0, 1)
-                    }
-                };
-                e.init()
-            }
-        }, {
-            name: "History Flooder",
-            description: "Floods browser history with specified amount of entries",
+            name: "Player Swapper",
+            description: "Swaps your stats and identity with another player",
             inputs: [{
-                name: "Amount",
-                type: "number"
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
             }],
             run: function(e) {
-                var t = e;
-                done = !1,
-                    C = window.location.href;
-                for (var a = 1; a <= t; a++)
-                    history.pushState(0, 0, a == t ? C : a.toString()), a == t && (done = !0);
-                !0 === done && alert("History flood successful! " + window.location.href + " now appears in your history " + t + (1 == t ? " time." : " times. "))
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetData = a[e];
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.setState({ progress: targetData.pr || 0 });
+                    }
+                });
             }
         }, {
-            name: "Auto Clicker",
-            description: "Automatically clicks for you. Press S to toggle.",
-            inputs: [{
-                name: "Click Delay",
-                type: "number"
-            }],
-            run: function(inputs) {
-                clicker: {
-                    "use strict";
-
-                    let clickInterval = null;
-                    let clickingEnabled = true;
-
-                    const {
-                        Number,
-                        self
-                    } = window;
-                    const milliseconds = Number.parseInt(inputs, 10);
-
-                    if (false === Number.isSafeInteger(milliseconds)) {
-                        self.alert("Input was not an integer");
-                        break clicker;
-                    }
-
-                    let clientX = 0,
-                        clientY = 0;
-                    const {
-                        document
-                    } = self;
-
-                    function startClicking() {
-                        clickInterval = self.setInterval(() => {
-                            document.elementFromPoint(clientX, clientY)?.click?.();
-                        }, milliseconds);
-                    }
-
-                    function stopClicking() {
-                        self.clearInterval(clickInterval);
-                        clickInterval = null;
-                    }
-
-                    startClicking();
-
-                    document.addEventListener("mousemove", event => {
-                        ({
-                            clientX,
-                            clientY
-                        } = event);
-                    }, {
-                        passive: true
-                    });
-
-                    self.addEventListener("keydown", event => {
-                        if (event.key === "s") {
-                            if (clickingEnabled) {
-                                stopClicking();
-                            } else {
-                                startClicking();
-                            }
-                            clickingEnabled = !clickingEnabled;
-                        }
-                    });
+            name: "Leaderboard Scrambler",
+            description: "Rapidly randomizes your score to scramble the host's leaderboard",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                if(this.enabled) { 
+                    this.enabled = !1; clearInterval(this.data); this.data = null; 
+                } else {
+                    this.enabled = !0;
+                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/pr`, val: Math.floor(Math.random() * 1000) });
+                    }, 200);
                 }
             }
         }, {
-            name: "Tab Cloaker",
-            description: "Changes the tab image and name",
-            inputs: [{
-                name: "Icon URL",
-                type: "text",
-            }, {
-                name: "Tab Title",
-                type: "text",
-            }],
-            run: function(e, t) {
-                var a = document.querySelector("link[rel*='icon']") || document.createElement("link");
-                a.type = "image/x-icon",
-                    a.rel = "shortcut icon",
-                    a.href = e || "https://www.blooket.com/favicon.ico",
-                    document.getElementsByTagName("head")[0].appendChild(a),
-                    document.title = t || "Blooket"
+            name: "Flood Alert Box",
+            description: "Makes the alert box filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(userInput) {
+                function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
+                getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
+                    if (data != null) {
+                        const playerName = Object.keys(data)[0];
+                        if (userInput) {
+                            const id = "1,723,583,989,363";
+                            const repeatedText = new Array(1700).fill(userInput).join(" ");
+                            getReactOwner().stateNode.props.liveGameController.setVal({
+                                path: `c/${getReactOwner().stateNode.props.client.name}/tat`,
+                                val: `${playerName}:${id}${repeatedText}`
+                            });
+                        }
+                    }
+                });
             }
-        }],
-        host: [{
-            name: "Host Any Gamemode",
-            description: "Change the selected gamemode on the host settings page",
+        }, {
+            name: "Send Ad Text",
+            description: "Sends a load of text to another player (This will override your blook!)",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let { stateNode: e } = Object.values(document.querySelector("body>div"))[1].children[0]._owner;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
+                }
+            }, { name: "Text", type: "text" }],
+            run: async function(player, e) {
+                let t2 = Object.values(document.querySelector("body>div"))[1].children[0]._owner.stateNode;
+                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
+                t2.props.client.blook = repeatedText;
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/b`, val: repeatedText });
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/tat`, val: `${player}:196` });
+            }
+        }, {
+            name: "Set Host Screen Text",
+            description: "Makes the whole host screen filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(e) {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({
+                    path: `c/${a.props.client.name}/pr`,
+                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
+                });
+            }
+        }, {
+            name: "Set Host Screen Green",
+            description: "Fills the host screen with green characters",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (this.enabled) {
+                    this.enabled = !1; clearInterval(this.data); this.data = null;
+                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/pr`, val: a.state.progress });
+                } else {
+                    this.enabled = !0;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({
+                            path: `c/${a.props.client.name}/pr`,
+                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
+                        });
+                    }, 25);
+                }
+            }
+        }, {
+            name: "Crash Host (Racing)",
+            description: "Crashes the Host's Game",
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/pr/t`, val: "t" });
+            }
+        }, {
+            name: "Steal Player's Progress",
+            description: "Steals all of someone's progress",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetProg = a[e].pr || 0;
+                        t.setState({ progress: t.state.progress + targetProg });
+                        t.props.liveGameController.setVal({
+                            path: `c/${t.props.client.name}`,
+                            val: { b: t.props.client.blook, pr: t.state.progress }
+                        });
+                    }
+                });
+            }
+        }, {
+            name: "Game Mode Changer",
+            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
             inputs: [{
                 name: "Gamemode",
                 type: "options",
-                options: ["Racing", "Classic", "Factory", "Cafe", "Defense2", "Defense", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
             }],
-            run: function(e) {
-                let t = document.createElement("iframe");
-                if (document.body.append(t), window.alert = t.contentWindow.alert.bind(window), window.prompt = t.contentWindow.prompt.bind(window), t.remove(), "/host/settings" != location.pathname)
-                    return alert("Run this script on the host settings page");
-                let {
-                    stateNode: a
-                } = Object.values(function e(t = document.querySelector("body>div")) {
-                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                    }
-                    ())[1].children[0]._owner;
-                a.setState({
-                    settings: {
-                        type: e
-                    }
-                })
-            }
-        }, {
-            name: "Toggle Spooky Theme",
-            description: "Toggles the spooky theme for Gold Quest",
-            run: function() {
-                (() => {
-                    const sn = Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner.stateNode;
-                    sn.season = sn.season ? 0 : 1;
-                    sn.render();
-                })();
-            }
-        }, {
-            name: "Freeze Timer",
-            description: "Makes the host timer stop ingame",
-            run: function() {
-                (() => {
-                    const {
-                        stateNode
-                    } = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner;
-                    clearInterval(stateNode.timerInterval);
-                    stateNode.timerInterval = setInterval(function() {
-                        stateNode?.getClients?.(!1);
-                    }, 4000);
-                })();
-            }
-        }, {
-            name: "Render Hours on Host Timer",
-            description: "Renders hours on host timer(use with remove host time limit). Can only render up to 24 hours.",
-            run: function() {
-                (() => {
-                    const format = "HH:mm:ss";
-                    const reg = '/(\\[[^\\[]*\\])|(\\\\)?(LTS|LT|LL?L?L?|l{1,4})/g';
-                    if (!RegExp.prototype.tes) {
-                        RegExp.prototype.tes = RegExp.prototype.test;
-                    }
-                    RegExp.prototype.test = function(a) {
-                        if (a == "mm:ss" && this.toString() == reg) {
-                            return !0;
-                        }
-                        return RegExp.prototype.tes.apply(this, arguments);
-                    }
-                    if (!String.prototype.rep) {
-                        String.prototype.rep = String.prototype.replace;
-                    }
-                    String.prototype.replace = function(a, b) {
-                        if (this == "mm:ss" && a.toString() == reg) {
-                            return format;
-                        }
-                        return String.prototype.rep.apply(this, arguments);
-                    }
-                })();
-            }
-        }, {
-            name: "View Lobbychat Logs",
-            description: "View messages players type in chat",
-            run: function() {
-                function reactHandler() {
-                    return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner;
+            run: function(mode) {
+                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (stateNode && stateNode.props && stateNode.props.client) {
+                    stateNode.props.client.type = mode;
+                    stateNode.forceUpdate();
                 }
-
-                document.addEventListener("keydown", function(e) {
-                    if (e.key === "Shift" && e.code === "ShiftRight") {
-                        c.style.display = c.style.display === "none" ? "block" : "none";
-                    }
-                });
-
-                const c = document.createElement("div");
-                c.className = "chat-box";
-                document.body.appendChild(c);
-                const h = document.createElement("div");
-                h.className = "chat-header";
-                h.textContent = "Chat Logs (RSHIFT to hide)";
-                c.appendChild(h);
-                const b = document.createElement("div");
-                b.className = "chat-body";
-                c.appendChild(b);
-
-                function a(e) {
-                    const t = document.createElement("div");
-                    t.textContent = e;
-                    b.appendChild(t);
-                    b.scrollTop = b.scrollHeight;
-                }
-
-                c.style.position = "fixed";
-                c.style.bottom = "20px";
-                c.style.right = "20px";
-                c.style.width = "300px";
-                c.style.height = "400px";
-                c.style.backgroundColor = "#fff";
-                c.style.border = "1px solid #ccc";
-                c.style.boxShadow = "0px 0px 10px rgba(0, 0, 0, 0.2)";
-                c.style.display = "block";
-
-                b.style.height = "360px";
-                b.style.overflowY = "scroll";
-                b.style.padding = "10px";
-
-                h.addEventListener("click", () => {
-                    b.classList.toggle("open");
-                });
-
-                var da = reactHandler().stateNode.props.liveGameController._liveApp.database()._delegate._repoInternal.server_.onDataUpdate_;
-
-                function handleChat(e, t) {
-                    if (t != null) {
-                        if (e.includes("/msg")) {
-                            t?.msg && (console.log(t.msg), a(e.split("/")[2] + ": " + t.msg));
-                        }
-                    }
-                }
-
-                reactHandler().stateNode.props.liveGameController._liveApp.database()._delegate._repoInternal.server_.onDataUpdate_ = function(e, t, a, n) {
-                    console.log(e, t, a, n);
-                    handleChat(e, t);
-                    da(e, t, a, n);
-                };
-
-                window.logsv = false;
-
-                function onsv(e) {
-                    if (window.logsv) {
-                        a("Path: " + e.path.split("/").splice(2, 2).join("/") + " Val: " + ((typeof e.val === 'object') ? JSON.stringify(e.val) : e.val));
-                    }
-                }
-
-                var orgsv = reactHandler().stateNode.props.liveGameController.setVal;
-                reactHandler().stateNode.props.liveGameController.setVal = function() {
-                    onsv.apply(this, arguments);
-                    orgsv.apply(this, arguments);
-                };
-
-                reactHandler().stateNode.props.liveGameController._liveApp.database().ref(`${reactHandler().stateNode.props.client.hostId}`).on("value", e => {});
-                a("Lobbychat successfully loaded!");
-
-                function app() {
-                    c.style.wordWrap = "break-word";
-                }
-
-                app();
-            }
-        }, {
-            name: "Remove Host Time Limit",
-            description: "Removes the host time limit",
-            run: function() {
-                (() => {
-                    const sn = Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner.stateNode;
-                    sn.onAmountUpdate = function(t) {
-                        let settings = sn.state.settings;
-                        settings.amount = parseInt(t.target.value);
-                        sn.setState({
-                            settings
-                        });
-                    }
-                })();
-            }
-        }, {
-            name: "Free Player Slots",
-            description: "Allows more players to join if the game is full",
-            run: async () => {
-                let i = document.createElement('iframe');
-                document.body.append(i);
-                const alert = i.contentWindow.alert.bind(window);
-                i.remove();
-                const stateNode = Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner.stateNode;
-                const players = await stateNode.props.liveGameController.getDatabaseVal("c");
-                let freed = 0;
-                if (!stateNode.state.blockedUsers) {
-                    stateNode.state.blockedUsers = [];
-                }
-                async function wait(time) {
-                    return new Promise(e => {
-                        setTimeout(e, time);
-                    });
-                }
-                async function blockUser(name) {
-                    if (stateNode.state.blockedUsers.includes(name)) {
-                        return;
-                    }
-                    const res = await fetch("https://fb.blooket.com/c/firebase/block", {
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        method: "POST",
-                        body: JSON.stringify({
-                            g: stateNode.props.host.id,
-                            u: name
-                        }),
-                        credentials: "include"
-                    });
-                    if (res.status !== 200) {
-                        return;
-                    }
-                    stateNode.state.blockedUsers.push(name);
-                    freed++;
-                    if (freed % parseInt("15") == 0) {
-                        await wait(600);
-                    }
-                    C.alerts?.[0].addLog("Freed user: " + name);
-                }
-                for (let i in players) {
-                    await blockUser(i);
-                }
-                alert(`Freed slots: ${freed}`);
-            }
-        }, {
-            name: "Realtime Updates",
-            description: "Makes leaderboard updates happen in real-time.",
-            run: async () => {
-                const stateNode = () => Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                (await stateNode().props.liveGameController.getDatabaseRef("")).on("value", e => stateNode()?.getClients?.(!1));
-            }
-        }, {
-            name: "Anti-Flood",
-            description: "Prevents bots from flooding the game",
-            enabled: false,
-            data: null,
-            run: function() {
-                if (this.enabled) {
-                    return;
-                }
-
-                this.enabled = true;
-                this.data = setInterval(async () => {
-                    var iframe = document.createElement("iframe");
-                    document.body.append(iframe);
-                    window.confirm = iframe.contentWindow.confirm.bind(window);
-                    iframe.style.display = "none";
-
-                    try {
-                        let stateNode = Object.values(document.querySelector("#app > div > div"))[1].children[0]._owner.stateNode;
-                        var dbRef = await stateNode.props.liveGameController.getDatabaseRef("c");
-                        let currentClients = {},
-                            clientCounts = {};
-
-                        dbRef.on("value", snapshot => {
-                            var clients = snapshot.val() || {};
-                            var newClients = [];
-
-                            for (const key in clients) {
-                                if (!currentClients[key]) {
-                                    newClients.push(key);
-                                    clientCounts[key.replace(/[0-9]/g, "")] = (clientCounts[key.replace(/[0-9]/g, "")] || 0) + 1;
-                                }
-                            }
-
-                            currentClients = clients;
-
-                            for (const client of newClients) {
-                                if (currentClients[client].g || clientCounts[client.replace(/[0-9]/g, "")] > 1) {
-                                    stateNode.props.liveGameController.blockUser(client);
-                                    clientCounts[client.replace(/[0-9]/g, "")]--;
-                                }
-                            }
-                        });
-                    } catch (error) {
-                        console.error("An error occurred", error);
-                    }
-                }, 2000);
-            }
-        }, {
-            name: "Enable Mobile Hosting",
-            description: "Makes it so that you can host on mobile",
-            run: function() {
-                (function() {
-                    var metaViewport = document.querySelector('meta[name="viewport"]');
-                    if (metaViewport) {
-                        metaViewport.parentNode.removeChild(metaViewport);
-                    }
-                    var newMetaViewport = document.createElement('meta');
-                    newMetaViewport.name = 'viewport';
-                    newMetaViewport.content = 'width=1280, initial-scale=1';
-                    document.head.appendChild(newMetaViewport);
-                })();
-            }
-        }, {
-            name: "Kick All Players",
-            description: "Kicks all players from your game.",
-            run: async () => {
-                const sn = Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner.stateNode;
-                const db = await sn.props.liveGameController.getDatabaseVal("");
-                sn.props.liveGameController.setVal({
-                    path: "bu",
-                    val: Object.keys(db.c).reduce((a, b) => (a[b] = 1, a), db.bu ? db.bu : {})
-                });
-                sn.props.liveGameController.setVal({
-                    path: "c",
-                    val: {}
-                });
             }
         }],
         royale: [{
@@ -6011,6 +6911,169 @@
                 stateNode.startTime = performance.now() - a;
                 stateNode?.onAnswer?.(true, stateNode.props.client.question.correctAnswers[0]);
             }
+        }, {
+            name: "Player Swapper",
+            description: "Swaps your stats and identity with another player",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetData = a[e];
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                    }
+                });
+            }
+        }, {
+            name: "Leaderboard Scrambler",
+            description: "Rapidly randomizes your score to scramble the host's leaderboard",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                if(this.enabled) { 
+                    this.enabled = !1; clearInterval(this.data); this.data = null; 
+                } else {
+                    this.enabled = !0;
+                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/e`, val: Math.floor(Math.random() * 1000) });
+                    }, 200);
+                }
+            }
+        }, {
+            name: "Set Energy",
+            description: "Sets amount of energy you have",
+            inputs: [{ name: "Energy", type: "number" }],
+            run: function(e) {
+                var t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.setVal({
+                    path: `c/${t.props.client.name}/e`,
+                    val: e
+                });
+            }
+        }, {
+            name: "Flood Alert Box",
+            description: "Makes the alert box filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(userInput) {
+                function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
+                getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
+                    if (data != null) {
+                        const playerName = Object.keys(data)[0];
+                        if (userInput) {
+                            const id = "1,723,583,989,363";
+                            const repeatedText = new Array(1700).fill(userInput).join(" ");
+                            getReactOwner().stateNode.props.liveGameController.setVal({
+                                path: `c/${getReactOwner().stateNode.props.client.name}/tat`,
+                                val: `${playerName}:${id}${repeatedText}`
+                            });
+                        }
+                    }
+                });
+            }
+        }, {
+            name: "Send Ad Text",
+            description: "Sends a load of text to another player (This will override your blook!)",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let { stateNode: e } = Object.values(document.querySelector("body>div"))[1].children[0]._owner;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
+                }
+            }, { name: "Text", type: "text" }],
+            run: async function(player, e) {
+                let t2 = Object.values(document.querySelector("body>div"))[1].children[0]._owner.stateNode;
+                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
+                t2.props.client.blook = repeatedText;
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/b`, val: repeatedText });
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/tat`, val: `${player}:196` });
+            }
+        }, {
+            name: "Set Host Screen Text",
+            description: "Makes the whole host screen filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(e) {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({
+                    path: `c/${a.props.client.name}/e`,
+                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
+                });
+            }
+        }, {
+            name: "Set Host Screen Green",
+            description: "Fills the host screen with green characters",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (this.enabled) {
+                    this.enabled = !1; clearInterval(this.data); this.data = null;
+                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/e`, val: 0 }); // Fallback value
+                } else {
+                    this.enabled = !0;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({
+                            path: `c/${a.props.client.name}/e`,
+                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
+                        });
+                    }, 25);
+                }
+            }
+        }, {
+            name: "Crash Host (Royale)",
+            description: "Crashes the Host's Game",
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/e/t`, val: "t" });
+            }
+        }, {
+            name: "Steal Player's Energy",
+            description: "Steals energy from a player (DB side)",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetEnergy = a[e].e || 0;
+                        t.props.liveGameController.setVal({
+                            path: `c/${t.props.client.name}`,
+                            val: { b: t.props.client.blook, e: targetEnergy } // Set DB energy
+                        });
+                    }
+                });
+            }
+        }, {
+            name: "Game Mode Changer",
+            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
+            inputs: [{
+                name: "Gamemode",
+                type: "options",
+                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+            }],
+            run: function(mode) {
+                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (stateNode && stateNode.props && stateNode.props.client) {
+                    stateNode.props.client.type = mode;
+                    stateNode.forceUpdate();
+                }
+            }
         }],
         rush: [{
             name: "Set Blooks",
@@ -6029,7 +7092,7 @@
                         val: e
                     }) : t.props.liveGameController.setVal({
                         path: `c/${t.props.client.name}/bs`,
-                        val: numDefense
+                        val: e
                     })
             }
         }, {
@@ -6073,6 +7136,160 @@
                         path: `c/${t.props.client.name}/bs`,
                         val: largeNumber
                     });
+                }
+            }
+        }, {
+            name: "Player Swapper",
+            description: "Swaps your stats and identity with another player",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetData = a[e];
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.setState({ numBlooks: targetData.bs || 0 });
+                    }
+                });
+            }
+        }, {
+            name: "Leaderboard Scrambler",
+            description: "Rapidly randomizes your score to scramble the host's leaderboard",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                if(this.enabled) { 
+                    this.enabled = !1; clearInterval(this.data); this.data = null; 
+                } else {
+                    this.enabled = !0;
+                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/bs`, val: Math.floor(Math.random() * 100000) });
+                    }, 200);
+                }
+            }
+        }, {
+            name: "Flood Alert Box",
+            description: "Makes the alert box filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(userInput) {
+                function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
+                getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
+                    if (data != null) {
+                        const playerName = Object.keys(data)[0];
+                        if (userInput) {
+                            const id = "1,723,583,989,363";
+                            const repeatedText = new Array(1700).fill(userInput).join(" ");
+                            getReactOwner().stateNode.props.liveGameController.setVal({
+                                path: `c/${getReactOwner().stateNode.props.client.name}/tat`,
+                                val: `${playerName}:${id}${repeatedText}`
+                            });
+                        }
+                    }
+                });
+            }
+        }, {
+            name: "Send Ad Text",
+            description: "Sends a load of text to another player (This will override your blook!)",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let { stateNode: e } = Object.values(document.querySelector("body>div"))[1].children[0]._owner;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
+                }
+            }, { name: "Text", type: "text" }],
+            run: async function(player, e) {
+                let t2 = Object.values(document.querySelector("body>div"))[1].children[0]._owner.stateNode;
+                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
+                t2.props.client.blook = repeatedText;
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/b`, val: repeatedText });
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/tat`, val: `${player}:196` });
+            }
+        }, {
+            name: "Set Host Screen Text",
+            description: "Makes the whole host screen filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(e) {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({
+                    path: `c/${a.props.client.name}/bs`,
+                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
+                });
+            }
+        }, {
+            name: "Set Host Screen Green",
+            description: "Fills the host screen with green characters",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (this.enabled) {
+                    this.enabled = !1; clearInterval(this.data); this.data = null;
+                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/bs`, val: a.state.numBlooks });
+                } else {
+                    this.enabled = !0;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({
+                            path: `c/${a.props.client.name}/bs`,
+                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
+                        });
+                    }, 25);
+                }
+            }
+        }, {
+            name: "Crash Host (Rush)",
+            description: "Crashes the Host's Game",
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/bs/t`, val: "t" });
+            }
+        }, {
+            name: "Steal Player's Blooks",
+            description: "Steals all of someone's Blooks (Rush)",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetBlooks = a[e].bs || 0;
+                        t.setState({ numBlooks: t.state.numBlooks + targetBlooks });
+                        t.props.liveGameController.setVal({
+                            path: `c/${t.props.client.name}`,
+                            val: { b: t.props.client.blook, bs: t.state.numBlooks }
+                        });
+                    }
+                });
+            }
+        }, {
+            name: "Game Mode Changer",
+            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
+            inputs: [{
+                name: "Gamemode",
+                type: "options",
+                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+            }],
+            run: function(mode) {
+                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (stateNode && stateNode.props && stateNode.props.client) {
+                    stateNode.props.client.type = mode;
+                    stateNode.forceUpdate();
                 }
             }
         }],
@@ -6180,6 +7397,323 @@
                         toys: o
                     }))
                 })
+            }
+        }, {
+            name: "Player Swapper",
+            description: "Swaps your stats and identity with another player",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetData = a[e];
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
+                        t.setState({ toys: targetData.t || 0 });
+                    }
+                });
+            }
+        }, {
+            name: "Leaderboard Scrambler",
+            description: "Rapidly randomizes your score to scramble the host's leaderboard",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                if(this.enabled) { 
+                    this.enabled = !1; clearInterval(this.data); this.data = null; 
+                } else {
+                    this.enabled = !0;
+                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/t`, val: Math.floor(Math.random() * 1000000) });
+                    }, 200);
+                }
+            }
+        }, {
+            name: "Flood Alert Box",
+            description: "Makes the alert box filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(userInput) {
+                function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
+                getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
+                    if (data != null) {
+                        const playerName = Object.keys(data)[0];
+                        if (userInput) {
+                            const id = "1,723,583,989,363";
+                            const repeatedText = new Array(1700).fill(userInput).join(" ");
+                            getReactOwner().stateNode.props.liveGameController.setVal({
+                                path: `c/${getReactOwner().stateNode.props.client.name}/tat`,
+                                val: `${playerName}:${id}${repeatedText}`
+                            });
+                        }
+                    }
+                });
+            }
+        }, {
+            name: "Send Ad Text",
+            description: "Sends a load of text to another player (This will override your blook!)",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let { stateNode: e } = Object.values(document.querySelector("body>div"))[1].children[0]._owner;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
+                }
+            }, { name: "Text", type: "text" }],
+            run: async function(player, e) {
+                let t2 = Object.values(document.querySelector("body>div"))[1].children[0]._owner.stateNode;
+                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
+                t2.props.client.blook = repeatedText;
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/b`, val: repeatedText });
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/tat`, val: `${player}:196` });
+            }
+        }, {
+            name: "Set Host Screen Text",
+            description: "Makes the whole host screen filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(e) {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({
+                    path: `c/${a.props.client.name}/t`,
+                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
+                });
+            }
+        }, {
+            name: "Set Host Screen Green",
+            description: "Fills the host screen with green characters",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (this.enabled) {
+                    this.enabled = !1; clearInterval(this.data); this.data = null;
+                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/t`, val: a.state.toys });
+                } else {
+                    this.enabled = !0;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({
+                            path: `c/${a.props.client.name}/t`,
+                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
+                        });
+                    }, 25);
+                }
+            }
+        }, {
+            name: "Crash Host (Workshop)",
+            description: "Crashes the Host's Game",
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/t/t`, val: "t" });
+            }
+        }, {
+            name: "Steal Player's Toys",
+            description: "Steals all of someone's Toys",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetToys = a[e].t || 0;
+                        t.setState({ toys: t.state.toys + targetToys });
+                        t.props.liveGameController.setVal({
+                            path: `c/${t.props.client.name}`,
+                            val: { b: t.props.client.blook, t: t.state.toys }
+                        });
+                    }
+                });
+            }
+        }, {
+            name: "Game Mode Changer",
+            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
+            inputs: [{
+                name: "Gamemode",
+                type: "options",
+                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+            }],
+            run: function(mode) {
+                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (stateNode && stateNode.props && stateNode.props.client) {
+                    stateNode.props.client.type = mode;
+                    stateNode.forceUpdate();
+                }
+            }
+        }],
+        classic: [{
+            name: "Player Swapper",
+            description: "Swaps your stats and identity with another player",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: a[e] });
+                    }
+                });
+            }
+        }, {
+            name: "Leaderboard Scrambler",
+            description: "Rapidly randomizes your score to scramble the host's leaderboard",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                if(this.enabled) { 
+                    this.enabled = !1; clearInterval(this.data); this.data = null; 
+                } else {
+                    this.enabled = !0;
+                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/p`, val: Math.floor(Math.random() * 1000000) });
+                    }, 200);
+                }
+            }
+        }, {
+            name: "Set Points",
+            description: "Sets your points",
+            inputs: [{ name: "Points", type: "number" }],
+            run: function(e) {
+                var t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.setVal({
+                    path: `c/${t.props.client.name}/p`,
+                    val: e
+                });
+            }
+        }, {
+            name: "Flood Alert Box",
+            description: "Makes the alert box filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(userInput) {
+                function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
+                getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
+                    if (data != null) {
+                        const playerName = Object.keys(data)[0];
+                        if (userInput) {
+                            const id = "1,723,583,989,363";
+                            const repeatedText = new Array(1700).fill(userInput).join(" ");
+                            getReactOwner().stateNode.props.liveGameController.setVal({
+                                path: `c/${getReactOwner().stateNode.props.client.name}/tat`,
+                                val: `${playerName}:${id}${repeatedText}`
+                            });
+                        }
+                    }
+                });
+            }
+        }, {
+            name: "Send Ad Text",
+            description: "Sends a load of text to another player (This will override your blook!)",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let { stateNode: e } = Object.values(document.querySelector("body>div"))[1].children[0]._owner;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
+                }
+            }, { name: "Text", type: "text" }],
+            run: async function(player, e) {
+                let t2 = Object.values(document.querySelector("body>div"))[1].children[0]._owner.stateNode;
+                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
+                t2.props.client.blook = repeatedText;
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/b`, val: repeatedText });
+                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/tat`, val: `${player}:196` });
+            }
+        }, {
+            name: "Set Host Screen Text",
+            description: "Makes the whole host screen filled with text",
+            inputs: [{ name: "Text", type: "text" }],
+            run: function(e) {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({
+                    path: `c/${a.props.client.name}/p`,
+                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
+                });
+            }
+        }, {
+            name: "Set Host Screen Green",
+            description: "Fills the host screen with green characters",
+            type: "toggle",
+            enabled: !1,
+            data: null,
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (this.enabled) {
+                    this.enabled = !1; clearInterval(this.data); this.data = null;
+                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/p`, val: 0 }); // reset
+                } else {
+                    this.enabled = !0;
+                    this.data = setInterval(() => {
+                        a.props.liveGameController.setVal({
+                            path: `c/${a.props.client.name}/p`,
+                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
+                        });
+                    }, 25);
+                }
+            }
+        }, {
+            name: "Crash Host (Classic)",
+            description: "Crashes the Host's Game",
+            run: function() {
+                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/p/t`, val: "t" });
+            }
+        }, {
+            name: "Steal Player's Points",
+            description: "Steals points from a player",
+            inputs: [{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetPoints = a[e].p || 0;
+                        t.props.liveGameController.setVal({
+                            path: `c/${t.props.client.name}`,
+                            val: { b: t.props.client.blook, p: targetPoints }
+                        });
+                    }
+                });
+            }
+        }, {
+            name: "Game Mode Changer",
+            description: "Tricks your client into thinking it's in a different gamemode",
+            inputs: [{
+                name: "Gamemode",
+                type: "options",
+                options: ["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
+            }],
+            run: function(mode) {
+                let stateNode = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
+                if (stateNode && stateNode.props && stateNode.props.client) {
+                    stateNode.props.client.type = mode;
+                    stateNode.forceUpdate();
+                }
             }
         }],
         settings: [{
@@ -7417,9 +8951,12 @@
         }
     }
     const path = "https://raw.githubusercontent.com/CryptoDude3/Blooket-Cheats-Premium";
-   w("Alerts", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434255/alerts_dsucpi.png", C.alerts, !0),
+    
+    // Add "Classic" to the menu
+    w("Alerts", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434255/alerts_dsucpi.png", C.alerts, !0),
         w("Global", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434297/global_cq8tkv.webp", C.global)(),
         w('<span style="font-size: 18px">Host</span>', ['<img style="height: 60px; margin-left: -15px; margin-right: -10px" src="https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435147/image-removebg-preview_wljrdo.png">'], C.host, !0),
+        w("Classic", "https://ac.blooket.com/dashboard/949175a25e1a141b2c4d.svg", C.classic),
         w(`<span style="font-size: 18px">Pirate's Voyage</span>`, "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435445/download_ruzs9t.svg", C.voyage),
         w("Gold Quest", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434943/gold_srug2d.svg", C.gold),
         w("Cafe", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435594/images-removebg-preview_cd6kgf.png", C.cafe),
