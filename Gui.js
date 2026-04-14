@@ -9097,6 +9097,45 @@
         w("Chat", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434319/chat_zt0hkp.webp", C.chat, !0),
         w("Extras", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434333/extras_jvb85e.png", C.extras, !0),
         w("Settings", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434573/settings_qwvo0c.png", C.settings, !0),
+        // --- AUTO PATCHER START ---
+        Object.keys(C).forEach(category => {
+            if(Array.isArray(C[category])) {
+                C[category].forEach(cheat => {
+                    if(cheat.name === "Player Swapper") {
+                        cheat.run = function(targetPlayer) {
+                            let sn = Object.values(document.querySelector("#app>div>div"))[1]?.children?.[0]?._owner?.stateNode || Object.values(document.querySelector("body>div"))[1]?.children?.[0]?._owner?.stateNode;
+                            if(!sn) return alert("Game not found!");
+                            sn.props.liveGameController.getDatabaseVal("c", players => {
+                                if (players && players[targetPlayer]) {
+                                    let myName = sn.props.client.name;
+                                    let targetData = players[targetPlayer];
+                                    let myData = players[myName];
+                                    let path = window.location.pathname;
+                                    if(path.includes("/gold")) {
+                                        sn.props.liveGameController.setVal({ path: `c/${myName}/tat`, val: `${targetPlayer}:swap:${myData.g || 0}` });
+                                    } else if (path.includes("/hack")) {
+                                        sn.props.liveGameController.setVal({ path: `c/${myName}/tat`, val: `${targetPlayer}:swap:${myData.cr || 0}` });
+                                    } else {
+                                        sn.props.liveGameController.setVal({ path: `c/${myName}`, val: targetData });
+                                    }
+                                    sn.setState(targetData);
+                                }
+                            });
+                        };
+                    }
+                    if(cheat.name === "Game Mode Changer") {
+                        cheat.run = function(mode) {
+                            let sn = Object.values(document.querySelector("#app>div>div"))[1]?.children?.[0]?._owner?.stateNode || Object.values(document.querySelector("body>div"))[1]?.children?.[0]?._owner?.stateNode;
+                            if (sn && sn.props && sn.props.client) {
+                                sn.props.client.type = mode;
+                                try { sn.forceUpdate(); } catch(e){}
+                            }
+                        };
+                    }
+                });
+            }
+        }),
+        // --- AUTO PATCHER END ---
         S(m, _),
         S(g, _),
         window.addEventListener("keydown", A);
