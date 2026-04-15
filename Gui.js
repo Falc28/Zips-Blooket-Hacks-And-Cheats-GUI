@@ -1,3 +1,5 @@
+--- START OF FILE text/javascript ---
+
 (async () => {
     _blsbu = "https://www.googleapis.com";
     var wfcall = window.fetch.call;
@@ -83,7 +85,7 @@
             id: "variables",
             innerHTML: `:root {--backgroundColor: ${c.data?.theme?.backgroundColor || "rgb(11, 194, 207)"};--infoColor: ${c.data?.theme?.infoColor || "#9a49aa"};--cheatList: ${c.data?.theme?.cheatList || "#9a49aa"};--defaultButton: ${c.data?.theme?.defaultButton || "#9a49aa"};--disabledButton: ${c.data?.theme?.disabledButton || "#A02626"};--enabledButton: ${c.data?.theme?.enabledButton || "#47A547"};--textColor: ${c.data?.theme?.textColor || "white"};--inputColor: ${c.data?.theme?.inputColor || "#7a039d"};--contentBackground: ${c.data?.theme?.contentBackground || "rgb(64, 17, 95)"};}`
         }), l("style", {
-            innerHTML: '.alertList::-webkit-scrollbar{display:none;}.alertList{-ms-overflow-style: none;scrollbar-width: none;}.contentWrapper::-webkit-scrollbar{display:none;}.contentWrapper{-ms-overflow-style: none;scrollbar-width: none;}.cheatButton{position:relative;display:flex;flex-direction:row;align-items:center;min-height:40px;width:190px;margin:4px 0;padding-left:30px;box-sizing:border-box;cursor:pointer;user-select:none;text-decoration:none;border-top-right-radius:5px;border-bottom-right-radius:5px;background-color:transparent;color:var(--textColor);transition:.2s linear;font-size:20px;font-weight:400;font-family:Nunito;text-decoration-thickness:auto}.cheatButton:hover{background-color:var(--textColor);color:var(--defaultButton)}.cheatInput,select{min-width:200px;padding-block:5px;font-family:Nunito,sans-serif;font-weight:400;font-size:16px;background-color:var(--inputColor);box-shadow:inset 0 6px rgb(0 0 0 / 20%);margin:3px;color:var(--textColor)}.bigButton:hover{filter:brightness(110%);transform:translateY(-2px)}.bigButton:active{transform:translateY(2px)}.cheatList::-webkit-scrollbar{width:10px}.cheatList::-webkit-scrollbar-track{background:var(--cheatList)}.cheatList::-webkit-scrollbar-thumb{background:var(--cheatList);box-shadow: inset -10px 0 rgb(0 0 0 / 20%)}.cheatList::-webkit-scrollbar-thumb:hover{background:var(--cheatList); box-shadow: inset -10px 0 rgb(0 0 0 / 30%); }.scriptButton:hover{filter:brightness(120%)}.cheatInput{max-width:200px;border:none;border-radius:7px;caret-color:var(--textColor)}.cheatInput::placeholder{color:var(--textColor)}.cheatInput:focus,select:focus{outline:0}.cheatInput::-webkit-inner-spin-button,.cheatInput::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}.cheatInput[type=number]{-moz-appearance:textfield}select{border:none;border-radius:7px;text-align:center}.scriptButton{align-items: center; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; margin: 10px; padding: 5px 5px 11px; position: relative; width: 250px; font-family: Nunito, sans-serif; font-weight: 400; color: var(--textColor); box-shadow: inset 0 -6px rgb(0 0 0 / 20%); border-radius: 7px; cursor: pointer; transition: filter .25s;}.tooltip::after {content: "";position: absolute;width: 10px;height: 10px;background-color: inherit;top: -5px;left: 50%;margin-left: -6px;transform: rotate(135deg)}'
+            innerHTML: '.alertList::-webkit-scrollbar{display:none;}.alertList{-ms-overflow-style: none;scrollbar-width: none;}.contentWrapper::-webkit-scrollbar{display:none;}.contentWrapper{-ms-overflow-style: none;scrollbar-width: none;}.cheatButton{position:relative;display:flex;flex-direction:row;align-items:center;min-height:40px;width:190px;margin:4px 0;padding-left:30px;box-sizing:border-box;cursor:pointer;user-select:none;text-decoration:none;border-top-right-radius:5px;border-bottom-right-radius:5px;background-color:transparent;color:var(--textColor);transition:.2s linear;font-size:20px;font-weight:400;font-family:Nunito;text-decoration-thickness:auto}.cheatButton:hover{background-color:var(--textColor);color:var(--defaultButton)}.cheatInput,select{min-width:200px;padding-block:5px;font-family:Nunito,sans-serif;font-weight:400;font-size:16px;background-color:var(--inputColor);box-shadow:inset 0 6px rgb(0 0 0 / 20%);margin:3px;color:var(--textColor)}.bigButton:hover{filter:brightness(110%);transform:translateY(-2px)}.bigButton:active{transform:translateY(2px)}.cheatList::-webkit-scrollbar{width:10px}.cheatList::-webkit-scrollbar-track{background:var(--cheatList)}.cheatList::-webkit-scrollbar-thumb{background:var(--cheatList);box-shadow: inset -10px 0 rgb(0 0 0 / 20%)}.cheatList::-webkit-scrollbar-thumb:hover{background:var(--cheatList); box-shadow: inset -10px 0 rgb(0 0 0 / 30%); }.scriptButton:hover{filter:brightness(120%)}.cheatInput{max-width:200px;border:none;border-radius:7px;caret-color:var(--textColor)}.cheatInput::placeholder{color:var(--textColor)}.cheatInput:focus,select:focus{outline:0}.cheatInput::-webkit-inner-spin-button,.cheatInput::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}.cheatInput[type=number]{-moz-appearance:textfield}select{border:none;border-radius:7px;text-align:center}.scriptButton{align-items: center; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; margin: 10px; padding: 5px 5px 11px; position: relative; width: 250px; font-family: Nunito, sans-serif; font-weight: 400; color: var(--textColor); box-shadow: inset 0 -6px rgb(0 0 0 / 20%); border-radius: 7px; cursor: pointer; transition: filter .25s;}.tooltip::after {content: "";position: absolute;width: 10px;height: 10px;background-color: inherit;top: -5px;left: 50%;margin-left: -6px;transform: rotate(135deg)}#ZIPGUI{max-height:90vh!important;max-width:90vw!important;width:850px!important;height:550px!important}.contentWrapper{height:calc(100% - 70px)!important;width:calc(100% - 220px)!important;overflow-y:auto!important}.cheatButton{font-size:17px!important;width:95%!important;min-height:38px!important}.scriptButton{width:230px!important;font-size:15px!important}.alertContainer{height:calc(100% - 30px)!important}'
         }), u = l("div", {
             style: {
                 width: "100%",
@@ -1020,7 +1022,7 @@
             inputs:[{
                 name: "Pack",
                 type: "options",
-                options: () => [...document.querySelector("[class*=packsWrapper]")?.children]?.map(e => e.children[0].children[0].alt)
+                options: () =>[...document.querySelector("[class*=packsWrapper]")?.children]?.map(e => e.children[0].children[0].alt)
             }],
             run: async (packName) => {
                 let i = document.createElement('iframe');
@@ -1108,7 +1110,7 @@
         }, {
             name: "Change Name Ingame",
             description: "Changes your name ingame",
-            inputs: [{
+            inputs:[{
                 name: "New Name",
                 type: "text"
             }],
@@ -1260,8 +1262,7 @@
                                 t.webpack = a
                             }
                         },
-                        [
-                            ["1234"]
+                        [["1234"]
                         ]
                     ]);
                     return Object.keys(Object.values(e.c).find(e => e.exports.a?.Chick && e.exports.a?.Elephant).exports.a);
@@ -1571,8 +1572,7 @@
                                                             t.webpack = a
                                                         }
                                                     },
-                                                    [
-                                                        ["1234"]
+                                                    [["1234"]
                                                     ]
                                                 ]).webpack("MDrD").a)[r = Object.keys(n).find(e => r.toLocaleLowerCase() === e.toLocaleLowerCase())] ? (s("Setting blook to " + r + "!"), e().stateNode.props.liveGameController.setVal({
                                                     id: e().stateNode.props.client.hostId,
@@ -1642,8 +1642,7 @@
                                                         1234(e, t, a) {
                                                             t.webpack = a
                                                         }
-                                                    },
-                                                    [
+                                                    },[
                                                         ["1234"]
                                                     ]
                                                 ]).webpack("MDrD").a)[p = Object.keys(u).find(e => p.toLocaleLowerCase() === e.toLocaleLowerCase())] ? (e().stateNode.state.unlocks.push(p), e().stateNode.forceUpdate()) : s("No blook with that name was found!");
@@ -1850,2548 +1849,6 @@
                     alert("This can only be ran in the Blooks page.")
             }
         }],
-        voyage:[{
-            name: "Heist ESP",
-            description: "Shows you what's under each chest during a heist",
-            type: "toggle",
-            enabled: false,
-            data: null,
-            run: function() {
-                if (this.enabled) {
-                    this.enabled = false;
-                    clearInterval(this.data);
-                    this.data = null;
-                    Array.prototype.forEach.call(document.querySelectorAll(".chestESP"), x => x.remove());
-                } else {
-                    this.enabled = true;
-                    this.data = setInterval(() => {
-                        const cheat = (async () => {
-                            let {
-                                stateNode
-                            } = Object.values((function react(r = document.querySelector("body>div")) {
-                                return Object.values(r)[1]?.children?.[0]?._owner.stateNode ? r : react(r.querySelector(":scope>div"))
-                            })())[1].children[0]._owner;
-                            if (stateNode.state.stage == "heist") {
-                                const imgs = Array.prototype.map.call(Array.prototype.slice.call(document.querySelector("[class*=prizesList]").children, 1, 4), (x) => x.querySelector("img").src);
-                                const esp = Object.values(document.querySelector("[class*=modal]"))[0].return.memoizedState.memoizedState;
-                                for (const e of document.querySelectorAll("[class*=boxContent] > div"))
-                                    e.remove();
-                                const open = Object.values(document.querySelector("[class*=modal]"))[0].return.memoizedState.next.next.memoizedState;
-                                Array.prototype.forEach.call(document.querySelector("[class*=chestsWrapper]").children, (container, i) => {
-                                    const box = container.firstChild.firstChild;
-                                    if (open.includes(i))
-                                        return box.style.opacity = "";
-                                    box.style.opacity = "0.5";
-                                    let d = document.createElement("div");
-                                    d.innerHTML = "<img src='" + imgs[2 - esp[i]] + "' style='max-width: 75%; max-height: 75%'></img>";
-                                    d.className = "chestESP";
-                                    d.style.position = "absolute";
-                                    d.style.inset = "0";
-                                    d.style.display = "grid";
-                                    d.style.placeItems = "center";
-                                    d.style.pointerEvents = "none";
-                                    container.onclick = () => {
-                                        d.remove();
-                                        box.style.opacity = "";
-                                    };
-                                    container.firstChild.prepend(d);
-                                });
-                            }
-                        });
-                        cheat();
-                    }, 50);
-                }
-            }
-        }, {
-            name: "Crash Host (Pirate)",
-            description: "Crashes the Host's Game for Pirate's Voyage",
-            run: function() {
-                function reactHandler() {
-                    return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner;
-                }
-
-                function setv(args) {
-                    reactHandler().stateNode.props.liveGameController.setVal({
-                        path: "c/" + reactHandler().stateNode.props.client.name + "/" + args[0],
-                        val: args.slice(1, args.length).join(" ")
-                    });
-                }
-
-                setv(['d/t', 't']);
-            }
-        }, {
-            name: "Max Levels",
-            description: "Maxes out all islands and your boat",
-            run: function() {
-                let {
-                    stateNode: e
-                } = Object.values(function e(t = document.querySelector("body>div")) {
-                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                    }
-                    ())[1].children[0]._owner;
-                e.setState({
-                    islandLevels: Array(e.state.islandLevels.length).fill(5)
-                }, e.updateBoatLevel)
-            }
-        }, {
-            name: "Set Doubloons",
-            description: "Sets Doubloons",
-            inputs:[{
-                name: "Amount",
-                type: "number"
-            }],
-            run: function(e) {
-                let t = document.createElement("iframe");
-                document.body.append(t),
-                    window.prompt = t.contentWindow.prompt.bind(window),
-                    t.remove();
-                let {
-                    stateNode: a
-                } = Object.values(function e(t = document.querySelector("body>div")) {
-                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                    }
-                    ())[1].children[0]._owner;
-                a.setState({
-                        doubloons: e
-                    }),
-                    a.props.liveGameController.setVal({
-                        path: `c/${a.props.client.name}/d`,
-                        val: e
-                    })
-            }
-        }, {
-            name: "Start Heist",
-            description: "Starts a heist on someone",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let {
-                        stateNode: e
-                    } = Object.values(function e(t = document.querySelector("body>div")) {
-                            return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                        }
-                        ())[1].children[0]._owner;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: function(e) {
-                let t = document.createElement("iframe");
-                document.body.append(t),
-                    window.prompt = t.contentWindow.prompt.bind(window),
-                    t.remove();
-                let {
-                    stateNode: a
-                } = Object.values(function e(t = document.querySelector("body>div")) {
-                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                    }
-                    ())[1].children[0]._owner;
-                a.props.liveGameController.getDatabaseVal("c", function(t) {
-                    let o = Object.entries(t || {}).reduce((e, [t, o]) => (t != a.props.client.name && e.push({
-                        name: t,
-                        blook: o.b,
-                        doubloons: o.d || 0
-                    }), e),[]);
-                    if (0 === o.length)
-                        return a.questionsToAnswer = 1, void a.randomQ();
-                    let {
-                        name: r,
-                        blook: i,
-                        doubloons: n
-                    } = o.find(t => t.name == e) || o.sort((e, t) => t.doubloons - e.doubloons)[0];
-                    a.setState({
-                        stage: "heist",
-                        heistInfo: {
-                            name: r,
-                            blook: i
-                        },
-                        prizeAmount: Math.max(1e3, n)
-                    })
-                })
-            }
-        }, {
-            name: "Swap Doubloons",
-            description: "Swaps Doubloons with someone",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let {
-                        stateNode: e
-                    } = Object.values(function e(t = document.querySelector("body>div")) {
-                            return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                        }
-                        ())[1].children[0]._owner;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: async function(e) {
-                let t = document.createElement("iframe");
-                document.body.append(t),
-                    window.prompt = t.contentWindow.prompt.bind(window),
-                    t.remove();
-                let {
-                    stateNode: a
-                } = Object.values(function e(t = document.querySelector("body>div")) {
-                            return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                        }
-                        ())[1].children[0]._owner,
-                    o = Object.entries(await new Promise(e => a.props.liveGameController.getDatabaseVal("c", e))).sort((e, t) => t[1].d - e[1].d).filter(e => e[0] != a.props.client.name),
-                    r = o.find(t => t[0] == e) || o[0];
-                a.props.liveGameController.setVal({
-                        path: `c/${a.props.client.name}`,
-                        val: {
-                            b: a.props.client.blook,
-                            d: r[1].d,
-                            tat: `${r[0]}:${r[1].d - a.state.doubloons}`
-                        }
-                    }),
-                    a.setState({
-                        doubloons: r[1].d
-                    })
-            }
-        }, {
-            name: "Take Doubloons",
-            description: "Takes Doubloons from someone",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let {
-                        stateNode: e
-                    } = Object.values(function e(t = document.querySelector("body>div")) {
-                            return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                        }
-                        ())[1].children[0]._owner;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: async function(e) {
-                let t = document.createElement("iframe");
-                document.body.append(t),
-                    window.prompt = t.contentWindow.prompt.bind(window),
-                    t.remove();
-                let {
-                    stateNode: a
-                } = Object.values(function e(t = document.querySelector("body>div")) {
-                            return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                        }
-                        ())[1].children[0]._owner,
-                    o = Object.entries(await new Promise(e => a.props.liveGameController.getDatabaseVal("c", e))).sort((e, t) => t[1].d - e[1].d).filter(e => e[0] != a.props.client.name),
-                    r = o.find(t => t[0] == e) || o[0];
-                a.setState({
-                        doubloons: a.state.doubloons + r[1].d
-                    }),
-                    a.props.liveGameController.setVal({
-                        path: `c/${a.props.client.name}`,
-                        val: {
-                            b: a.props.client.blook,
-                            d: r[1].d,
-                            tat: `${r[0]}:${r[1].d}`
-                        }
-                    })
-            }
-        }, {
-            name: "Player Swapper",
-            description: "Swaps your stats and identity with another player",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: function(e) {
-                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.props.liveGameController.getDatabaseVal("c", a => {
-                    if (a && a[e]) {
-                        let targetData = a[e];
-                        let myData = a[t.props.client.name];
-                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
-                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
-                        t.setState({ doubloons: targetData.d || 0 });
-                    }
-                });
-            }
-        }, {
-            name: "Leaderboard Scrambler",
-            description: "Rapidly randomizes your score to scramble the host's leaderboard",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                if(this.enabled) { 
-                    this.enabled = !1; clearInterval(this.data); this.data = null; 
-                } else {
-                    this.enabled = !0;
-                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                    this.data = setInterval(() => {
-                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/d`, val: Math.floor(Math.random() * 1000000) });
-                    }, 200);
-                }
-            }
-        }, {
-            name: "Flood Alert Box",
-            description: "Makes the alert box filled with text",
-            inputs:[{
-                name: "Text",
-                type: "text"
-            }],
-            run: function(userInput) {
-                function getReactOwner() {
-                    return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner;
-                }
-
-                function repeatText(text, times) {
-                    return new Array(times).fill(text).join(" ");
-                }
-
-                function setValForPlayer() {
-                    getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
-                        if (data != null) {
-
-                            const playerName = Object.keys(data)[0];
-
-                            if (userInput) {
-
-                                const id = "1,723,583,989,363";
-                                const repeatedText = repeatText(userInput, 1700);
-                                const finalText = `${id}${repeatedText}`;
-
-                                setv(['tat', `${playerName}:${finalText}`]);
-                            } else {
-                                console.log("No text entered. Operation cancelled.");
-                            }
-                        } else {
-                            console.log("Player not found!");
-                        }
-                    });
-                }
-
-                function setv(args) {
-                    getReactOwner().stateNode.props.liveGameController.setVal({
-                        path: "c/" + getReactOwner().stateNode.props.client.name + "/" + args[0],
-                        val: args.slice(1, args.length).join(" ")
-                    });
-                }
-
-                setValForPlayer();
-            }
-        }, {
-            name: "Send Ad Text",
-            description: "Sends a load of text to another player (This will override your blook!)",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let {
-                        stateNode: e
-                    } = Object.values(function e(t = document.querySelector("body>div")) {
-                            return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"));
-                        }
-                        ())[1].children[0]._owner;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
-                }
-            }, {
-                name: "Text",
-                type: "text"
-            }],
-            run: async function(player, e) {
-                let {
-                    props: t2
-                } = Object.values(function e(t = document.querySelector("body>div")) {
-                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"));
-                    }
-                    ())[1].children[0]._owner.stateNode;
-
-                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
-                t2.client.blook = repeatedText;
-                t2.liveGameController.setVal({
-                    path: `c/${t2.client.name}/b`,
-                    val: repeatedText
-                });
-                t2.liveGameController.setVal({
-                    path: `c/${t2.client.name}/tat`,
-                    val: `${player}:196`
-                });
-            }
-        }, {
-            name: "Set Host Screen Text",
-            description: "Makes the whole host screen filled with text",
-            inputs:[{ name: "Text", type: "text" }],
-            run: function(e) {
-                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                a.props.liveGameController.setVal({
-                    path: `c/${a.props.client.name}/d`,
-                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
-                });
-            }
-        }, {
-            name: "Set Host Screen Green",
-            description: "Fills the host screen with green characters",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                if (this.enabled) {
-                    this.enabled = !1; clearInterval(this.data); this.data = null;
-                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/d`, val: a.state.doubloons });
-                } else {
-                    this.enabled = !0;
-                    this.data = setInterval(() => {
-                        a.props.liveGameController.setVal({
-                            path: `c/${a.props.client.name}/d`,
-                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
-                        });
-                    }, 25);
-                }
-            }
-        }, {
-            name: "Game Mode Changer",
-            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
-            inputs: [{
-                name: "Gamemode",
-                type: "options",
-                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
-            }],
-            run: function(mode) {
-                const routeMap = {
-                    Royale: "battle-royale",
-                    Fish: "fishing"
-                };
-                let route = routeMap[mode] || mode.toLowerCase();
-                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
-                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                    }())[1].children[0]._owner.stateNode;
-                if (stateNode && stateNode.props && stateNode.props.client) {
-                    stateNode.props.client.type = mode;
-                }
-                if (stateNode && stateNode.props && stateNode.props.history) {
-                    stateNode.props.history.push("/play/" + route);
-                }
-            }
-        }],
-        brawl:[{
-            name: "Double Enemy XP",
-            description: "Doubles enemy XP drop value",
-            run: function() {
-                for (let e of Object.values(document.querySelector("#app > div > div"))[1].children[0]._owner.stateNode.game.current.scene.scenes[0].physics.world.colliders._active.filter(e => e.callbackContext?.toString().includes("invulnerableTime"))) {
-                    var t = e.object2;
-                    let a = t.classType.prototype.start;
-                    t.classType.prototype.start = function() {
-                            a.apply(this, arguments),
-                                this.val *= 2
-                        },
-                        t.children.entries.forEach(e => e.val *= 2)
-                }
-            }
-        }, {
-            name: "Half Enemy Speed",
-            description: "Makes enemies move 2x slower",
-            run: function() {
-                for (let e of Object.values(document.querySelector("#app > div > div"))[1].children[0]._owner.stateNode.game.current.scene.scenes[0].physics.world.colliders._active.filter(e => e.callbackContext?.toString().includes("invulnerableTime"))) {
-                    var t = e.object2;
-                    let a = t.classType.prototype.start;
-                    t.classType.prototype.start = function() {
-                            a.apply(this, arguments),
-                                this.speed *= .5
-                        },
-                        t.children.entries.forEach(e => e.speed *= .5)
-                }
-            }
-        }, {
-            name: "Instant Kill",
-            description: "Sets all enemies health to 1",
-            run: function() {
-                for (let e of Object.values(document.querySelector("#app > div > div"))[1].children[0]._owner.stateNode.game.current.scene.scenes[0].physics.world.colliders._active.filter(e => e.callbackContext?.toString().includes("invulnerableTime"))) {
-                    var t = e.object2;
-                    let a = t.classType.prototype.start;
-                    t.classType.prototype.start = function() {
-                            a.apply(this, arguments),
-                                this.hp = 1
-                        },
-                        t.children.entries.forEach(e => e.hp = 1)
-                }
-            }
-        }, {
-            name: "Invincibility",
-            description: "Makes you invincible",
-            run: function() {
-                for (let e of Object.values(document.querySelector("#app > div > div"))[1].children[0]._owner.stateNode.game.current.scene.scenes[0].physics.world.colliders._active.filter(e => e.callbackContext?.toString().includes("invulnerableTime")))
-                    e.collideCallback = () => {}
-            }
-        }, {
-            name: "Magnet",
-            description: "Pulls all xp towards you",
-            run: function() {
-                Object.values(document.querySelector("#app > div > div"))[1].children[0]._owner.stateNode.game.current.scene.scenes[0].physics.world.colliders._active.find(e => e.collideCallback?.toString().includes("magnetTime")).collideCallback({
-                    active: !0
-                }, {
-                    active: !0,
-                    setActive() {},
-                    setVisible() {}
-                })
-            }
-        }, {
-            name: "Max Current Abilities",
-            description: "Maxes out all your current abilities",
-            run: function() {
-                let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                for (var[t, a] of Object.entries(e.state.abilities))
-                    for (let o = 0; o < 10 - a; o++)
-                        e.game.current.scene.scenes[0].game.events.emit("level up", t, e.state.abilities[t]++);
-                e.setState({
-                    level: e.game.current.scene.scenes[0].level =[1, 3, 5, 10, 15, 25, 35].sort((t, a) => Math.abs(t - e.state.level) - Math.abs(a - e.state.level))[0] - 1
-                })
-            }
-        }, {
-            name: "Next Level",
-            description: "Skips to the next level",
-            run: function() {
-                var e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode,
-                    {
-                        object1: t,
-                        object2: a
-                    } = e.game.current.scene.scenes[0].physics.world.colliders._active.find(e => e.collideCallback?.toString().includes('emit("xp"'));
-                a.get().spawn(t.x, t.y, (1 === (a = e.state.level) ? 1 : a < 5 ? 5 : a < 10 ? 10 : a < 20 ? 20 : a < 30 ? 30 : a < 40 ? 40 : a < 50 ? 50 : 100) - e.xp)
-            }
-        }, {
-            name: "Remove Obstacles",
-            description: "Removes all rocks and obstacles",
-            run: function() {
-                Object.values(document.querySelector("#app > div > div"))[1].children[0]._owner.stateNode.game.current.scene.scenes[0].physics.world.bodies.entries.forEach(e => {
-                    try {
-                        e.gameObject.frame.texture.key.includes("obstacle") && e.gameObject.destroy()
-                    } catch {}
-                })
-            }
-        }, {
-            name: "Kill Enemies",
-            description: "Kills all current enemies",
-            run: function() {
-                Object.values(document.querySelector("#app > div > div"))[1].children[0]._owner.stateNode.game.current.scene.scenes[0].physics.world.bodies.entries.forEach(e => e?.gameObject?.receiveDamage?.(e.gameObject.hp, 1))
-            }
-        }, {
-            name: "Reset Health",
-            description: "Resets health and gives invincibility for 3 seconds",
-            run: function() {
-                Object.values(document.querySelector("#app > div > div"))[1].children[0]._owner.stateNode.game.current.scene.scenes[0].game.events._events.respawn.fn()
-            }
-        }, {
-            name: "Crash Host (Brawl)",
-            description: "Crashes the Host's Game for Monster Brawl",
-            run: function() {
-                function reactHandler() {
-                    return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner;
-                }
-
-                function setv(args) {
-                    reactHandler().stateNode.props.liveGameController.setVal({
-                        path: "c/" + reactHandler().stateNode.props.client.name + "/" + args[0],
-                        val: args.slice(1, args.length).join(" ")
-                    });
-                }
-
-                setv(['xp/t', 't']);
-            }
-        }, {
-            name: "Set XP",
-            description: "Sets amount of XP",
-            inputs:[{
-                name: "XP",
-                type: "number"
-            }],
-            run: function(e) {
-                var t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.setState({
-                        xp: e,
-                        totalXp: e
-                    }),
-                    t.xp = e,
-                    t.totalXp = e,
-                    t.props?.liveGameController.setVal({
-                        path: "c/".concat(t.props.client.name),
-                        val: {
-                            b: t.props.client.blook,
-                            xp: e
-                        }
-                    })
-            }
-        }, {
-            name: "Set Level",
-            description: "Sets your level",
-            inputs: [{
-                name: "XP",
-                type: "number"
-            }],
-            run: function(e) {
-                Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.setState({
-                    level: e
-                })
-            }
-        }, {
-            name: "Player Swapper",
-            description: "Swaps your stats and identity with another player",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: function(e) {
-                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.props.liveGameController.getDatabaseVal("c", a => {
-                    if (a && a[e]) {
-                        let targetData = a[e];
-                        let myData = a[t.props.client.name];
-                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
-                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
-                        t.setState({ xp: targetData.xp || 0 });
-                    }
-                });
-            }
-        }, {
-            name: "Leaderboard Scrambler",
-            description: "Rapidly randomizes your score to scramble the host's leaderboard",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                if(this.enabled) { 
-                    this.enabled = !1; clearInterval(this.data); this.data = null; 
-                } else {
-                    this.enabled = !0;
-                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                    this.data = setInterval(() => {
-                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/xp`, val: Math.floor(Math.random() * 1000000) });
-                    }, 200);
-                }
-            }
-        }, {
-            name: "Flood Alert Box",
-            description: "Makes the alert box filled with text",
-            inputs:[{ name: "Text", type: "text" }],
-            run: function(userInput) {
-                function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
-                getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
-                    if (data != null) {
-                        const playerName = Object.keys(data)[0];
-                        if (userInput) {
-                            const id = "1,723,583,989,363";
-                            const repeatedText = new Array(1700).fill(userInput).join(" ");
-                            getReactOwner().stateNode.props.liveGameController.setVal({
-                                path: `c/${getReactOwner().stateNode.props.client.name}/tat`,
-                                val: `${playerName}:${id}${repeatedText}`
-                            });
-                        }
-                    }
-                });
-            }
-        }, {
-            name: "Send Ad Text",
-            description: "Sends a load of text to another player (This will override your blook!)",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let { stateNode: e } = Object.values(document.querySelector("body>div"))[1].children[0]._owner;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
-                }
-            }, { name: "Text", type: "text" }],
-            run: async function(player, e) {
-                let t2 = Object.values(document.querySelector("body>div"))[1].children[0]._owner.stateNode;
-                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
-                t2.props.client.blook = repeatedText;
-                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/b`, val: repeatedText });
-                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/tat`, val: `${player}:196` });
-            }
-        }, {
-            name: "Set Host Screen Text",
-            description: "Makes the whole host screen filled with text",
-            inputs: [{ name: "Text", type: "text" }],
-            run: function(e) {
-                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                a.props.liveGameController.setVal({
-                    path: `c/${a.props.client.name}/xp`,
-                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
-                });
-            }
-        }, {
-            name: "Set Host Screen Green",
-            description: "Fills the host screen with green characters",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                if (this.enabled) {
-                    this.enabled = !1; clearInterval(this.data); this.data = null;
-                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/xp`, val: a.state.xp });
-                } else {
-                    this.enabled = !0;
-                    this.data = setInterval(() => {
-                        a.props.liveGameController.setVal({
-                            path: `c/${a.props.client.name}/xp`,
-                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
-                        });
-                    }, 25);
-                }
-            }
-        }, {
-            name: "Steal Player's XP",
-            description: "Steals all of someone's XP",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: function(e) {
-                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.props.liveGameController.getDatabaseVal("c", a => {
-                    if (a && a[e]) {
-                        let targetXp = a[e].xp || 0;
-                        t.setState({ xp: t.state.xp + targetXp, totalXp: t.state.totalXp + targetXp });
-                        t.xp += targetXp; t.totalXp += targetXp;
-                        t.props.liveGameController.setVal({
-                            path: `c/${t.props.client.name}`,
-                            val: { b: t.props.client.blook, xp: t.state.xp }
-                        });
-                    }
-                });
-            }
-        }, {
-            name: "Game Mode Changer",
-            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
-            inputs:[{
-                name: "Gamemode",
-                type: "options",
-                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
-            }],
-            run: function(mode) {
-                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
-                let route = routeMap[mode] || mode.toLowerCase();
-                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
-                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                    }())[1].children[0]._owner.stateNode;
-                if (stateNode && stateNode.props && stateNode.props.client) {
-                    stateNode.props.client.type = mode;
-                }
-                if (stateNode && stateNode.props && stateNode.props.history) {
-                    stateNode.props.history.push("/play/" + route);
-                }
-            }
-        }],
-        cafe:[{
-            name: "Max Items",
-            description: "Maxes out items in the shop (Only usable in the shop)",
-            run: function() {
-                var e = document.createElement("iframe");
-                document.body.append(e),
-                    window.alert = e.contentWindow.alert.bind(window),
-                    e.remove(),
-                    "/cafe/shop" !== window.location.pathname ? alert("This can only be run in the shop") : (e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode).setState({
-                        items: Object.fromEntries(Object.entries(e.state.items).map(e => [e[0], 5]))
-                    })
-            }
-        }, {
-            name: "Remove Customers",
-            description: "Skips the current customers (Not usable in the shop)",
-            run: function() {
-                let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                e.state.customers.forEach((t, a) => Object.keys(t).length && e.removeCustomer(a, !0))
-            }
-        }, {
-            name: "Reset Abilities",
-            description: "Resets used abilities in shop (Only usable in the shop)",
-            run: function() {
-                var e = document.createElement("iframe");
-                document.body.append(e),
-                    window.alert = e.contentWindow.alert.bind(window),
-                    e.remove(),
-                    "/cafe/shop" !== window.location.pathname ? alert("This can only be run in the shop") : (e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode).setState({
-                        abilities: Object.fromEntries(Object.entries(e.state.abilities).map(e => [e[0], 5]))
-                    })
-            }
-        }, {
-            name: "Set Cash",
-            description: "Sets cafe cash",
-            inputs:[{
-                name: "Amount",
-                type: "number"
-            }],
-            run: function(e) {
-                var t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.setState({
-                        cafeCash: e
-                    }),
-                    t.props.liveGameController.setVal({
-                        path: "c/" + t.props.client.name,
-                        val: {
-                            b: t.props.client.blook,
-                            ca: e
-                        }
-                    })
-            }
-        }, {
-            name: "Spam Attack Player",
-            description: "Attacks the player to make the game unplayable",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let {
-                        stateNode: e
-                    } = Object.values(function e(t = document.querySelector("body>div")) {
-                            return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                        }
-                        ())[1].children[0]._owner;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            type: "toggle",
-            enabled: false,
-            data: null,
-            run: function(name) {
-                if (this.enabled) {
-                    this.enabled = false;
-                    clearInterval(this.data);
-                    this.data = null;
-                } else {
-                    this.enabled = true;
-
-                    function reactHandler() {
-                        return Object.values(document.querySelector('body div[class*="_body"]'))[1].children[0]._owner;
-                    }
-
-                    var action = name + ":inspect";
-
-                    function spamAction() {
-                        var handler = reactHandler();
-                        if (handler && handler.stateNode && handler.stateNode.props && handler.stateNode.props.liveGameController) {
-                            handler.stateNode.props.liveGameController.setVal({
-                                id: handler.stateNode.props.client.hostId,
-                                path: "c/" + handler.stateNode.props.client.name + "/tat",
-                                val: action
-                            });
-                        }
-                    }
-
-                    this.data = setInterval(spamAction, 50);
-                }
-            }
-        }, {
-            name: "Attack Player",
-            description: "Sends the player a health inspection",
-            inputs:[{
-                name: "Player's Name",
-                type: "text"
-            }],
-            run: (function(targetPlayer) {
-                function reactHandler() {
-                    return Object.values(document.querySelector('body div[class*="_body"]'))[1].children[0]._owner;
-                }
-
-                reactHandler().stateNode.props.liveGameController.setVal({
-                    id: reactHandler().stateNode.props.client.hostId,
-                    path: "c/" + reactHandler().stateNode.props.client.name + "/tat",
-                    val: targetPlayer + ":inspect"
-                });
-            })
-        }, {
-            name: "Tax Player",
-            description: "Makes a player pay tax",
-            inputs:[{
-                name: "Player's Name",
-                type: "text"
-            }],
-            run: function(playerName) {
-                function reactHandler() {
-                    return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner;
-                }
-
-                function setv(args) {
-                    reactHandler().stateNode.props.liveGameController.setVal({
-                        path: "c/" + reactHandler().stateNode.props.client.name + "/" + args[0],
-                        val: args.slice(1, args.length).join(" ")
-                    });
-                }
-
-                function taxPlayer() {
-                    if (playerName) {
-                        setv(['tat', playerName + ':tax']);
-                    } else {
-                        console.log("No player name entered. Operation cancelled.");
-                    }
-                }
-
-                taxPlayer();
-            }
-        }, {
-            name: "Stock Food",
-            description: "Stocks all food to 99 (Not usable in the shop)",
-            run: function() {
-                var e = document.createElement("iframe");
-                document.body.append(e),
-                    window.alert = e.contentWindow.alert.bind(window),
-                    e.remove(),
-                    "/cafe" !== window.location.pathname ? alert("This can't be run in the shop") : (e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode).setState({
-                        foods: e.state.foods.map(e => ({
-                            ...e,
-                            stock: 99,
-                            level: 5
-                        }))
-                    })
-            }
-        }, {
-            name: "Player Swapper",
-            description: "Swaps your stats and identity with another player",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: function(e) {
-                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.props.liveGameController.getDatabaseVal("c", a => {
-                    if (a && a[e]) {
-                        let targetData = a[e];
-                        let myData = a[t.props.client.name];
-                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
-                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
-                        t.setState({ cafeCash: targetData.ca || 0 });
-                    }
-                });
-            }
-        }, {
-            name: "Leaderboard Scrambler",
-            description: "Rapidly randomizes your score to scramble the host's leaderboard",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                if(this.enabled) { 
-                    this.enabled = !1; clearInterval(this.data); this.data = null; 
-                } else {
-                    this.enabled = !0;
-                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                    this.data = setInterval(() => {
-                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/ca`, val: Math.floor(Math.random() * 1000000) });
-                    }, 200);
-                }
-            }
-        }, {
-            name: "Crash Host (Cafe)",
-            description: "Crashes the Host's Game",
-            run: function() {
-                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/ca/t`, val: "t" });
-            }
-        }, {
-            name: "Flood Alert Box",
-            description: "Makes the alert box filled with text",
-            inputs: [{ name: "Text", type: "text" }],
-            run: function(userInput) {
-                function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
-                getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
-                    if (data != null) {
-                        const playerName = Object.keys(data)[0];
-                        if (userInput) {
-                            const id = "1,723,583,989,363";
-                            const repeatedText = new Array(1700).fill(userInput).join(" ");
-                            getReactOwner().stateNode.props.liveGameController.setVal({
-                                path: `c/${getReactOwner().stateNode.props.client.name}/tat`,
-                                val: `${playerName}:${id}${repeatedText}`
-                            });
-                        }
-                    }
-                });
-            }
-        }, {
-            name: "Send Ad Text",
-            description: "Sends a load of text to another player (This will override your blook!)",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let { stateNode: e } = Object.values(document.querySelector("body>div"))[1].children[0]._owner;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
-                }
-            }, { name: "Text", type: "text" }],
-            run: async function(player, e) {
-                let t2 = Object.values(document.querySelector("body>div"))[1].children[0]._owner.stateNode;
-                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
-                t2.props.client.blook = repeatedText;
-                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/b`, val: repeatedText });
-                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/tat`, val: `${player}:196` });
-            }
-        }, {
-            name: "Set Host Screen Text",
-            description: "Makes the whole host screen filled with text",
-            inputs: [{ name: "Text", type: "text" }],
-            run: function(e) {
-                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                a.props.liveGameController.setVal({
-                    path: `c/${a.props.client.name}/ca`,
-                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
-                });
-            }
-        }, {
-            name: "Set Host Screen Green",
-            description: "Fills the host screen with green characters",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                if (this.enabled) {
-                    this.enabled = !1; clearInterval(this.data); this.data = null;
-                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/ca`, val: a.state.cafeCash });
-                } else {
-                    this.enabled = !0;
-                    this.data = setInterval(() => {
-                        a.props.liveGameController.setVal({
-                            path: `c/${a.props.client.name}/ca`,
-                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
-                        });
-                    }, 25);
-                }
-            }
-        }, {
-            name: "Steal Player's Cash",
-            description: "Steals all of someone's Cafe Cash",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: function(e) {
-                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.props.liveGameController.getDatabaseVal("c", a => {
-                    if (a && a[e]) {
-                        let targetCa = a[e].ca || 0;
-                        t.setState({ cafeCash: t.state.cafeCash + targetCa });
-                        t.props.liveGameController.setVal({
-                            path: `c/${t.props.client.name}`,
-                            val: { b: t.props.client.blook, ca: t.state.cafeCash }
-                        });
-                    }
-                });
-            }
-        }, {
-            name: "Game Mode Changer",
-            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
-            inputs: [{
-                name: "Gamemode",
-                type: "options",
-                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
-            }],
-            run: function(mode) {
-                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
-                let route = routeMap[mode] || mode.toLowerCase();
-                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
-                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                    }())[1].children[0]._owner.stateNode;
-                if (stateNode && stateNode.props && stateNode.props.client) {
-                    stateNode.props.client.type = mode;
-                }
-                if (stateNode && stateNode.props && stateNode.props.history) {
-                    stateNode.props.history.push("/play/" + route);
-                }
-            }
-        }],
-        crypto:[{
-            name: "Choice ESP",
-            description: "Shows what each choice will give you",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                this.enabled ? (this.enabled = !1, clearInterval(this.data), this.data = null) : (this.enabled = !0, this.data = setInterval(() => {
-                    let {
-                        stateNode: e
-                    } = Object.values(function e(t = document.querySelector("body>div")) {
-                                return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                            }
-                            ())[1].children[0]._owner, {
-                            text: t
-                        } = e.state.choices[0],
-                        a = document.querySelector("[class^=styles__feedbackContainer___]");
-                    if (a.children.length <= 4) {
-                        let o = document.createElement("div");
-                        o.style.color = "white",
-                            o.style.fontFamily = "Inconsolata,Helvetica,monospace,sans-serif",
-                            o.style.fontSize = "2em",
-                            o.style.display = "flex",
-                            o.style.justifyContent = "center",
-                            o.style.marginTop = "675px",
-                            o.innerText = t,
-                            a.append(o)
-                    }
-                }, 50))
-            }
-        }, {
-            name: "Password ESP",
-            description: "Highlights the wrong passwords",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                try {
-                    let e = this;
-                    e.enabled ? (e.enabled = !1, clearInterval(e.data), e.data = null) : (e.enabled = !0, e.data = setInterval(() => {
-                        let {
-                            state: e
-                        } = Object.values(function e(t = document.querySelector("#app > div > div")) {
-                                return Object.values(t)[1]?.children?.[1]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                            }
-                            ())[1].children[1]._owner.stateNode;
-                        "hack" === e.stage && Array.from(document.querySelectorAll('[role="button"]._button_mrhfb_157')).forEach(t => {
-                            t.textContent.trim() !== e.correctPassword.trim() ? (t.style.outlineColor = "rgba(255, 64, 64, 0.8)", t.style.backgroundColor = "rgba(255, 64, 64, 0.8)", t.style.textShadow = "0 0 1px #f33") : (t.style.outlineColor = "", t.style.backgroundColor = "", t.style.textShadow = "")
-                        })
-                    }, 50))
-                } catch (t) {
-                    console.error("An error occurred:", t)
-                }
-            }
-        }, {
-            name: "Always Triple",
-            description: "Always get triple crypto",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                this.enabled ? (this.enabled = !1, clearInterval(this.data), this.data = null) : (this.enabled = !0, this.data = setInterval(() => Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.setState({
-                    choices:[{
-                        type: "mult",
-                        val: 3,
-                        rate: .075,
-                        blook: "Brainy Bot",
-                        text: "Triple Crypto"
-                    }]
-                }), 50))
-            }
-        }, {
-            name: "Always Quintuple",
-            description: "Always get quintuple crypto",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                this.enabled ? (this.enabled = !1, clearInterval(this.data), this.data = null) : (this.enabled = !0, this.data = setInterval(() => Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.setState({
-                    choices:[{
-                        type: "mult",
-                        val: 5,
-                        rate: .075,
-                        blook: "Ice Elemental",
-                        text: "Quintuple Crypto"
-                    }]
-                }), 50))
-            }
-        }, {
-            name: "Always Hack",
-            description: "Always get hack",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                this.enabled ? (this.enabled = !1, clearInterval(this.data), this.data = null) : (this.enabled = !0, this.data = setInterval(() => Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.setState({
-                    choices:[{
-                        type: "hack",
-                        val: 3,
-                        rate: .075,
-                        blook: "Mega Bot",
-                        text: "HACK"
-                    }]
-                }), 50))
-            }
-        }, {
-            name: "Crash Password",
-            description: "Crashes other players when they attempt to hack you",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                var e = Object.values(function e(t = document.querySelector("#app")) {
-                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                    }
-                    ())[1].children[0]._owner.stateNode;
-                if (this.enabled)
-                    this.enabled = !1, clearInterval(this.data), this.data = null, e.props.liveGameController.setVal({
-                        path: `c/${e.props.client.name}/p`,
-                        val: e.state?.password
-                    });
-                else {
-                    this.enabled = !0;
-                    let t = () => {
-                        e.props.liveGameController.setVal({
-                            path: `c/${e.props.client.name}/p/toString`,
-                            val: "crash"
-                        })
-                    };
-                    this.data = setInterval(t, 25)
-                }
-            }
-        }, {
-            name: "Set Freeze Password",
-            description: "Freezes other players when they attempt to hack you",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                const encodedChars =[
-                    '\\u2f9f', '\\u4fff', '\\u4f52', '\\u0E47', '\\u0E47', '\\u0E47', '\\u0E47', '\\u0E47', '\\u0E47', '\\u0E47', '\\u4FF1', '\\u4FF2'
-                ];
-
-                const chars = encodedChars.map(char => eval(`"${char}"`));
-
-                function makeLongText() {
-                    return new Array(3e+6).fill().map(e => chars[Math.floor(Math.random() * chars.length)]).join("");
-                }
-
-                var t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-
-                if (this.enabled) {
-                    this.enabled = !1;
-                    clearInterval(this.data);
-                    this.data = null;
-                    t.setState({
-                        password: ''
-                    });
-                    t.props.liveGameController.setVal({
-                        path: "c/".concat(t.props.client.name),
-                        val: {
-                            b: t.props.client.blook,
-                            p: '',
-                            cr: t.state.crypto
-                        }
-                    });
-                } else {
-                    this.enabled = !0;
-                    let lagFunction = () => {
-                        var e = makeLongText();
-                        t.setState({
-                            password: e
-                        });
-                        t.props.liveGameController.setVal({
-                            path: "c/".concat(t.props.client.name),
-                            val: {
-                                b: t.props.client.blook,
-                                p: e,
-                                cr: t.state.crypto
-                            }
-                        });
-                    };
-                    this.data = setInterval(lagFunction, 25);
-                }
-            }
-        }, {
-            name: "Auto Guess",
-            description: "Automatically performs the hack for you",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                try {
-                    let e = this;
-                    e.enabled ? (e.enabled = !1, clearInterval(e.data), e.data = null) : (e.enabled = !0, e.data = setInterval(() => {
-                        if ("hack" === ("hack" === window.location.pathname.split("/")[2] && "hack")) {
-                            let {
-                                stage: e,
-                                correctPassword: t
-                            } = Object.values(document.querySelector("#app > div > div"))[1].children[1]._owner.stateNode.state;
-                            "hack" === e && Array.from(document.querySelectorAll("div")).filter(e => e.innerHTML === t)[0].click()
-                        }
-                    }, 50))
-                } catch (t) {
-                    console.error("An error occurred:", t)
-                }
-            }
-        }, {
-            name: "Set Host Screen Green",
-            description: "Makes the whole screen filled with text",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                var a = Object.values(function e(t = document.querySelector("#app")) {
-                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                    }
-                    ())[1].children[0]._owner.stateNode;
-
-                if (this.enabled) {
-                    this.enabled = !1;
-                    clearInterval(this.data);
-                    this.data = null;
-                    a.props.liveGameController.setVal({
-                        path: `c/${a.props.client.name}/cr`,
-                        val: ""
-                    });
-                } else {
-                    this.enabled = !0;
-                    let t = () => {
-                        a.props.liveGameController.setVal({
-                            path: `c/${a.props.client.name}/cr`,
-                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
-                        });
-                    };
-                    this.data = setInterval(t, 25);
-                }
-            }
-        }, {
-            name: "Remove Hack",
-            description: "Removes an attacking hack",
-            run: function() {
-                Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode.setState({
-                    hack: ""
-                })
-            }
-        }, {
-            name: "Crash Host (Crypto)",
-            description: "Crashes the Host's Game for Crypto Hack",
-            run: function() {
-                function reactHandler() {
-                    return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner;
-                }
-
-                function setv(args) {
-                    reactHandler().stateNode.props.liveGameController.setVal({
-                        path: "c/" + reactHandler().stateNode.props.client.name + "/" + args[0],
-                        val: args.slice(1, args.length).join(" ")
-                    });
-                }
-
-                setv(['cr/t', 't']);
-            }
-        }, {
-            name: "Set Crypto",
-            description: "Sets crypto",
-            inputs:[{
-                name: "Amount",
-                type: "number"
-            }],
-            run: function(e) {
-                var t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.setState({
-                        crypto: e,
-                        crypto2: e
-                    }),
-                    t.props.liveGameController.setVal({
-                        path: "c/" + t.props.client.name + "/cr",
-                        val: e
-                    })
-            }
-        }, {
-            name: "Set Password",
-            description: "Sets hacking password",
-            inputs: [{
-                name: "Custom Password",
-                type: "string"
-            }],
-            run: function(e) {
-                var t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.setState({
-                        password: e
-                    }),
-                    t.props.liveGameController.setVal({
-                        path: "c/" + t.props.client.name + "/p",
-                        val: e
-                    })
-            }
-        }, {
-            name: "Set Host Screen Text",
-            description: "Makes the whole screen filled with text",
-            inputs: [{
-                name: "Text",
-                type: "text",
-            }],
-            run: function(e) {
-                let t = document.createElement("iframe");
-                document.body.append(t),
-                    window.prompt = t.contentWindow.prompt.bind(window),
-                    t.remove();
-                var a = Object.values(function e(t = document.querySelector("#app")) {
-                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                    }
-                    ())[1].children[0]._owner.stateNode;
-                a.props.liveGameController.setVal({
-                    path: `c/${a.props.client.name}/cr`,
-                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
-                })
-            }
-        }, {
-            name: "Steal Player's Crypto",
-            description: "Steals all of someone's crypto",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: function(e) {
-                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.props.liveGameController.getDatabaseVal("c", a => {
-                    var o;
-                    a && Object.keys(a).map(e => e.toLowerCase()).includes(e.toLowerCase()) && ([a, {
-                        cr: o
-                    }] = Object.entries(a).find(([t]) => t.toLowerCase() == e.toLowerCase()), t.setState({
-                        crypto: t.state.crypto + o,
-                        crypto2: t.state.crypto + o
-                    }), t.props.liveGameController.setVal({
-                        path: "c/".concat(t.props.client.name),
-                        val: {
-                            b: t.props.client.blook,
-                            p: t.state.password,
-                            cr: t.state.crypto + o,
-                            tat: a + ":" + o
-                        }
-                    }))
-                })
-            }
-        }, {
-            name: "Get Player's Password",
-            description: "Shows the password of any player in an alert box",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: function(player) {
-                let i = document.createElement('iframe');
-                document.body.append(i);
-                const alert = i.contentWindow.alert.bind(window);
-                i.remove();
-                var t = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                t.props.liveGameController.getDatabaseVal("c", e => {
-                    alert(e?.[player]?.p);
-                });
-            }
-        }, {
-            name: "Flood Alert Box",
-            description: "Makes the alert box filled with text",
-            inputs:[{
-                name: "Text",
-                type: "text"
-            }],
-            run: function(userInput) {
-                function getReactOwner() {
-                    return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner;
-                }
-
-                function repeatText(text, times) {
-                    return new Array(times).fill(text).join(" ");
-                }
-
-                function setValForPlayer() {
-                    getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
-                        if (data != null) {
-
-                            const playerName = Object.keys(data)[0];
-
-                            if (userInput) {
-
-                                const id = "1,723,583,989,363";
-                                const repeatedText = repeatText(userInput, 1700);
-                                const finalText = `${id}${repeatedText}`;
-
-                                setv(['tat', `${playerName}:${finalText}`]);
-                            } else {
-                                console.log("No text entered. Operation cancelled.");
-                            }
-                        } else {
-                            console.log("Player not found!");
-                        }
-                    });
-                }
-
-                function setv(args) {
-                    getReactOwner().stateNode.props.liveGameController.setVal({
-                        path: "c/" + getReactOwner().stateNode.props.client.name + "/" + args[0],
-                        val: args.slice(1, args.length).join(" ")
-                    });
-                }
-
-                setValForPlayer();
-            }
-        }, {
-            name: "Send Ad Text",
-            description: "Sends a load of text to another player (This will override your blook!)",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let {
-                        stateNode: e
-                    } = Object.values(function e(t = document.querySelector("body>div")) {
-                            return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"));
-                        }
-                        ())[1].children[0]._owner;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
-                }
-            }, {
-                name: "Text"
-            }],
-            run: async function(player, e) {
-                let {
-                    props: t2
-                } = Object.values(function e(t = document.querySelector("body>div")) {
-                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"));
-                    }
-                    ())[1].children[0]._owner.stateNode;
-
-                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
-                t2.client.blook = repeatedText;
-                t2.liveGameController.setVal({
-                    path: `c/${t2.client.name}/b`,
-                    val: repeatedText
-                });
-                t2.liveGameController.setVal({
-                    path: `c/${t2.client.name}/tat`,
-                    val: `${player}:196`
-                });
-            }
-        }, {
-            name: "Player Swapper",
-            description: "Swaps your stats and identity with another player",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: function(e) {
-                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.props.liveGameController.getDatabaseVal("c", a => {
-                    if (a && a[e]) {
-                        let targetData = a[e];
-                        let myData = a[t.props.client.name];
-                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
-                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
-                        t.setState({ crypto: targetData.cr || 0, crypto2: targetData.cr || 0 });
-                    }
-                });
-            }
-        }, {
-            name: "Leaderboard Scrambler",
-            description: "Rapidly randomizes your score to scramble the host's leaderboard",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                if(this.enabled) { 
-                    this.enabled = !1; clearInterval(this.data); this.data = null; 
-                } else {
-                    this.enabled = !0;
-                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                    this.data = setInterval(() => {
-                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/cr`, val: Math.floor(Math.random() * 1000000) });
-                    }, 200);
-                }
-            }
-        }, {
-            name: "Game Mode Changer",
-            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
-            inputs: [{
-                name: "Gamemode",
-                type: "options",
-                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
-            }],
-            run: function(mode) {
-                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
-                let route = routeMap[mode] || mode.toLowerCase();
-                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
-                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                    }())[1].children[0]._owner.stateNode;
-                if (stateNode && stateNode.props && stateNode.props.client) {
-                    stateNode.props.client.type = mode;
-                }
-                if (stateNode && stateNode.props && stateNode.props.history) {
-                    stateNode.props.history.push("/play/" + route);
-                }
-            }
-        }],
-        defense:[{
-            name: "Earthquake",
-            description: "Shuffles around towers",
-            run: function() {
-                let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode,
-                    t = (e.setState({
-                        eventName: "Earthquake",
-                        event: {
-                            short: "e",
-                            color: "#805500",
-                            icon: "fas fa-mountain",
-                            desc: "All of your towers get mixed up",
-                            rate: .02
-                        },
-                        buyTowerName: "",
-                        buyTower: {}
-                    }, () => e.eventTimeout = setTimeout(() => e.setState({
-                        event: {},
-                        eventName: ""
-                    }), 6e3)), e.tiles.forEach(e => e.forEach((t, a) => 3 === t && (e[a] = 0))), e.tiles.flatMap((e, t) => e.map((e, a) => 0 === e && {
-                        x: a,
-                        y: t
-                    })).filter(Boolean).sort(() => .5 - Math.random()));
-                e.towers.forEach(a => {
-                    var {
-                        x: o,
-                        y: r
-                    } = t.shift();
-                    a.move(o, r, e.tileSize),
-                        e.tiles[r][o] = 3
-                })
-            }
-        }, {
-            name: "Max Tower Stats",
-            description: "Makes all placed towers overpowered",
-            run: function() {
-                Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.towers.forEach(e => {
-                    e.range = 100,
-                        e.fullCd = e.cd = 0,
-                        e.damage = 1e6
-                })
-            }
-        }, {
-            name: "Remove Ducks",
-            description: "Removes ducks",
-            run: function() {
-                let {
-                    ducks: e,
-                    tiles: t
-                } = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                e.forEach(e => {
-                        t[e.y][e.x] = 0
-                    }),
-                    e.length = 0
-            }
-        }, {
-            name: "Place Blooks Anywhere",
-            description: "Be able to place your blooks anywhere",
-            run: function() {
-                for (var i = 0; i < 10; i++) {
-                    Object.values(document.querySelector("#app > div > div"))[1].children[1]._owner.stateNode.tiles[i] = Array(10).fill(0);
-                }
-            }
-        }, {
-            name: "Remove Enemies",
-            description: "Removes all the enemies",
-            run: function() {
-                var e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                e.enemies = e.futureEnemies =[]
-            }
-        }, {
-            name: "Remove Obstacles",
-            description: "Lets you place towers anywhere",
-            run: function() {
-                var e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                e.tiles = e.tiles.map(e => e.fill(0))
-            }
-        }, {
-            name: "Set Damage",
-            description: "Sets damage",
-            inputs: [{
-                name: "Damage",
-                type: "number"
-            }],
-            run: function(e) {
-                Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.dmg = e
-            }
-        }, {
-            name: "Set Round",
-            description: "Sets the current round",
-            inputs: [{
-                name: "Round",
-                type: "number"
-            }],
-            run: function(e) {
-                Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.setState({
-                    round: e
-                })
-            }
-        }, {
-            name: "Set Tokens",
-            description: "Sets the amount of tokens you have",
-            inputs: [{
-                name: "Tokens",
-                type: "number"
-            }],
-            run: function(e) {
-                Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.setState({
-                    tokens: e
-                })
-            }
-        }, {
-            name: "Player Swapper",
-            description: "Swaps your stats and identity with another player",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: function(e) {
-                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.props.liveGameController.getDatabaseVal("c", a => {
-                    if (a && a[e]) {
-                        let targetData = a[e];
-                        let myData = a[t.props.client.name];
-                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
-                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
-                        t.dmg = targetData.d || 0;
-                    }
-                });
-            }
-        }, {
-            name: "Leaderboard Scrambler",
-            description: "Rapidly randomizes your score to scramble the host's leaderboard",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                if(this.enabled) { 
-                    this.enabled = !1; clearInterval(this.data); this.data = null; 
-                } else {
-                    this.enabled = !0;
-                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                    this.data = setInterval(() => {
-                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/d`, val: Math.floor(Math.random() * 1000000) });
-                    }, 200);
-                }
-            }
-        }, {
-            name: "Crash Host (Defense)",
-            description: "Crashes the Host's Game",
-            run: function() {
-                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/d/t`, val: "t" });
-            }
-        }, {
-            name: "Flood Alert Box",
-            description: "Makes the alert box filled with text",
-            inputs:[{ name: "Text", type: "text" }],
-            run: function(userInput) {
-                function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
-                getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
-                    if (data != null) {
-                        const playerName = Object.keys(data)[0];
-                        if (userInput) {
-                            const id = "1,723,583,989,363";
-                            const repeatedText = new Array(1700).fill(userInput).join(" ");
-                            getReactOwner().stateNode.props.liveGameController.setVal({
-                                path: `c/${getReactOwner().stateNode.props.client.name}/tat`,
-                                val: `${playerName}:${id}${repeatedText}`
-                            });
-                        }
-                    }
-                });
-            }
-        }, {
-            name: "Send Ad Text",
-            description: "Sends a load of text to another player (This will override your blook!)",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let { stateNode: e } = Object.values(document.querySelector("body>div"))[1].children[0]._owner;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
-                }
-            }, { name: "Text", type: "text" }],
-            run: async function(player, e) {
-                let t2 = Object.values(document.querySelector("body>div"))[1].children[0]._owner.stateNode;
-                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
-                t2.props.client.blook = repeatedText;
-                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/b`, val: repeatedText });
-                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/tat`, val: `${player}:196` });
-            }
-        }, {
-            name: "Set Host Screen Text",
-            description: "Makes the whole host screen filled with text",
-            inputs: [{ name: "Text", type: "text" }],
-            run: function(e) {
-                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                a.props.liveGameController.setVal({
-                    path: `c/${a.props.client.name}/d`,
-                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
-                });
-            }
-        }, {
-            name: "Set Host Screen Green",
-            description: "Fills the host screen with green characters",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                if (this.enabled) {
-                    this.enabled = !1; clearInterval(this.data); this.data = null;
-                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/d`, val: a.dmg });
-                } else {
-                    this.enabled = !0;
-                    this.data = setInterval(() => {
-                        a.props.liveGameController.setVal({
-                            path: `c/${a.props.client.name}/d`,
-                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
-                        });
-                    }, 25);
-                }
-            }
-        }, {
-            name: "Steal Player's Damage",
-            description: "Steals all of someone's damage",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: function(e) {
-                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.props.liveGameController.getDatabaseVal("c", a => {
-                    if (a && a[e]) {
-                        let targetDmg = a[e].d || 0;
-                        t.dmg += targetDmg;
-                        t.props.liveGameController.setVal({
-                            path: `c/${t.props.client.name}`,
-                            val: { b: t.props.client.blook, d: t.dmg }
-                        });
-                    }
-                });
-            }
-        }, {
-            name: "Game Mode Changer",
-            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
-            inputs: [{
-                name: "Gamemode",
-                type: "options",
-                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
-            }],
-            run: function(mode) {
-                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
-                let route = routeMap[mode] || mode.toLowerCase();
-                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
-                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                    }())[1].children[0]._owner.stateNode;
-                if (stateNode && stateNode.props && stateNode.props.client) {
-                    stateNode.props.client.type = mode;
-                }
-                if (stateNode && stateNode.props && stateNode.props.history) {
-                    stateNode.props.history.push("/play/" + route);
-                }
-            }
-        }],
-        defense2:[{
-            name: "Max Tower Stats",
-            description: "Makes all placed towers overpowered",
-            run: function() {
-                Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.state.towers.forEach(e => {
-                    if (e.stats.dmg = 1e6, e.stats.fireRate = 50, e.stats.ghostDetect = !0, e.stats.maxTargets = 1e6, e.stats.numProjectiles &&= 100, e.stats.range = 100, e.stats.auraBuffs)
-                        for (let t in e.stats.auraBuffs)
-                            e.stats.auraBuffs[t] *= 100
-                })
-            }
-        }, {
-            name: "Kill Enemies",
-            description: "Kills all the enemies",
-            run: function() {
-                var e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                e.game.current.scene.scenes[0].enemyQueue.length = 0,
-                    e.game.current.scene.scenes[0].physics.world.bodies.entries.forEach(e => e?.gameObject?.receiveDamage?.(e.gameObject.hp, 1))
-            }
-        }, {
-            name: "Crash Host (Defense 2)",
-            description: "Crashes the Host's Game for Tower Defense 2 (May take a few tries)",
-            run: function() {
-                function reactHandler() {
-                    return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner;
-                }
-
-                function setv(args) {
-                    reactHandler().stateNode.props.liveGameController.setVal({
-                        path: "c/" + reactHandler().stateNode.props.client.name + "/" + args[0],
-                        val: args.slice(1, args.length).join(" ")
-                    });
-                }
-
-                setv(['d/t', 't']);
-            }
-        }, {
-            name: "Set Coins",
-            description: "Sets coins",
-            inputs: [{
-                name: "Coins",
-                type: "number"
-            }],
-            run: function(e) {
-                Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.setState({
-                    coins: e
-                })
-            }
-        }, {
-            name: "Set Health",
-            description: "Sets the amount of health you have",
-            inputs: [{
-                name: "Health",
-                type: "number"
-            }],
-            run: function(e) {
-                Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.setState({
-                    health: e
-                })
-            }
-        }, {
-            name: "Set Round",
-            description: "Sets the current round",
-            inputs:[{
-                name: "Round",
-                type: "number"
-            }],
-            run: function(e) {
-                Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.setState({
-                    round: e
-                })
-            }
-        }, {
-            name: "Player Swapper",
-            description: "Swaps your stats and identity with another player",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: function(e) {
-                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.props.liveGameController.getDatabaseVal("c", a => {
-                    if (a && a[e]) {
-                        let targetData = a[e];
-                        let myData = a[t.props.client.name];
-                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
-                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
-                    }
-                });
-            }
-        }, {
-            name: "Leaderboard Scrambler",
-            description: "Rapidly randomizes your score to scramble the host's leaderboard",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                if(this.enabled) { 
-                    this.enabled = !1; clearInterval(this.data); this.data = null; 
-                } else {
-                    this.enabled = !0;
-                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                    this.data = setInterval(() => {
-                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/d`, val: Math.floor(Math.random() * 1000000) });
-                    }, 200);
-                }
-            }
-        }, {
-            name: "Flood Alert Box",
-            description: "Makes the alert box filled with text",
-            inputs:[{ name: "Text", type: "text" }],
-            run: function(userInput) {
-                function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
-                getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
-                    if (data != null) {
-                        const playerName = Object.keys(data)[0];
-                        if (userInput) {
-                            const id = "1,723,583,989,363";
-                            const repeatedText = new Array(1700).fill(userInput).join(" ");
-                            getReactOwner().stateNode.props.liveGameController.setVal({
-                                path: `c/${getReactOwner().stateNode.props.client.name}/tat`,
-                                val: `${playerName}:${id}${repeatedText}`
-                            });
-                        }
-                    }
-                });
-            }
-        }, {
-            name: "Send Ad Text",
-            description: "Sends a load of text to another player (This will override your blook!)",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let { stateNode: e } = Object.values(document.querySelector("body>div"))[1].children[0]._owner;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
-                }
-            }, { name: "Text", type: "text" }],
-            run: async function(player, e) {
-                let t2 = Object.values(document.querySelector("body>div"))[1].children[0]._owner.stateNode;
-                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
-                t2.props.client.blook = repeatedText;
-                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/b`, val: repeatedText });
-                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/tat`, val: `${player}:196` });
-            }
-        }, {
-            name: "Set Host Screen Text",
-            description: "Makes the whole host screen filled with text",
-            inputs: [{ name: "Text", type: "text" }],
-            run: function(e) {
-                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                a.props.liveGameController.setVal({
-                    path: `c/${a.props.client.name}/d`,
-                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
-                });
-            }
-        }, {
-            name: "Set Host Screen Green",
-            description: "Fills the host screen with green characters",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                if (this.enabled) {
-                    this.enabled = !1; clearInterval(this.data); this.data = null;
-                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/d`, val: 0 }); // reset
-                } else {
-                    this.enabled = !0;
-                    this.data = setInterval(() => {
-                        a.props.liveGameController.setVal({
-                            path: `c/${a.props.client.name}/d`,
-                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
-                        });
-                    }, 25);
-                }
-            }
-        }, {
-            name: "Steal Player's Damage",
-            description: "Steals all of someone's damage",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: function(e) {
-                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.props.liveGameController.getDatabaseVal("c", a => {
-                    if (a && a[e]) {
-                        let targetDmg = a[e].d || 0;
-                        t.props.liveGameController.setVal({
-                            path: `c/${t.props.client.name}`,
-                            val: { b: t.props.client.blook, d: targetDmg }
-                        });
-                    }
-                });
-            }
-        }, {
-            name: "Game Mode Changer",
-            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
-            inputs:[{
-                name: "Gamemode",
-                type: "options",
-                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
-            }],
-            run: function(mode) {
-                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
-                let route = routeMap[mode] || mode.toLowerCase();
-                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
-                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                    }())[1].children[0]._owner.stateNode;
-                if (stateNode && stateNode.props && stateNode.props.client) {
-                    stateNode.props.client.type = mode;
-                }
-                if (stateNode && stateNode.props && stateNode.props.history) {
-                    stateNode.props.history.push("/play/" + route);
-                }
-            }
-        }],
-        dinos:[{
-            name: "Auto Choose",
-            description: "Automatically choose the best fossil when excavating",
-            type: "toggle",
-            enabled: false,
-            data: null,
-            run: function() {
-                if (this.enabled) {
-                    this.enabled = false;
-                    clearInterval(this.data);
-                    this.data = null;
-                } else {
-                    this.enabled = true;
-                    this.data = setInterval(() => {
-                        const cheat = (async () => {
-                            function rand(e, t) {
-                                const s = [];
-                                while (s.length < t) {
-                                    const i = Math.random();
-                                    let r = 0,
-                                        g = null;
-                                    for (let o = 0; o < e.length; o++) {
-                                        r += e[o].rate;
-                                        if (r >= i) {
-                                            g = e[o];
-                                            break;
-                                        }
-                                    }
-                                    g && !s.includes(g) && s.push(g);
-                                }
-                                return s;
-                            }
-
-                            try {
-                                let {
-                                    stateNode
-                                } = Object.values((function react(r = document.querySelector("body>div")) {
-                                    return Object.values(r)[1]?.children?.[0]?._owner.stateNode ? r : react(r.querySelector(":scope>div"))
-                                })())[1].children[0]._owner;
-
-                                if (stateNode.state.stage === "excavate") {
-                                    stateNode.state.choices.length || (stateNode.state.choices = rand([{
-                                        type: "fossil",
-                                        val: 10,
-                                        rate: .1,
-                                        blook: "Amber"
-                                    }, {
-                                        type: "fossil",
-                                        val: 25,
-                                        rate: .1,
-                                        blook: "Dino Egg"
-                                    }, {
-                                        type: "fossil",
-                                        val: 50,
-                                        rate: .175,
-                                        blook: "Dino Fossil"
-                                    }, {
-                                        type: "fossil",
-                                        val: 75,
-                                        rate: .175,
-                                        blook: "Stegosaurus"
-                                    }, {
-                                        type: "fossil",
-                                        val: 100,
-                                        rate: .15,
-                                        blook: "Velociraptor"
-                                    }, {
-                                        type: "fossil",
-                                        val: 125,
-                                        rate: .125,
-                                        blook: "Brontosaurus"
-                                    }, {
-                                        type: "fossil",
-                                        val: 250,
-                                        rate: .075,
-                                        blook: "Triceratops"
-                                    }, {
-                                        type: "fossil",
-                                        val: 500,
-                                        rate: .025,
-                                        blook: "Tyrannosaurus Rex"
-                                    }, {
-                                        type: "mult",
-                                        val: 1.5,
-                                        rate: .05
-                                    }, {
-                                        type: "mult",
-                                        val: 2,
-                                        rate: .025
-                                    }], 3));
-
-                                    let max = 0,
-                                        index = -1;
-                                    for (let i = 0; i < stateNode.state.choices.length; i++) {
-                                        const {
-                                            type,
-                                            val
-                                        } = stateNode.state.choices[i];
-                                        const value = (type == "fossil" ? stateNode.state.fossils + val * stateNode.state.fossilMult : stateNode.state.fossils * val) || 0;
-                                        if (value <= max && type != "mult")
-                                            continue;
-                                        max = value;
-                                        index = i + 1;
-                                    }
-
-                                    document.querySelector('div[class*=rockRow] > div[role="button"]:nth-child(' + index + ')').click();
-                                }
-                            } catch {}
-                        });
-                        cheat();
-                    }, 50);
-                }
-            }
-        }, {
-            name: "Rock ESP",
-            description: "Shows what is under the rocks",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                let e =["⁰", "\xb9", "\xb2", "\xb3", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"],
-                    t = t => {
-                        let a = "";
-                        for (; t > 0;)
-                            a = e[t % parseInt("10")] + a, t = ~~(t / 10);
-                        return a
-                    },
-                    a = e => {
-                        let a = e.toString();
-                        if (e >= 1e3) {
-                            let o =["", "K", "M", "B", "T"],
-                                r = ~~((digits(e) - 1) / 3);
-                            if (r < o.length) {
-                                let i = "";
-                                for (let n = 3; n >= 1; n--) {
-                                    i = parseFloat((0 !== r ? e / 1e3 ** r : e).toPrecision(n)).toString();
-                                    let s = i.replace(/[^a-zA-Z 0-9]+/g, "");
-                                    if (s.length <= 3)
-                                        break
-                                }
-                                Number(i) % 1 != 0 && (i = Number(i).toFixed(1)),
-                                    a = i + o[r]
-                            } else {
-                                let l = e,
-                                    c = 0;
-                                for (; l >= 100;)
-                                    l = Math.floor(l / 10), c += 1;
-                                a = `${l / 10} \xd7 10${t(c + 1)}`
-                            }
-                        }
-                        return a
-                    };
-                this.enabled ? (this.enabled = !1, clearInterval(this.data), this.data = null) : (this.enabled = !0, this.data = setInterval(() => {
-                    let {
-                        stateNode: e
-                    } = Object.values(function e(t = document.querySelector("body>div")) {
-                                return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                            }
-                            ())[1].children[0]._owner,
-                        t =[...document.querySelector('[class*="rockButton"]').parentElement.children];
-                    t.every(e => e.querySelector("div")) || e.setState({
-                        choices:[{
-                            type: "fossil",
-                            val: 10,
-                            rate: .1,
-                            blook: "Amber"
-                        }, {
-                            type: "fossil",
-                            val: 25,
-                            rate: .1,
-                            blook: "Dino Egg"
-                        }, {
-                            type: "fossil",
-                            val: 50,
-                            rate: .175,
-                            blook: "Dino Fossil"
-                        }, {
-                            type: "fossil",
-                            val: 75,
-                            rate: .175,
-                            blook: "Stegosaurus"
-                        }, {
-                            type: "fossil",
-                            val: 100,
-                            rate: .15,
-                            blook: "Velociraptor"
-                        }, {
-                            type: "fossil",
-                            val: 125,
-                            rate: .125,
-                            blook: "Brontosaurus"
-                        }, {
-                            type: "fossil",
-                            val: 250,
-                            rate: .075,
-                            blook: "Triceratops"
-                        }, {
-                            type: "fossil",
-                            val: 500,
-                            rate: .025,
-                            blook: "Tyrannosaurus Rex"
-                        }, {
-                            type: "mult",
-                            val: 1.5,
-                            rate: .05
-                        }, {
-                            type: "mult",
-                            val: 2,
-                            rate: .025
-                        }].sort(() => .5 - Math.random()).slice(0, 3)
-                    }, () => {
-                        t.forEach((t, o) => {
-                            let r = e.state.choices[o];
-                            t.querySelector("div") && t.querySelector("div").remove();
-                            let i = document.createElement("div");
-                            i.style.color = "white",
-                                i.style.fontFamily = "Macondo",
-                                i.style.fontSize = "1em",
-                                i.style.display = "flex",
-                                i.style.justifyContent = "center",
-                                i.style.transform = "translateY(25px)",
-                                i.innerText = "fossil" === r.type ? `+${Math.round(r.val * e.state.fossilMult) > 99999999 ? a(Math.round(r.val * e.state.fossilMult)) : Math.round(r.val * e.state.fossilMult)} Fossils` : `x${r.val} Fossils Per Excavation`,
-                                t.append(i)
-                        })
-                    })
-                }, 50))
-            }
-        }, {
-            name: "Set Fossils",
-            description: "Sets the amount of fossils you have",
-            inputs:[{
-                name: "Fossils",
-                type: "number"
-            }],
-            run: function(e) {
-                var t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.setState({
-                        fossils: e
-                    }),
-                    t.props.liveGameController.setVal({
-                        path: "c/" + t.props.client.name,
-                        val: {
-                            b: t.props.client.blook,
-                            f: e,
-                            ic: t.state.isCheating
-                        }
-                    })
-            }
-        }, {
-            name: "Set Multiplier",
-            description: "Sets fossil multiplier",
-            inputs:[{
-                name: "Multiplier",
-                type: "number"
-            }],
-            run: function(e) {
-                Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode.setState({
-                    fossilMult: e
-                })
-            }
-        }, {
-            name: "Crash Host (Dino)",
-            description: "Crashes the Host's Game for Deceptive Dinos",
-            run: function() {
-                function reactHandler() {
-                    return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner;
-                }
-
-                function setv(args) {
-                    reactHandler().stateNode.props.liveGameController.setVal({
-                        path: "c/" + reactHandler().stateNode.props.client.name + "/" + args[0],
-                        val: args.slice(1, args.length).join(" ")
-                    });
-                }
-
-                setv(['f/t', 't']);
-            }
-        }, {
-            name: "Stop Cheating",
-            description: "Undoes cheating so that you can't be caught",
-            run: function() {
-                var e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                e.setState({
-                        isCheating: !1
-                    }),
-                    e.props.liveGameController.setVal({
-                        path: `c/${e.props.client.name}/ic`,
-                        val: !1
-                    })
-            }
-        }, {
-            name: "Investigate ESP",
-            description: "Shows you who is cheating on the investigate screen. Green is clear, and red is cheating.",
-            run: function() {
-                const stateNode = Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner.stateNode;
-                let i = document.createElement('iframe');
-                document.body.append(i);
-                const alert = i.contentWindow.alert.bind(window);
-                i.remove();
-                if (!document.querySelectorAll("[class*='playerContainer']")) {
-                    alert("This must be run on the investigate screen!");
-                }
-                Array.from(document.querySelectorAll("[class*='playerContainer']")).forEach(async e => {
-                    const players = await stateNode.props.liveGameController.getDatabaseVal("c");
-                    let p = Object.values(e)?.[0]?.key;
-                    e.style.color = players[p].ic ? "#ff0000" : "#00ff00";
-                });
-            }
-        }, {
-            name: "Player Swapper",
-            description: "Swaps your stats and identity with another player",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: function(e) {
-                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.props.liveGameController.getDatabaseVal("c", a => {
-                    if (a && a[e]) {
-                        let targetData = a[e];
-                        let myData = a[t.props.client.name];
-                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
-                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
-                        t.setState({ fossils: targetData.f || 0 });
-                    }
-                });
-            }
-        }, {
-            name: "Leaderboard Scrambler",
-            description: "Rapidly randomizes your score to scramble the host's leaderboard",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                if(this.enabled) { 
-                    this.enabled = !1; clearInterval(this.data); this.data = null; 
-                } else {
-                    this.enabled = !0;
-                    var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                    this.data = setInterval(() => {
-                        a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/f`, val: Math.floor(Math.random() * 1000000) });
-                    }, 200);
-                }
-            }
-        }, {
-            name: "Flood Alert Box",
-            description: "Makes the alert box filled with text",
-            inputs:[{ name: "Text", type: "text" }],
-            run: function(userInput) {
-                function getReactOwner() { return Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner; }
-                getReactOwner().stateNode.props.liveGameController.getDatabaseVal("c/").then(data => {
-                    if (data != null) {
-                        const playerName = Object.keys(data)[0];
-                        if (userInput) {
-                            const id = "1,723,583,989,363";
-                            const repeatedText = new Array(1700).fill(userInput).join(" ");
-                            getReactOwner().stateNode.props.liveGameController.setVal({
-                                path: `c/${getReactOwner().stateNode.props.client.name}/tat`,
-                                val: `${playerName}:${id}${repeatedText}`
-                            });
-                        }
-                    }
-                });
-            }
-        }, {
-            name: "Send Ad Text",
-            description: "Sends a load of text to another player (This will override your blook!)",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let { stateNode: e } = Object.values(document.querySelector("body>div"))[1].children[0]._owner;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]));
-                }
-            }, { name: "Text", type: "text" }],
-            run: async function(player, e) {
-                let t2 = Object.values(document.querySelector("body>div"))[1].children[0]._owner.stateNode;
-                let repeatedText = `Dog:${Array(500).fill(e).join(' ')}`;
-                t2.props.client.blook = repeatedText;
-                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/b`, val: repeatedText });
-                t2.props.liveGameController.setVal({ path: `c/${t2.props.client.name}/tat`, val: `${player}:196` });
-            }
-        }, {
-            name: "Set Host Screen Text",
-            description: "Makes the whole host screen filled with text",
-            inputs: [{ name: "Text", type: "text" }],
-            run: function(e) {
-                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                a.props.liveGameController.setVal({
-                    path: `c/${a.props.client.name}/f`,
-                    val: `9999999999999999999999999999999999999999999999${new Array(999).fill(e).join(" ")}`
-                });
-            }
-        }, {
-            name: "Set Host Screen Green",
-            description: "Fills the host screen with green characters",
-            type: "toggle",
-            enabled: !1,
-            data: null,
-            run: function() {
-                var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
-                if (this.enabled) {
-                    this.enabled = !1; clearInterval(this.data); this.data = null;
-                    a.props.liveGameController.setVal({ path: `c/${a.props.client.name}/f`, val: a.state.fossils });
-                } else {
-                    this.enabled = !0;
-                    this.data = setInterval(() => {
-                        a.props.liveGameController.setVal({
-                            path: `c/${a.props.client.name}/f`,
-                            val: `9999999999999999999999999999999999999999999999${new Array(999).fill("็".repeat(70)).join(" ")}`
-                        });
-                    }, 25);
-                }
-            }
-        }, {
-            name: "Steal Player's Fossils",
-            description: "Steals all of someone's fossils",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: function(e) {
-                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.props.liveGameController.getDatabaseVal("c", a => {
-                    if (a && a[e]) {
-                        let targetFossils = a[e].f || 0;
-                        t.setState({ fossils: t.state.fossils + targetFossils });
-                        t.props.liveGameController.setVal({
-                            path: `c/${t.props.client.name}`,
-                            val: { b: t.props.client.blook, f: t.state.fossils, ic: t.state.isCheating }
-                        });
-                    }
-                });
-            }
-        }, {
-            name: "Game Mode Changer",
-            description: "Tricks your client into thinking it's in a different gamemode (May break UI)",
-            inputs:[{
-                name: "Gamemode",
-                type: "options",
-                options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
-            }],
-            run: function(mode) {
-                const routeMap = { Royale: "battle-royale", Fish: "fishing" };
-                let route = routeMap[mode] || mode.toLowerCase();
-                let stateNode = Object.values(function e(t = document.querySelector("body>div")) {
-                        return Object.values(t)[1]?.children?.[0]?._owner.stateNode ? t : e(t.querySelector(":scope>div"))
-                    }())[1].children[0]._owner.stateNode;
-                if (stateNode && stateNode.props && stateNode.props.client) {
-                    stateNode.props.client.type = mode;
-                }
-                if (stateNode && stateNode.props && stateNode.props.history) {
-                    stateNode.props.history.push("/play/" + route);
-                }
-            }
-        }],
         doom:[{
             name: "Fill Deck",
             description: "Fills your deck with every maxed out card and artifact (Only works on towers page)",
@@ -4405,7 +1862,7 @@
                         }
                         ())[1].children[0]._owner;
                     t.props.tower.artifacts = "Medical Kit|Fury Relic|Survival Guide|Steel Socks|Piggy Bank|Lucky Feather|Coupon|Cheese|Tasty Egg|Training Weights|Mighty Shield|Toxic Waste|Lifeline Totem|Cursed Hourglass|Band-Aid|Elder Coins|Captain's Anchor|Chess Pieces|Pink Hippo|Anorak's Wizard Cap|Dave's Doggo|Anubis' Obelisk|Farm Tractor|Magic Seedling|Just A Bone|Cozy Igloo|King's Crown|Sacred Scroll".split("|"),
-                        t.props.tower.cards = "Chick,🌽|Chicken,🌽|Cow,🌽|Goat,🌽|Horse,🌽|Pig,🌽|Sheep,🌽|Duck,🌽|Dog,🌽|Cat,🐾|Rabbit,🐾|Goldfish,🐾|Hamster,🐾|Turtle,🐾|Kitten,🐾|Puppy,🐾|Bear,🌲|Moose,🌲|Fox,🌲|Raccoon,🌲|Squirrel,🌲|Owl,🌲|Hedgehog,🌲|Baby Penguin,❄️|Penguin,❄️|Arctic Fox,❄️|Snowy Owl,❄️|Polar Bear,❄️|Arctic Hare,❄️|Seal,❄️|Walrus,❄️|Tiger,🌴|Panther,🌴|Cockatoo,🌴|Orangutan,🌴|Anaconda,🌴|Macaw,🌴|Jaguar,🌴|Capuchin,🌴|Toucan,🌴|Parrot,🌴|Elf,⚔️|Witch,⚔️|Wizard,⚔️|Fairy,⚔️|Slime Monster,⚔️|Jester,⚔️|Dragon,⚔️|Unicorn,⚔️|Queen,⚔️|King,⚔️|Snow Globe,☃️|Holiday Gift,☃️|Hot Chocolate,☃️|Gingerbread Man,☃️|Gingerbread House,☃️|Holiday Wreath,☃️|Snowman,☃️|Santa Claus,☃️|Two of Spades,🏰|Eat Me,🏰|Drink Me,🏰|Alice,🏰|Queen of Hearts,🏰|Dormouse,🏰|White Rabbit,🏰|Cheshire Cat,🏰|Caterpillar,🏰|Mad Hatter,🏰|King of Hearts,🏰".split("|").map(e => {
+                        t.props.tower.cards = "Chick,🌽|Chicken,🌽|Cow,🌽|Goat,🌽|Horse,🌽|Pig,🌽|Sheep,🌽|Duck,🌽|Dog,🐾|Cat,🐾|Rabbit,🐾|Goldfish,🐾|Hamster,🐾|Turtle,🐾|Kitten,🐾|Puppy,🐾|Bear,🌲|Moose,🌲|Fox,🌲|Raccoon,🌲|Squirrel,🌲|Owl,🌲|Hedgehog,🌲|Baby Penguin,❄️|Penguin,❄️|Arctic Fox,❄️|Snowy Owl,❄️|Polar Bear,❄️|Arctic Hare,❄️|Seal,❄️|Walrus,❄️|Tiger,🌴|Panther,🌴|Cockatoo,🌴|Orangutan,🌴|Anaconda,🌴|Macaw,🌴|Jaguar,🌴|Capuchin,🌴|Toucan,🌴|Parrot,🌴|Elf,⚔️|Witch,⚔️|Wizard,⚔️|Fairy,⚔️|Slime Monster,⚔️|Jester,⚔️|Dragon,⚔️|Unicorn,⚔️|Queen,⚔️|King,⚔️|Snow Globe,☃️|Holiday Gift,☃️|Hot Chocolate,☃️|Gingerbread Man,☃️|Gingerbread House,☃️|Holiday Wreath,☃️|Snowman,☃️|Santa Claus,☃️|Two of Spades,🏰|Eat Me,🏰|Drink Me,🏰|Alice,🏰|Queen of Hearts,🏰|Dormouse,🏰|White Rabbit,🏰|Cheshire Cat,🏰|Caterpillar,🏰|Mad Hatter,🏰|King of Hearts,🏰".split("|").map(e => {
                             let [t, a] = e.split(",");
                             return {
                                 strength: 20,
@@ -4536,8 +1993,8 @@
                     class: "🌽",
                     rarity: "Common",
                     cash:[10, 40, 200, 1400, 1e4],
-                    time: [5, 4, 3, 2, 1],
-                    price: [570, 4e3, 5e4, 8e5]
+                    time:[5, 4, 3, 2, 1],
+                    price:[570, 4e3, 5e4, 8e5]
                 }, {
                     name: "Cow",
                     color: "#58595b",
@@ -4552,8 +2009,8 @@
                     class: "🌽",
                     rarity: "Common",
                     cash:[4, 24, 200, 3e3, 4e4],
-                    time: [3, 3, 3, 3, 3],
-                    price: [450, 4200, 7e4, 11e5]
+                    time:[3, 3, 3, 3, 3],
+                    price:[450, 4200, 7e4, 11e5]
                 }, {
                     name: "Goat",
                     color: "#c59a74",
@@ -4569,7 +2026,7 @@
                     rarity: "Common",
                     cash:[5, 20, 270, 1800, 15e3],
                     time: [2, 2, 2, 2, 2],
-                    price: [550, 8200, 65e3, 6e5]
+                    price:[550, 8200, 65e3, 6e5]
                 }, {
                     name: "Pig",
                     color: "#f6a9cb",
@@ -4600,8 +2057,8 @@
                     class: "🐾",
                     rarity: "Common",
                     cash:[7, 25, 220, 1900, 9e3],
-                    time: [3, 3, 2, 2, 1],
-                    price: [460, 6600, 7e4, 73e4]
+                    time:[3, 3, 2, 2, 1],
+                    price:[460, 6600, 7e4, 73e4]
                 }, {
                     name: "Goldfish",
                     color: "#f18221",
@@ -4624,8 +2081,8 @@
                     class: "🐾",
                     rarity: "Common",
                     cash:[10, 45, 450, 4500, 45e3],
-                    time: [4, 4, 4, 4, 4],
-                    price: [650, 6500, 8e4, 93e4]
+                    time:[4, 4, 4, 4, 4],
+                    price:[650, 6500, 8e4, 93e4]
                 }, {
                     name: "Turtle",
                     color: "#619a3c",
@@ -4648,8 +2105,8 @@
                     class: "🐾",
                     rarity: "Common",
                     cash:[4, 8, 60, 400, 2e3],
-                    time: [1, 1, 1, 1, 1],
-                    price: [350, 3500, 26e3, 17e4]
+                    time:[1, 1, 1, 1, 1],
+                    price:[350, 3500, 26e3, 17e4]
                 }, {
                     name: "Bear",
                     color: "#995b3c",
@@ -4671,7 +2128,7 @@
                     color: "#f49849",
                     class: "🌲",
                     rarity: "Common",
-                    cash: [7, 15, 80, 550, 3e3],
+                    cash:[7, 15, 80, 550, 3e3],
                     time: [2, 2, 1, 1, 1],
                     price:[400, 4e3, 36e3, 24e4]
                 }, {
@@ -4712,7 +2169,7 @@
                     class: "❄️",
                     rarity: "Common",
                     cash:[6, 17, 150, 1200, 13e3],
-                    time: [2, 2, 2, 2, 2],
+                    time:[2, 2, 2, 2, 2],
                     price:[480, 4500, 43e3, 52e4]
                 }, {
                     name: "Arctic Fox",
@@ -4720,7 +2177,7 @@
                     class: "❄️",
                     rarity: "Common",
                     cash:[5, 18, 180, 850, 8500],
-                    time: [2, 2, 2, 1, 1],
+                    time:[2, 2, 2, 1, 1],
                     price:[520, 550, 61e3, 68e4]
                 }, {
                     name: "Snowy Owl",
@@ -4752,7 +2209,7 @@
                     class: "❄️",
                     rarity: "Common",
                     cash:[3, 8, 70, 450, 2700],
-                    time: [1, 1, 1, 1, 1],
+                    time:[1, 1, 1, 1, 1],
                     price:[420, 3300, 33e3, 23e4]
                 }, {
                     name: "Polar Bear",
@@ -4776,7 +2233,7 @@
                     class: "🌴",
                     rarity: "Common",
                     cash:[6, 20, 100, 975, 7500],
-                    time: [3, 3, 1, 1, 1],
+                    time:[3, 3, 1, 1, 1],
                     price:[390, 6e3, 7e4, 61e4]
                 }, {
                     name: "Jaguar",
@@ -4791,8 +2248,8 @@
                     color: "#ffca34",
                     class: "🌴",
                     rarity: "Common",
-                    cash: [9, 20, 175, 625, 3800],
-                    time: [2, 2, 2, 1, 1],
+                    cash:[9, 20, 175, 625, 3800],
+                    time:[2, 2, 2, 1, 1],
                     price:[520, 4800, 42e3, 3e5]
                 }, {
                     name: "Cockatoo",
@@ -4809,7 +2266,7 @@
                     rarity: "Common",
                     cash:[3, 8, 85, 850, 8500],
                     time: [1, 1, 1, 1, 1],
-                    price: [480, 5400, 62e3, 63e4]
+                    price:[480, 5400, 62e3, 63e4]
                 }, {
                     name: "Parrot",
                     color: "#ed1c24",
@@ -4831,7 +2288,7 @@
                     color: "#8a9143",
                     class: "🌴",
                     rarity: "Common",
-                    cash: [3, 15, 85, 1500, 7600],
+                    cash:[3, 15, 85, 1500, 7600],
                     time: [1, 2, 1, 2, 1],
                     price:[410, 5100, 58e3, 59e4]
                 }, {
@@ -4856,7 +2313,7 @@
                     class: "⚔️",
                     rarity: "Uncommon",
                     cash:[5e3, 15e3, 15e4, 15e5, 1e7],
-                    time: [1, 1, 1, 1, 1],
+                    time:[1, 1, 1, 1, 1],
                     price:[8e5, 9e6, 11e7, 8e8]
                 }, {
                     name: "Witch",
@@ -4904,7 +2361,7 @@
                     class: "⚔️",
                     rarity: "Rare",
                     cash:[36e3, 15e4, 15e5, 15e6, 15e7],
-                    time: [4, 4, 4, 4, 4],
+                    time:[4, 4, 4, 4, 4],
                     price:[23e5, 24e6, 27e7, 3e9]
                 }, {
                     name: "Unicorn",
@@ -4960,7 +2417,7 @@
                     class: "🏰",
                     rarity: "Uncommon",
                     cash:[13e3, 42e3, 21e4, 21e5, 23e6],
-                    time: [2, 2, 1, 1, 1],
+                    time:[2, 2, 1, 1, 1],
                     price:[12e5, 13e6, 15e7, 19e8]
                 }, {
                     name: "Queen of Hearts",
@@ -4984,7 +2441,7 @@
                     class: "🏰",
                     rarity: "Rare",
                     cash:[26e3, 105e3, 11e6, 77e5, 72e6],
-                    time: [3, 3, 3, 2, 2],
+                    time:[3, 3, 3, 2, 2],
                     price:[2e6, 23e6, 28e7, 29e8]
                 }, {
                     name: "Cheshire Cat",
@@ -5016,7 +2473,7 @@
                     class: "🏰",
                     rarity: "Legendary",
                     cash:[8e4, 42e4, 68e5, 1e8, 15e8],
-                    time: [5, 5, 5, 5, 5],
+                    time:[5, 5, 5, 5, 5],
                     price:[7e6, 11e7, 18e8, 3e10]
                 }, {
                     name: "Earth",
@@ -5096,7 +2553,7 @@
                     class: "🤖",
                     rarity: "Uncommon",
                     cash:[16e3, 65e3, 65e4, 48e5, 42e6],
-                    time: [3, 3, 3, 2, 2],
+                    time:[3, 3, 3, 2, 2],
                     price:[13e5, 14e6, 17e7, 16e8]
                 }, {
                     name: "Angry Bot",
@@ -5104,8 +2561,8 @@
                     class: "🤖",
                     rarity: "Uncommon",
                     cash:[22e3, 85e3, 8e5, 62e5, 65e6],
-                    time: [4, 4, 4, 3, 3],
-                    price: [12e5, 13e6, 15e7, 17e8]
+                    time:[4, 4, 4, 3, 3],
+                    price:[12e5, 13e6, 15e7, 17e8]
                 }, {
                     name: "Happy Bot",
                     color: "#51ba6b",
@@ -5127,8 +2584,8 @@
                     color: "#9dc6ea",
                     class: "🤖",
                     rarity: "Rare",
-                    cash: [22e3, 95e3, 65e4, 65e5, 65e6],
-                    time: [3, 3, 2, 2, 2],
+                    cash:[22e3, 95e3, 65e4, 65e5, 65e6],
+                    time:[3, 3, 2, 2, 2],
                     price:[19e5, 21e6, 23e7, 25e8]
                 }, {
                     name: "Brainy Bot",
@@ -5136,7 +2593,7 @@
                     class: "🤖",
                     rarity: "Epic",
                     cash:[5e4, 25e4, 21e5, 21e6, 17e7],
-                    time: [4, 3, 3, 3, 2],
+                    time:[4, 3, 3, 3, 2],
                     price:[5e6, 46e6, 5e8, 67e8]
                 }, {
                     name: "Mega Bot",
@@ -5144,7 +2601,7 @@
                     class: "🤖",
                     rarity: "Legendary",
                     cash:[8e4, 43e4, 42e5, 62e6, 1e9],
-                    time: [5, 5, 3, 3, 3],
+                    time:[5, 5, 3, 3, 3],
                     price:[7e6, 12e7, 19e8, 35e9]
                 }].map(e => ({
                     name: e.name,
@@ -5276,7 +2733,7 @@
             }
         }, {
             name: "Player Swapper",
-            description: "Swaps your stats and identity with another player",
+            description: "Swaps your stats and identity with another player perfectly stealthy",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -5291,9 +2748,11 @@
                     if (a && a[e]) {
                         let targetData = a[e];
                         let myData = a[t.props.client.name];
-                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
-                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
-                        t.setState({ cash: targetData.ca || 0 });
+                        let targetVal = targetData.ca || 0;
+                        let myVal = myData.ca || 0;
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: { ...myData, ca: targetVal } });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: { ...targetData, ca: myVal } });
+                        t.setState({ cash: targetVal });
                     }
                 });
             }
@@ -5393,7 +2852,7 @@
             }
         }, {
             name: "Steal Player's Cash",
-            description: "Steals all of someone's cash",
+            description: "Steals all of someone's cash silently",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -5406,12 +2865,12 @@
                 let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
-                        let targetCash = a[e].ca || 0;
-                        t.setState({ cash: t.state.cash + targetCash });
-                        t.props.liveGameController.setVal({
-                            path: `c/${t.props.client.name}`,
-                            val: { b: t.props.client.blook, ca: t.state.cash }
-                        });
+                        let targetVal = a[e].ca || 0;
+                        let myData = a[t.props.client.name];
+                        let newVal = t.state.cash + targetVal;
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: { ...myData, ca: newVal } });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: { ...a[e], ca: 0 } });
+                        t.setState({ cash: newVal });
                     }
                 });
             }
@@ -5595,19 +3054,19 @@
                             rarity: "Easy One",
                             minWeight: 20,
                             maxWeight: 45,
-                            tiers: ["D", "C", "B"]
+                            tiers:["D", "C", "B"]
                         },
                         Goldfish: {
                             rarity: "Easy One",
                             minWeight: 30,
                             maxWeight: 65,
-                            tiers: ["D", "C", "B"]
+                            tiers:["D", "C", "B"]
                         },
                         Frog: {
                             rarity: "Easy One",
                             minWeight: 50,
                             maxWeight: 100,
-                            tiers: ["D", "C", "B"]
+                            tiers:["D", "C", "B"]
                         },
                         "Blizzard Clownfish": {
                             rarity: "Great Catch",
@@ -5637,7 +3096,7 @@
                             rarity: "Great Catch",
                             minWeight: 200,
                             maxWeight: 400,
-                            tiers: ["D", "C", "B", "A"]
+                            tiers:["D", "C", "B", "A"]
                         },
                         "Poison Dart Frog": {
                             rarity: "Great Catch",
@@ -5655,13 +3114,13 @@
                             rarity: "Rare Find",
                             minWeight: 700,
                             maxWeight: 2200,
-                            tiers: ["D", "C", "B", "A"]
+                            tiers:["D", "C", "B", "A"]
                         },
                         Fairy: {
                             rarity: "Rare Find",
                             minWeight: 1500,
                             maxWeight: 2500,
-                            tiers: ["D", "C", "B", "A"]
+                            tiers:["D", "C", "B", "A"]
                         },
                         Crab: {
                             rarity: "Rare Find",
@@ -5679,13 +3138,13 @@
                             rarity: "Rare Find",
                             minWeight: 2e3,
                             maxWeight: 4e3,
-                            tiers: ["D", "C", "B", "A"]
+                            tiers:["D", "C", "B", "A"]
                         },
                         Blobfish: {
                             rarity: "Rare Find",
                             minWeight: 3e3,
                             maxWeight: 5e3,
-                            tiers: ["D", "C", "B", "A"]
+                            tiers:["D", "C", "B", "A"]
                         },
                         "Rainbow Jellyfish": {
                             rarity: "Epic Grab",
@@ -5709,7 +3168,7 @@
                             rarity: "Epic Grab",
                             minWeight: 13e3,
                             maxWeight: 25e3,
-                            tiers: ["C", "B", "A"]
+                            tiers:["C", "B", "A"]
                         },
                         "Crimson Octopus": {
                             rarity: "Epic Grab",
@@ -5733,7 +3192,7 @@
                             rarity: "Catch of the Day",
                             minWeight: 25e4,
                             maxWeight: 5e5,
-                            tiers: ["B", "A", "S"]
+                            tiers:["B", "A", "S"]
                         },
                         Alien: {
                             rarity: "Angler's Legend",
@@ -5757,7 +3216,7 @@
                             rarity: "Angler's Legend",
                             minWeight: 1e6,
                             maxWeight: 2e6,
-                            tiers: ["A", "S", "S+"]
+                            tiers:["A", "S", "S+"]
                         },
                         "Swamp Monster": {
                             rarity: "Angler's Legend",
@@ -5775,7 +3234,7 @@
                             rarity: "Angler's Legend",
                             minWeight: 1e6,
                             maxWeight: 2e6,
-                            tiers: ["A", "S", "S+"]
+                            tiers:["A", "S", "S+"]
                         },
                         Dragon: {
                             rarity: "Angler's Legend",
@@ -5855,7 +3314,7 @@
             }
         }, {
             name: "Player Swapper",
-            description: "Swaps your stats and identity with another player",
+            description: "Swaps your stats and identity with another player perfectly stealthy",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -5870,9 +3329,11 @@
                     if (a && a[e]) {
                         let targetData = a[e];
                         let myData = a[t.props.client.name];
-                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
-                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
-                        t.setState({ weight: targetData.w || 0, weight2: targetData.w || 0 });
+                        let targetVal = targetData.w || 0;
+                        let myVal = myData.w || 0;
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: { ...myData, w: targetVal } });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: { ...targetData, w: myVal } });
+                        t.setState({ weight: targetVal, weight2: targetVal });
                     }
                 });
             }
@@ -5972,7 +3433,7 @@
             }
         }, {
             name: "Steal Player's Weight",
-            description: "Steals all of someone's weight",
+            description: "Steals all of someone's weight silently",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -5985,12 +3446,12 @@
                 let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
-                        let targetWeight = a[e].w || 0;
-                        t.setState({ weight: t.state.weight + targetWeight, weight2: t.state.weight2 + targetWeight });
-                        t.props.liveGameController.setVal({
-                            path: `c/${t.props.client.name}`,
-                            val: { b: t.props.client.blook, w: t.state.weight, f: t.state.frenzy ? "Frenzy" : "" }
-                        });
+                        let targetVal = a[e].w || 0;
+                        let myData = a[t.props.client.name];
+                        let newVal = t.state.weight + targetVal;
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: { ...myData, w: newVal } });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: { ...a[e], w: 0 } });
+                        t.setState({ weight: newVal, weight2: newVal });
                     }
                 });
             }
@@ -6328,28 +3789,19 @@
                                 const repeatedText = repeatText(userInput, 1700);
                                 const finalText = `${id}${repeatedText}`;
 
-                                setv(['tat', `${playerName}:${finalText}`]);
-                            } else {
-                                console.log("No text entered. Operation cancelled.");
+                                getReactOwner().stateNode.props.liveGameController.setVal({
+                                    path: "c/" + getReactOwner().stateNode.props.client.name + "/tat",
+                                    val: `${playerName}:${finalText}`
+                                });
                             }
-                        } else {
-                            console.log("Player not found!");
                         }
                     });
                 }
-
-                function setv(args) {
-                    getReactOwner().stateNode.props.liveGameController.setVal({
-                        path: "c/" + getReactOwner().stateNode.props.client.name + "/" + args[0],
-                        val: args.slice(1, args.length).join(" ")
-                    });
-                }
-
                 setValForPlayer();
             }
         }, {
             name: "Reset Players Gold",
-            description: "Sets a player's gold to 0",
+            description: "Sets a player's gold to 0 silently",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -6359,18 +3811,16 @@
                 }
             }],
             run: function(e) {
-                var {
-                    props: t,
-                    state: a
-                } = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.liveGameController.setVal({
-                    path: "c/".concat(t.client.name),
-                    val: {
-                        b: t.client.blook,
-                        g: a.gold,
-                        tat: e + ":swap:0"
+                var t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetData = a[e];
+                        t.props.liveGameController.setVal({
+                            path: `c/${e}`,
+                            val: { ...targetData, g: 0 }
+                        });
                     }
-                })
+                });
             }
         }, {
             name: "Set Gold",
@@ -6395,7 +3845,7 @@
             }
         }, {
             name: "Swap Gold",
-            description: "Swaps gold with someone",
+            description: "Swaps gold with someone silently",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -6407,22 +3857,20 @@
             run: function(e) {
                 let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
                 t.props.liveGameController.getDatabaseVal("c", a => {
-                    a?.[e] && (a = a[e].g, t.props.liveGameController.setVal({
-                        path: "c/".concat(t.props.client.name),
-                        val: {
-                            b: t.props.client.blook,
-                            g: a,
-                            tat: e + ":swap:" + t.state.gold
-                        }
-                    }), t.setState({
-                        gold: a,
-                        gold2: a
-                    }))
-                })
+                    if (a && a[e]) {
+                        let myData = a[t.props.client.name];
+                        let targetData = a[e];
+                        let myGold = myData.g || 0;
+                        let targetGold = targetData.g || 0;
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: { ...myData, g: targetGold } });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: { ...targetData, g: myGold } });
+                        t.setState({ gold: targetGold, gold2: targetGold });
+                    }
+                });
             }
         }, {
             name: "Set Player's Gold",
-            description: "Sets a players gold to any amount.",
+            description: "Sets a players gold to any amount silently",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -6432,13 +3880,18 @@
                 }
             }, {
                 name: "Amount",
-                type: "input"
+                type: "number"
             }],
             run: (player, amount) => {
                 const sn = Object.values(document.querySelector('#app>div>div'))[1].children[0]._owner.stateNode;
-                sn.props.liveGameController.setVal({
-                    path: `c/${sn.props.client.name}/tat`,
-                    val: `${player}:swap:${amount}`
+                sn.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[player]) {
+                        let targetData = a[player];
+                        sn.props.liveGameController.setVal({
+                            path: `c/${player}`,
+                            val: { ...targetData, g: parseInt(amount) || 0 }
+                        });
+                    }
                 });
             }
         }, {
@@ -6480,30 +3933,29 @@
             }
         }, {
             name: "Reset All Players' Gold",
-            description: "Set's everyone else's gold to 0",
+            description: "Set's everyone else's gold to 0 silently",
             run: function() {
-                var e = document.createElement("iframe");
-                document.body.append(e),
-                    window.alert = e.contentWindow.alert.bind(window),
-                    e.remove();
+                var d = document.createElement("iframe");
+                document.body.append(d),
+                    window.alert = d.contentWindow.alert.bind(window),
+                    d.remove();
                 let {
-                    props: t,
-                    state: a
-                } = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode,
-                    o = 0;
+                    props: t
+                } = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
                 t.liveGameController.getDatabaseVal("c", async e => {
-                    if (e)
-                        for (let r of Object.keys(e))
-                            t.liveGameController.setVal({
-                                path: "c/".concat(t.client.name),
-                                val: {
-                                    b: t.client.blook,
-                                    g: a.gold,
-                                    tat: r + ":swap:0"
-                                }
-                            }), o++, await new Promise(e => setTimeout(e, 4e3));
-                    alert(`Reset ${o} players' gold!`)
-                })
+                    if (e) {
+                        let myName = t.client.name;
+                        for (let r of Object.keys(e)) {
+                            if (r !== myName) {
+                                t.liveGameController.setVal({
+                                    path: `c/${r}`,
+                                    val: { ...e[r], g: 0 }
+                                });
+                            }
+                        }
+                    }
+                    alert("Reset all players' gold silently!");
+                });
             }
         }, {
             name: "Crash Host (Gold)",
@@ -6524,7 +3976,7 @@
             }
         }, {
             name: "Player Swapper",
-            description: "Swaps your stats and identity with another player",
+            description: "Swaps your stats and identity with another player perfectly stealthy",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -6539,9 +3991,11 @@
                     if (a && a[e]) {
                         let targetData = a[e];
                         let myData = a[t.props.client.name];
-                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
-                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
-                        t.setState({ gold: targetData.g || 0, gold2: targetData.g || 0 });
+                        let targetVal = targetData.g || 0;
+                        let myVal = myData.g || 0;
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: { ...myData, g: targetVal } });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: { ...targetData, g: myVal } });
+                        t.setState({ gold: targetVal, gold2: targetVal });
                     }
                 });
             }
@@ -6596,7 +4050,7 @@
             }
         }, {
             name: "Steal Player's Gold",
-            description: "Steals all of someone's gold",
+            description: "Steals all of someone's gold silently",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -6610,11 +4064,11 @@
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
                         let targetGold = a[e].g || 0;
-                        t.setState({ gold: t.state.gold + targetGold, gold2: t.state.gold2 + targetGold });
-                        t.props.liveGameController.setVal({
-                            path: `c/${t.props.client.name}`,
-                            val: { b: t.props.client.blook, g: t.state.gold, tat: e + ":swap:0" }
-                        });
+                        let myData = a[t.props.client.name];
+                        let newGold = t.state.gold + targetGold;
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: { ...myData, g: newGold } });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: { ...a[e], g: 0 } });
+                        t.setState({ gold: newGold, gold2: newGold });
                     }
                 });
             }
@@ -6812,7 +4266,7 @@
             }
         }, {
             name: "Player Swapper",
-            description: "Swaps your stats and identity with another player",
+            description: "Swaps your stats and identity with another player perfectly stealthy",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -6827,9 +4281,11 @@
                     if (a && a[e]) {
                         let targetData = a[e];
                         let myData = a[t.props.client.name];
-                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
-                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
-                        t.setState({ progress: targetData.pr || 0 });
+                        let targetVal = targetData.pr || 0;
+                        let myVal = myData.pr || 0;
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: { ...myData, pr: targetVal } });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: { ...targetData, pr: myVal } });
+                        t.setState({ progress: targetVal });
                     }
                 });
             }
@@ -6891,7 +4347,7 @@
         }, {
             name: "Set Host Screen Text",
             description: "Makes the whole host screen filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(e) {
                 var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
                 a.props.liveGameController.setVal({
@@ -6929,7 +4385,7 @@
             }
         }, {
             name: "Steal Player's Progress",
-            description: "Steals all of someone's progress",
+            description: "Steals all of someone's progress silently",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -6942,12 +4398,12 @@
                 let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
-                        let targetProg = a[e].pr || 0;
-                        t.setState({ progress: t.state.progress + targetProg });
-                        t.props.liveGameController.setVal({
-                            path: `c/${t.props.client.name}`,
-                            val: { b: t.props.client.blook, pr: t.state.progress }
-                        });
+                        let targetVal = a[e].pr || 0;
+                        let myData = a[t.props.client.name];
+                        let newVal = t.state.progress + targetVal;
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: { ...myData, pr: newVal } });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: { ...a[e], pr: 0 } });
+                        t.setState({ progress: newVal });
                     }
                 });
             }
@@ -7001,7 +4457,7 @@
             }
         }, {
             name: "Player Swapper",
-            description: "Swaps your stats and identity with another player",
+            description: "Swaps your stats and identity with another player perfectly stealthy",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -7016,8 +4472,10 @@
                     if (a && a[e]) {
                         let targetData = a[e];
                         let myData = a[t.props.client.name];
-                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
-                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
+                        let targetVal = targetData.e || 0;
+                        let myVal = myData.e || 0;
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: { ...myData, e: targetVal } });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: { ...targetData, e: myVal } });
                     }
                 });
             }
@@ -7128,7 +4586,7 @@
             }
         }, {
             name: "Steal Player's Energy",
-            description: "Steals energy from a player (DB side)",
+            description: "Steals energy from a player silently",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -7141,11 +4599,12 @@
                 let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
-                        let targetEnergy = a[e].e || 0;
-                        t.props.liveGameController.setVal({
-                            path: `c/${t.props.client.name}`,
-                            val: { b: t.props.client.blook, e: targetEnergy } // Set DB energy
-                        });
+                        let targetVal = a[e].e || 0;
+                        let myData = a[t.props.client.name];
+                        // Cannot simply get current energy perfectly from state in royale directly sometimes, so we replace current db e
+                        let newVal = (myData.e || 0) + targetVal;
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: { ...myData, e: newVal } });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: { ...a[e], e: 0 } });
                     }
                 });
             }
@@ -7194,7 +4653,7 @@
         }, {
             name: "Set Defense",
             description: "Sets amount of defense you or your team has (Max 4)",
-            inputs: [{
+            inputs:[{
                 name: "Defense (max 4)",
                 type: "number",
                 max: 4
@@ -7236,7 +4695,7 @@
             }
         }, {
             name: "Player Swapper",
-            description: "Swaps your stats and identity with another player",
+            description: "Swaps your stats and identity with another player perfectly stealthy",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -7251,9 +4710,11 @@
                     if (a && a[e]) {
                         let targetData = a[e];
                         let myData = a[t.props.client.name];
-                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
-                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
-                        t.setState({ numBlooks: targetData.bs || 0 });
+                        let targetVal = targetData.bs || 0;
+                        let myVal = myData.bs || 0;
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: { ...myData, bs: targetVal } });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: { ...targetData, bs: myVal } });
+                        t.setState({ numBlooks: targetVal });
                     }
                 });
             }
@@ -7315,7 +4776,7 @@
         }, {
             name: "Set Host Screen Text",
             description: "Makes the whole host screen filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(e) {
                 var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
                 a.props.liveGameController.setVal({
@@ -7353,7 +4814,7 @@
             }
         }, {
             name: "Steal Player's Blooks",
-            description: "Steals all of someone's Blooks (Rush)",
+            description: "Steals all of someone's Blooks silently (Rush)",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -7366,12 +4827,12 @@
                 let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
-                        let targetBlooks = a[e].bs || 0;
-                        t.setState({ numBlooks: t.state.numBlooks + targetBlooks });
-                        t.props.liveGameController.setVal({
-                            path: `c/${t.props.client.name}`,
-                            val: { b: t.props.client.blook, bs: t.state.numBlooks }
-                        });
+                        let targetVal = a[e].bs || 0;
+                        let myData = a[t.props.client.name];
+                        let newVal = t.state.numBlooks + targetVal;
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: { ...myData, bs: newVal } });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: { ...a[e], bs: 0 } });
+                        t.setState({ numBlooks: newVal });
                     }
                 });
             }
@@ -7475,36 +4936,7 @@
             }
         }, {
             name: "Swap Toys",
-            description: "Swaps toys with someone",
-            inputs:[{
-                name: "Player",
-                type: "options",
-                options() {
-                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
-                }
-            }],
-            run: function(e) {
-                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
-                t.props.liveGameController.getDatabaseVal("c", a => {
-                    var o;
-                    a && Object.keys(a).map(e => e.toLowerCase()).includes(e.toLowerCase()) && ([a, {
-                        t: o
-                    }] = Object.entries(a).find(([t]) => t.toLowerCase() == e.toLowerCase()), t.props.liveGameController.setVal({
-                        path: "c/".concat(t.props.client.name),
-                        val: {
-                            b: t.props.client.blook,
-                            t: o,
-                            tat: a + ":swap:" + t.state.toys
-                        }
-                    }), t.setState({
-                        toys: o
-                    }))
-                })
-            }
-        }, {
-            name: "Player Swapper",
-            description: "Swaps your stats and identity with another player",
+            description: "Swaps toys silently with someone",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -7519,9 +4951,36 @@
                     if (a && a[e]) {
                         let targetData = a[e];
                         let myData = a[t.props.client.name];
-                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
-                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
-                        t.setState({ toys: targetData.t || 0 });
+                        let targetVal = targetData.t || 0;
+                        let myVal = myData.t || 0;
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: { ...myData, t: targetVal } });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: { ...targetData, t: myVal } });
+                        t.setState({ toys: targetVal });
+                    }
+                });
+            }
+        }, {
+            name: "Player Swapper",
+            description: "Swaps your stats and identity with another player perfectly stealthy",
+            inputs:[{
+                name: "Player",
+                type: "options",
+                options() {
+                    let e = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                    return new Promise(t => e.props.liveGameController._liveApp ? e.props.liveGameController.getDatabaseVal("c", e => e && t(Object.keys(e))) : t([]))
+                }
+            }],
+            run: function(e) {
+                let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
+                t.props.liveGameController.getDatabaseVal("c", a => {
+                    if (a && a[e]) {
+                        let targetData = a[e];
+                        let myData = a[t.props.client.name];
+                        let targetVal = targetData.t || 0;
+                        let myVal = myData.t || 0;
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: { ...myData, t: targetVal } });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: { ...targetData, t: myVal } });
+                        t.setState({ toys: targetVal });
                     }
                 });
             }
@@ -7583,7 +5042,7 @@
         }, {
             name: "Set Host Screen Text",
             description: "Makes the whole host screen filled with text",
-            inputs: [{ name: "Text", type: "text" }],
+            inputs:[{ name: "Text", type: "text" }],
             run: function(e) {
                 var a = Object.values(document.querySelector("#app>div>div"))[1].children[0]._owner.stateNode;
                 a.props.liveGameController.setVal({
@@ -7621,7 +5080,7 @@
             }
         }, {
             name: "Steal Player's Toys",
-            description: "Steals all of someone's Toys",
+            description: "Steals all of someone's Toys silently",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -7634,12 +5093,12 @@
                 let t = Object.values(document.querySelector("body div[id] > div > div"))[1].children[0]._owner.stateNode;
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
-                        let targetToys = a[e].t || 0;
-                        t.setState({ toys: t.state.toys + targetToys });
-                        t.props.liveGameController.setVal({
-                            path: `c/${t.props.client.name}`,
-                            val: { b: t.props.client.blook, t: t.state.toys }
-                        });
+                        let targetVal = a[e].t || 0;
+                        let myData = a[t.props.client.name];
+                        let newVal = t.state.toys + targetVal;
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: { ...myData, t: newVal } });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: { ...a[e], t: 0 } });
+                        t.setState({ toys: newVal });
                     }
                 });
             }
@@ -7667,7 +5126,7 @@
         }],
         classic:[{
             name: "Player Swapper",
-            description: "Swaps your stats and identity with another player",
+            description: "Swaps your stats and identity with another player perfectly stealthy",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -7682,8 +5141,10 @@
                     if (a && a[e]) {
                         let targetData = a[e];
                         let myData = a[t.props.client.name];
-                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: targetData });
-                        t.props.liveGameController.setVal({ path: `c/${e}`, val: myData });
+                        let targetVal = targetData.p || 0;
+                        let myVal = myData.p || 0;
+                        t.props.liveGameController.setVal({ path: `c/${t.props.client.name}`, val: { ...myData, p: targetVal } });
+                        t.props.liveGameController.setVal({ path: `c/${e}`, val: { ...targetData, p: myVal } });
                     }
                 });
             }
@@ -7794,7 +5255,7 @@
             }
         }, {
             name: "Steal Player's Points",
-            description: "Steals points from a player",
+            description: "Steals points from a player silently",
             inputs:[{
                 name: "Player",
                 type: "options",
@@ -7808,9 +5269,15 @@
                 t.props.liveGameController.getDatabaseVal("c", a => {
                     if (a && a[e]) {
                         let targetPoints = a[e].p || 0;
+                        let myData = a[t.props.client.name];
+                        let newPoints = (myData.p || 0) + targetPoints;
                         t.props.liveGameController.setVal({
                             path: `c/${t.props.client.name}`,
-                            val: { b: t.props.client.blook, p: targetPoints }
+                            val: { ...myData, p: newPoints }
+                        });
+                        t.props.liveGameController.setVal({
+                            path: `c/${e}`,
+                            val: { ...a[e], p: 0 }
                         });
                     }
                 });
@@ -7818,7 +5285,7 @@
         }, {
             name: "Game Mode Changer",
             description: "Tricks your client into thinking it's in a different gamemode",
-            inputs: [{
+            inputs:[{
                 name: "Gamemode",
                 type: "options",
                 options:["Classic", "Racing", "Factory", "Cafe", "Defense", "Defense2", "Royale", "Gold", "Brawl", "Hack", "Pirate", "Fish", "Dino", "Toy", "Rush"]
@@ -7837,7 +5304,7 @@
                 }
             }
         }],
-        settings: [{
+        settings:[{
             name: "Import Settings",
             description: "Import a custom theme",
             inputs:[{
@@ -8170,7 +5637,7 @@
         }, {
             name: "Background Color",
             description: "Changes the background color of the GUI",
-            inputs: [{
+            inputs:[{
                 type: "string",
                 name: "Color"
             }],
@@ -8257,7 +5724,7 @@
         }, {
             name: "Content Color",
             description: "Changes the background color of the cheats",
-            inputs: [{
+            inputs:[{
                 type: "string",
                 name: "Color"
             }],
@@ -8696,11 +6163,8 @@
                 })))
             },
             addAlert(e, t, a) {
-                return this.element.firstChild.prepend(l("li", {
-                    style: {
-                        margin: "5px"
-                    }
-                }, l("strong", {}, e), " ", a))
+                // Mutating internal alerts for completely silent steals and swaps. Do not render popup.
+                return;
             },
             connection: null,
             data: {},
@@ -8732,7 +6196,7 @@
                 var t = e;
                 if (e < 1e3)
                     return t.toString();
-                var a = ["", "K", "M", "B", "T"],
+                var a =["", "K", "M", "B", "T"],
                     o = Math.floor((e.toString().length - 1) / 3);
                 if (o < a.length) {
                     let r = 0;
@@ -9072,7 +6536,7 @@
     }
     const path = "https://raw.githubusercontent.com/CryptoDude3/Blooket-Cheats-Premium";
     
-    // Add "Classic" to the menu
+    // Load Menu Categories
     w("Alerts", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434255/alerts_dsucpi.png", C.alerts, !0),
         w("Global", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434297/global_cq8tkv.webp", C.global)(),
         w('<span style="font-size: 18px">Host</span>',['<img style="height: 60px; margin-left: -15px; margin-right: -10px" src="https://res.cloudinary.com/dhiws7ac5/image/upload/v1743435147/image-removebg-preview_wljrdo.png">'], C.host, !0),
@@ -9096,134 +6560,9 @@
         w(`<span style="font-size: 15px">Santa's Workshop</span>`, "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434611/santa_iv1laq.webp", C.workshop),
         w("Chat", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434319/chat_zt0hkp.webp", C.chat, !0),
         w("Extras", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434333/extras_jvb85e.png", C.extras, !0),
-        w("Settings", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434573/settings_qwvo0c.png", C.settings, !0),
-        // --- AUTO PATCHER V2 START ---
-        (() => {
-            // 1. FIX GUI ZOOM & CUTOFF ISSUES
-            let style = document.createElement("style");
-            style.innerHTML = `
-                #ZIPGUI {
-                    max-height: 90vh !important;
-                    max-width: 90vw !important;
-                    width: 850px !important;
-                    height: 550px !important;
-                }
-                .contentWrapper {
-                    height: calc(100% - 70px) !important;
-                    width: calc(100% - 220px) !important;
-                    overflow-y: auto !important;
-                }
-                .cheatButton {
-                    font-size: 17px !important;
-                    width: 95% !important;
-                    min-height: 38px !important;
-                }
-                .scriptButton {
-                    width: 230px !important;
-                    font-size: 15px !important;
-                }
-                .alertContainer {
-                    height: calc(100% - 30px) !important;
-                }
-            `;
-            document.head.appendChild(style);
+        w("Settings", "https://res.cloudinary.com/dhiws7ac5/image/upload/v1743434573/settings_qwvo0c.png", C.settings, !0);
 
-            // 2. PROPER GAME ROUTING FOR MODE CHANGER
-            const routeMap = {
-                "Classic": "classic",
-                "Racing": "racing",
-                "Factory": "factory",
-                "Cafe": "cafe",
-                "Defense": "defense",
-                "Defense2": "defense2",
-                "Royale": "battle-royale",
-                "Gold": "gold",
-                "Brawl": "brawl",
-                "Hack": "hack",
-                "Pirate": "pirate",
-                "Fish": "fishing",
-                "Dino": "dino",
-                "Toy": "toy",
-                "Rush": "rush"
-            };
-
-            // 3. APPLY FIXES TO ALL GAME MODES
-            Object.keys(C).forEach(category => {
-                if(Array.isArray(C[category])) {
-                    C[category].forEach(cheat => {
-                        
-                        // UNDETECTABLE PLAYER SWAPPER (Score Cloner)
-                        if(cheat.name === "Player Swapper") {
-                            cheat.run = function(targetPlayer) {
-                                let sn = Object.values(document.querySelector("#app>div>div"))[1]?.children?.[0]?._owner?.stateNode || Object.values(document.querySelector("body>div"))[1]?.children?.[0]?._owner?.stateNode;
-                                if(!sn) return alert("Game not found!");
-                                
-                                sn.props.liveGameController.getDatabaseVal("c", players => {
-                                    if (players && players[targetPlayer]) {
-                                        let myName = sn.props.client.name;
-                                        let targetData = players[targetPlayer];
-                                        let myData = players[myName];
-                                        
-                                        // Find which score variable the game mode uses (cr = crypto, g = gold, etc.)
-                                        let scoreKey = Object.keys(targetData).find(k =>['p','pr','ca','d','e','g','xp','cr','w','f','t','bs'].includes(k));
-                                        
-                                        if(scoreKey) {
-                                            // SILENT UPDATE: We only modify OUR score. 
-                                            // No "tat" attack is sent, meaning 0 in-game alerts or logs. Completely undetectable.
-                                            let myNewData = { ...myData,[scoreKey]: targetData[scoreKey] };
-                                            sn.props.liveGameController.setVal({ path: `c/${myName}`, val: myNewData });
-                                            
-                                            // Update local screen visually
-                                            let su = {};
-                                            if (scoreKey === 'g') { su.gold = targetData.g; su.gold2 = targetData.g; }
-                                            else if (scoreKey === 'cr') { su.crypto = targetData.cr; su.crypto2 = targetData.cr; }
-                                            else if (scoreKey === 'ca') { su.cafeCash = targetData.ca; su.cash = targetData.ca; }
-                                            else if (scoreKey === 'xp') { su.xp = targetData.xp; su.totalXp = targetData.xp; }
-                                            else if (scoreKey === 'w') { su.weight = targetData.w; su.weight2 = targetData.w; }
-                                            else if (scoreKey === 'f') { su.fossils = targetData.f; }
-                                            else if (scoreKey === 't') { su.toys = targetData.t; }
-                                            else if (scoreKey === 'bs') { su.numBlooks = targetData.bs; }
-                                            else if (scoreKey === 'd') { su.doubloons = targetData.d; sn.dmg = targetData.d; }
-                                            else if (scoreKey === 'pr') { su.progress = targetData.pr; }
-                                            
-                                            if(Object.keys(su).length > 0) sn.setState(su);
-                                            
-                                            alert(`Successfully cloned ${targetPlayer}'s score completely undetected!`);
-                                        }
-                                    }
-                                });
-                            };
-                        }
-                        
-                        // FIX GAME MODE CHANGER (Actually re-routes the page)
-                        if(cheat.name === "Game Mode Changer") {
-                            cheat.run = function(mode) {
-                                let sn = Object.values(document.querySelector("#app>div>div"))[1]?.children?.[0]?._owner?.stateNode || Object.values(document.querySelector("body>div"))[1]?.children?.[0]?._owner?.stateNode;
-                                if (sn && sn.props) {
-                                    if (sn.props.client) sn.props.client.type = mode;
-                                    let route = routeMap[mode] || mode.toLowerCase();
-                                    
-                                    // Force React Router to push the new page visually
-                                    if (sn.props.history) {
-                                        sn.props.history.push("/play/" + route);
-                                    }
-                                }
-                            };
-                        }
-                    });
-                }
-            });
-            
-            // 4. MUTE INTERNAL GUI ALERTS (To stop annoying popups)
-            if(C.alerts && C.alerts[0]) {
-                C.alerts[0].addAlert = function(player, img, msg) {
-                    // Doing absolutely nothing here mutes the internal chat box logs so the hacks are stealthy
-                };
-            }
-            
-        })();
-        // --- AUTO PATCHER V2 END ---
-        S(m, _),
+    S(m, _),
         S(g, _),
         window.addEventListener("keydown", A);
     let x = setInterval(() => {
